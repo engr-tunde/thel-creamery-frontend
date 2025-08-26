@@ -1,6 +1,6 @@
 import { Outlet } from "react-router-dom";
-import LeftsideBar from "../Component/global/LeftsideBar";
-import NavBar from "../Component/global/NavBar";
+import LeftsideBar from "../component/global/LeftsideBar";
+import NavBar from "../component/global/NavBar";
 
 export const ProductPageLayout = () => {
   return (

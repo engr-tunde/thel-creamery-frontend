@@ -15,6 +15,8 @@ export default defineConfig({
           proGray: "#858c85",
           proGreen: "#00c689",
           proBlue: "#297ff9",
+          proBtnPacificBlue: "#17a2b8",
+          proBtnYellow: "#ffc107",
         },
       },
     ]),
