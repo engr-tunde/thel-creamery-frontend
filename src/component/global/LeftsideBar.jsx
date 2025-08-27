@@ -8,7 +8,7 @@ const LeftsideBar = () => {
   const [openIndex, setOpenIndex] = useState(null);
 
   return (
-    <div className="bg-white p-3 overflow-y-auto">
+    <div className="bg-white p-3 overflow-y-auto w-full">
       <img src="/images/logo-plain.png" alt="" className="w-28" />
       <div className="w-full flex flex-col gap- mt-0">
         <div>

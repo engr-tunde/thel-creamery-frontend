@@ -536,3 +536,101 @@ export const plusMenu = [
     link: "/add-user",
   },
 ];
+
+export const tableColumn = [
+  {
+    accessor: "input",
+    title: "checkbox",
+    className: "font-semibold",
+    maxWidth: "150px",
+  },
+  {
+    accessor: "product",
+    title: "Product",
+    className: "font-semibold",
+  },
+  {
+    accessor: "Code",
+    title: "Code",
+    className: "font-semibold",
+  },
+  {
+    accessor: "Brand",
+    title: "Brand",
+    className: "font-semibold",
+  },
+  {
+    accessor: "Category",
+    title: "Category",
+    className: "font-semibold",
+  },
+  {
+    accessor: "Quantity",
+    title: "Quantity",
+    className: "font-semibold",
+  },
+  {
+    accessor: "Unit",
+    title: "Unit",
+    className: "font-semibold",
+  },
+  {
+    accessor: "Price",
+    title: "Price",
+    className: "font-semibold",
+  },
+  {
+    accessor: "Cost",
+    title: "Cost",
+    className: "font-semibold",
+  },
+  {
+    accessor: "Stock worth (price/cost)",
+    title: "Stock worth (price/cost)",
+    className: "font-semibold",
+  },
+  {
+    accessor: "Action",
+    title: "Action",
+    className: "font-semibold",
+  },
+];
+
+export const rowData = [
+  {
+    image: "product-1.png",
+    productTitle: "Zenbook 14 OLED (UX3402)｜Laptops For Home – ASUS",
+    code: "2035892312345",
+    brand: "Huawei",
+    category: "Laptops & Computers",
+    quantity: "20",
+    unit: "Pieces",
+    price: "1200",
+    cost: "1000",
+    stockWorth: "USD-5500 / USD-5000",
+  },
+  {
+    image: "product-1.png",
+    productTitle: "Zenbook 14 OLED (UX3402)｜Laptops For Home – ASUS",
+    code: "2035892312345",
+    brand: "Huawei",
+    category: "Laptops & Computers",
+    quantity: "20",
+    unit: "Pieces",
+    price: "1200",
+    cost: "1000",
+    stockWorth: "USD-5500 / USD-5000",
+  },
+  {
+    image: "product-1.png",
+    productTitle: "Zenbook 14 OLED (UX3402)｜Laptops For Home – ASUS",
+    code: "2035892312345",
+    brand: "Huawei",
+    category: "Laptops & Computers",
+    quantity: "20",
+    unit: "Pieces",
+    price: "1200",
+    cost: "1000",
+    stockWorth: "USD-5500 / USD-5000",
+  },
+];
