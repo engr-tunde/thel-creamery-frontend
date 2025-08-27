@@ -7,6 +7,8 @@ import DashboardLayout from "./layouts/DashboardLayout";
 // import LoginPage from "./Pages/auth/Login";
 // import { ProductPageLayout } from "./layouts/ProductPageLayout";
 // import { ProductPage } from "./Pages/products";
+// import { Navigate } from 'react-router-dom'
+import CategoryPage  from './pages/dashboard/category.jsx'
 
 function App() {
   const [count, setCount] = useState(0);
@@ -22,6 +24,7 @@ function App() {
 
         <Route element={<DashboardLayout />}>
           <Route path="/dashboard" element={<DashboardPage />} />
+          <Route path="/category" element={<CategoryPage />} />
         </Route>
 
         {/* <Route element={<ProductPageLayout />}>
