@@ -4,10 +4,14 @@ import { BrowserRouter, Route, Router, Routes } from "react-router-dom";
 // import AuthLayout from "./layouts/AuthLayout";
 import DashboardPage from "./Pages/dashboard";
 import DashboardLayout from "./layouts/DashboardLayout";
+<<<<<<< HEAD
 import PrintBarcodePage from "./pages/Pages/products/print_barcode";
 import { PrintBarcodeLayout } from "./layouts/PrintBarcodeLayout";
+=======
+import ProductListPage from "./pages/products/ProductListPage";
+import { ProductPageLayout } from "./layouts/ProductPageLayout";
+>>>>>>> 2c98ff1b2a4bcd6cd36228e7222f08d53a4eddd2
 // import LoginPage from "./Pages/auth/Login";
-// import { ProductPageLayout } from "./layouts/ProductPageLayout";
 // import { ProductPage } from "./Pages/products";
 
 function App() {
@@ -29,9 +33,9 @@ function App() {
           <Route path="/products/print_barcode" element={<PrintBarcodePage />} />
         </Route>
 
-        {/* <Route element={<ProductPageLayout />}>
-          <Route path="/products" element={<ProductPage />} />
-        </Route> */}
+        <Route element={<ProductPageLayout />}>
+          <Route path="/product-list" element={<ProductListPage />} />
+        </Route>
       </Routes>
     </BrowserRouter>
   );

@@ -6,7 +6,7 @@ import { useState } from "react";
 const DashboardLayout = ({ children }) => {
   const [sidebarOpen, setSidebarOpen] = useState(true);
   return (
-    <div className="flex bg-red-300 w-screen h-screen gap-3">
+    <div className="flex bg-blue-500 w-screen h-screen gap-3">
       {/* left side */}
       <div className={`${sidebarOpen ? "block" : "hidden"} flex w-[20%]`}>
         <LeftsideBar />
