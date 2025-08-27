@@ -4,6 +4,8 @@ import { BrowserRouter, Route, Router, Routes } from "react-router-dom";
 // import AuthLayout from "./layouts/AuthLayout";
 import DashboardPage from "./Pages/dashboard";
 import DashboardLayout from "./layouts/DashboardLayout";
+import PrintBarcodePage from "./pages/Pages/products/print_barcode";
+import { PrintBarcodeLayout } from "./layouts/PrintBarcodeLayout";
 // import LoginPage from "./Pages/auth/Login";
 // import { ProductPageLayout } from "./layouts/ProductPageLayout";
 // import { ProductPage } from "./Pages/products";
@@ -22,6 +24,9 @@ function App() {
 
         <Route element={<DashboardLayout />}>
           <Route path="/dashboard" element={<DashboardPage />} />
+        </Route>
+        <Route element={<PrintBarcodeLayout />}>
+          <Route path="/products/print_barcode" element={<PrintBarcodePage />} />
         </Route>
 
         {/* <Route element={<ProductPageLayout />}>

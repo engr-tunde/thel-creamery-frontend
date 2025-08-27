@@ -1,8 +1,8 @@
+import LeftsideBar from "../component/global/LeftsideBar";
+import NavBar from "../component/global/NavBar";
 import { Outlet } from "react-router-dom";
-import LeftsideBar from "../Component/global/LeftsideBar";
-import NavBar from "../Component/global/NavBar";
 
-export const ProductPageLayout = () => {
+export const PrintBarcodeLayout = () => {
   return (
     <div className="flex w-screen h-screen gap-3">
       {/* left side */}
@@ -10,13 +10,13 @@ export const ProductPageLayout = () => {
         <LeftsideBar />
       </div>
       {/* right side */}
-      <div className="w-full flex flex-col gap-3">
+      <div className="w-full flex flex-col gap-3 pr-10">
         {/* navbar side */}
         <NavBar />
         {/* main  */}
         <Outlet />
       </div>
-
+      {/* rgb(228,230,252) */}
     </div>
   );
 };

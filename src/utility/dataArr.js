@@ -536,3 +536,59 @@ export const plusMenu = [
     link: "/add-user",
   },
 ];
+
+export const productSearch = [
+  {heading: "Name"},
+  {heading: "Code"},
+  {heading: "Quantity",}
+  
+]
+
+export const formDetails = [
+  {
+    Name:"Product Name",
+    size: "Size" ,
+    className: "bg-white",
+  },
+  {
+    Name:"Price",
+    size: "Size" ,
+    className: "bg-white",
+  },
+  {
+    Name:"Promotional Price",
+    size: "Size" ,
+    className: "bg-white",
+  },
+  {
+    Name:"Business Name",
+    size: "Size" ,
+    className: "bg-white",
+  },
+  {
+    Name:"Brand",
+    size: "Size" ,
+    className: "bg-white",
+  },
+
+
+]
+
+export const papperSize = [
+  {
+    itemList: "20 Label per Sheet, Sheet Size: 8.5 x 11, Label Size: 4 x 1, Label... "
+  },
+  {
+    itemList: "30 Label per Sheet, Sheet Size: 8.5 x 11, Label Size: 2.625 x 1, Label per sheet: 30 "
+  },
+  {
+    itemList: "42 Label per Sheet, Sheet Size: 8.5 x 11, Label Size: 2 x 1, Label per sheet: 32 "
+  },
+  {
+    itemList: "40 Label per Sheet, Sheet Size: 8.5 x 11, Label Size: 1.5 x 1, Label per sheet: 40 "
+  },
+  {
+    itemList: "continious rolls - 31.75mm x 24.5mm label size:31.75mm x 24.5mm  gap:3.18mm "
+  },
+
+]
