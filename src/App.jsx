@@ -10,6 +10,7 @@ import ProductListPage from "./pages/ProductListPage";
 import { ProductPageLayout } from "./layouts/ProductPageLayout";
 import { AddAdjustmentLayout } from "./layouts/AddAdjustmentLayout";
 import AddAdjustmentPage from "./pages/products/add-adjustment";
+import CategoryPage from './pages/products/category/index.jsx'
 // import LoginPage from "./Pages/auth/Login";
 // import { ProductPage } from "./Pages/products";
 
@@ -27,7 +28,9 @@ function App() {
 
         <Route element={<DashboardLayout />}>
           <Route path="/dashboard" element={<DashboardPage />} />
+          <Route path="/category" element={<CategoryPage />} />
         </Route>
+
         <Route element={<PrintBarcodeLayout />}>
           <Route path="/products/print_barcode" element={<PrintBarcodePage />} />
         </Route>
