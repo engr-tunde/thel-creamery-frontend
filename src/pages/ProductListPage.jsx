@@ -9,8 +9,8 @@ import {
 import { LiaTimesSolid } from "react-icons/lia";
 import { MdOutlineFilterAlt } from "react-icons/md";
 import { RiArrowDownSFill } from "react-icons/ri";
-import Table from "../../component/global/Table";
-import { rowData, tableColumn } from "../../utility/dataArr";
+import Table from "../component/global/Table";
+import { rowData, tableColumn } from "../utility/dataArr";
 import { useState } from "react";
 
 const ProductListPage = () => {

@@ -24,7 +24,7 @@ export const sidebarData = [
       },
       {
         title: "Print Barcode",
-        link: "/print-barcode",
+        link: "/products/print_barcode",
       },
       {
         title: "Adjustment List",
@@ -32,7 +32,7 @@ export const sidebarData = [
       },
       {
         title: "Add Adjustment",
-        link: "/add-adjustment",
+        link: "/product/add_adjustment",
       },
       {
         title: "Stock Count",
@@ -537,7 +537,6 @@ export const plusMenu = [
   },
 ];
 
-<<<<<<< HEAD
 export const productSearch = [
   {heading: "Name"},
   {heading: "Code"},
@@ -545,6 +544,7 @@ export const productSearch = [
   
 ]
 
+//for print-barcodeb page
 export const formDetails = [
   {
     Name:"Product Name",
@@ -575,6 +575,7 @@ export const formDetails = [
 
 ]
 
+//print-barcode page
 export const papperSize = [
   {
     itemList: "20 Label per Sheet, Sheet Size: 8.5 x 11, Label Size: 4 x 1, Label... "
@@ -593,7 +594,6 @@ export const papperSize = [
   },
 
 ]
-=======
 export const tableColumn = [
   {
     accessor: "input",
@@ -691,4 +691,34 @@ export const rowData = [
     stockWorth: "USD-5500 / USD-5000",
   },
 ];
->>>>>>> 2c98ff1b2a4bcd6cd36228e7222f08d53a4eddd2
+
+//for add adjustment page
+export const tableTitle = [
+  {
+    title: "Name"	
+  },
+  {
+    title: "Code"	
+  },
+  {
+    title: "Unit"
+  },
+  {
+    title: "Cost"		
+  },
+  {
+    title: "Quantity"	
+  },
+  {
+    title: "action"		 		
+  },
+]
+
+export const availableSearch = [
+  {
+    title: "Shop1"
+  },
+    {
+    title: "Shop2"
+  }
+]

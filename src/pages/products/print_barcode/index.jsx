@@ -1,6 +1,6 @@
-import AppInputField from "../../../../component/form/AppInputField";
-import { formDetails, papperSize, productSearch } from "../../../../utility/dataArr";
-import AppSubmitButton from "../../../../component/form/AppSubmitButton"
+import AppInputField from "../../../component/form/AppInputField";
+import { formDetails, papperSize, productSearch } from "../../../utility/dataArr";
+import AppSubmitButton from "../../../component/form/AppSubmitButton"
 import { useState } from "react";
 import {  IoIosCheckmark,  } from "react-icons/io";
 import { RiDeleteBinLine } from "react-icons/ri";
@@ -11,18 +11,14 @@ const PrintBarcodePage = () => {
         const [selectedValue, setSelectedValue] = useState(dropdownValue);
 
         const [count, setCount] = useState(0) //initialize state for the input number
-        const [validate, setValidate] = useState(null)
+        const [validate, setValidate] = useState(false)
 
         
-        const toggleChecks = () => {
-                setValidate(!validate)  
-        }
+        
 
         //handle change
         const handleChanges = (event) => {
-            
-            const newValue = parseInt(event.target.value, 10)
-            setCount(isNaN(newValue) ? 0 : newValue)
+            setSelectedValue(event.target.value)
         }
     
 
@@ -51,20 +47,23 @@ const PrintBarcodePage = () => {
                 <div className="w-full grid grid-cols-3 justify-between item-center gap-y-5">
                     {
                         formDetails?.map((item, i) => {  
-                            
+                            const toggleChecks = (e) => {
+                                if (e === i) {
+                                    setValidate( !validate) 
+                                } 
+                               
+                            }
                             return (
                             
                             <div key={i} className="flex flex-col gap-1 w-[250px]">
                                 <div className="flex items-center gap-1">
-                                    <span onClick={toggleChecks} className={`${item.className} border-1  size-4 items-center flex rounded-sm`}><IoIosCheckmark key={i}  className={ validate ? "bg-blue-800 text-white" : "hidden"} /></span>
+                                    <span key={i} onClick={((e) => toggleChecks(e))} className={`${item.className} border-1  size-4 items-center flex rounded-sm`}><IoIosCheckmark   className={ validate ? "bg-blue-800 text-white" : "hidden"} /></span>
                                     <label htmlFor="" className="font-semibold text-[rgb(94,88,115)]">{item.Name}</label>
                                 </div>
                                 <div className="flex gap-[2px]">
                                     <span>{item.size}:</span>
                                     <div className="border-[rgb(118,118,118)] border-1 rounded-sm relative">
-                                        {/* <IoMdArrowDropup className="absolute top-[2px] right-1" onClick={handleIncreament}/> */}
-                                        <AppInputField className={`${item.className}  h-full`} type="number" onChange={handleChanges}/>
-                                        {/* <IoMdArrowDropdown className="absolute bottom-[2px] right-1" onClick={handleDecreament}/> */}
+                                        <AppInputField className={`${item.className}  h-full`} type="number"/>
                                     </div>
                                     
                                 </div>

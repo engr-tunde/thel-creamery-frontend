@@ -4,13 +4,12 @@ import { BrowserRouter, Route, Router, Routes } from "react-router-dom";
 // import AuthLayout from "./layouts/AuthLayout";
 import DashboardPage from "./Pages/dashboard";
 import DashboardLayout from "./layouts/DashboardLayout";
-<<<<<<< HEAD
-import PrintBarcodePage from "./pages/Pages/products/print_barcode";
+import PrintBarcodePage from "./pages/products/print_barcode"
 import { PrintBarcodeLayout } from "./layouts/PrintBarcodeLayout";
-=======
-import ProductListPage from "./pages/products/ProductListPage";
+import ProductListPage from "./pages/ProductListPage";
 import { ProductPageLayout } from "./layouts/ProductPageLayout";
->>>>>>> 2c98ff1b2a4bcd6cd36228e7222f08d53a4eddd2
+import { AddAdjustmentLayout } from "./layouts/AddAdjustmentLayout";
+import AddAdjustmentPage from "./pages/products/add-adjustment";
 // import LoginPage from "./Pages/auth/Login";
 // import { ProductPage } from "./Pages/products";
 
@@ -35,6 +34,9 @@ function App() {
 
         <Route element={<ProductPageLayout />}>
           <Route path="/product-list" element={<ProductListPage />} />
+        </Route>
+        <Route element={<AddAdjustmentLayout />}>
+          <Route path="/product/add_adjustment" element={<AddAdjustmentPage />} />
         </Route>
       </Routes>
     </BrowserRouter>
