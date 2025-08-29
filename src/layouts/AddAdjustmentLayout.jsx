@@ -3,7 +3,7 @@ import LeftsideBar from "../component/global/LeftsideBar";
 import NavBar from "../component/global/NavBar";
 import { useState } from "react";
 
-const AdjustmentListLayout = () => {
+const AddAdjustmentLayout = () => {
   const [sidebarOpen, setSidebarOpen] = useState(true);
 
   return (
@@ -19,8 +19,9 @@ const AdjustmentListLayout = () => {
         {/* main  */}
         <Outlet />
       </div>
+
     </div>
   );
 };
 
-export default AdjustmentListLayout;
+ export default AddAdjustmentLayout;

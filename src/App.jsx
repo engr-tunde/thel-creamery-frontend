@@ -7,12 +7,14 @@ import DashboardLayout from "./layouts/DashboardLayout";
 import ProductPageList from "./pages/products/productListPage";
 import PrintBarcodePage from "./pages/products/print_barcode";
 import { PrintBarcodeLayout } from "./layouts/PrintBarcodeLayout";
-import { AddAdjustmentLayout } from "./layouts/AddAdjustmentLayout";
 import AddAdjustmentPage from "./pages/products/add-adjustment";
 import CategoryPage from "./pages/products/category/index.jsx";
 import ProductListPageLayout from "./layouts/ProductListPageLayout.jsx";
 import AdjustmentListLayout from "./layouts/AdjustmentListLayout.jsx";
 import AdjustmentListPage from "./pages/products/adjustmentListPage/index.jsx";
+import StockCountLayout from "./layouts/StockCountLayout.jsx";
+import StockCountPage from "./pages/products/stockCountPage/index.jsx";
+import AddAdjustmentLayout from "./layouts/AddAdjustmentLayout.jsx";
 // import LoginPage from "./Pages/auth/Login";
 // import { ProductPage } from "./Pages/products";
 
@@ -53,6 +55,10 @@ function App() {
             path="/product/add_adjustment"
             element={<AddAdjustmentPage />}
           />
+        </Route>
+
+        <Route element={<StockCountLayout />}>
+          <Route path="/stock-count" element={<StockCountPage />} />
         </Route>
       </Routes>
     </BrowserRouter>
