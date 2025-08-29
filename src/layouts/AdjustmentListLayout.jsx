@@ -3,11 +3,11 @@ import LeftsideBar from "../component/global/LeftsideBar";
 import NavBar from "../component/global/NavBar";
 import { useState } from "react";
 
-export const AddAdjustmentLayout = () => {
+const AdjustmentListLayout = () => {
   const [sidebarOpen, setSidebarOpen] = useState(true);
 
   return (
-    <div className="flex w-screen h-screen">
+    <div className="flex w-screen h-screen relative">
       {/* left side */}
       <div className={`${sidebarOpen ? "block" : "hidden"} flex w-[15%]`}>
         <LeftsideBar />
@@ -19,7 +19,8 @@ export const AddAdjustmentLayout = () => {
         {/* main  */}
         <Outlet />
       </div>
-
     </div>
   );
 };
+
+export default AdjustmentListLayout;

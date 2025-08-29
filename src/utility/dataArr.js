@@ -729,6 +729,69 @@ export const productListInputData = [
   },
 ];
 
+// for adjustment list page
+export const adjustmentListTableCol = [
+  {
+    accessor: "input",
+    title: "checkbox",
+    className: "font-semibold",
+    maxWidth: "150px",
+  },
+  {
+    accessor: "Date",
+    title: "Date",
+    className: "font-semibold",
+  },
+  {
+    accessor: "Reference",
+    title: "Reference",
+    className: "font-semibold",
+  },
+  {
+    accessor: "Warehouse",
+    title: "Warehouse",
+    className: "font-semibold",
+  },
+  {
+    accessor: "Products",
+    title: "Products",
+    className: "font-semibold",
+  },
+  {
+    accessor: "Note",
+    title: "Note",
+    className: "font-semibold",
+  },
+  {
+    accessor: "Action",
+    title: "Action",
+    className: "font-semibold",
+  },
+];
+
+export const adjustmentRowData = [
+  {
+    date: "04-06-2025 05:15:51",
+    reference: "adr-20250604-111551",
+    warehouse: "Shop 2",
+    product: {
+      title: "2bc",
+      dimension: "10 x 10"      
+    },
+    note: "",
+  },
+  {
+    date: "04-06-2025 05:15:51",
+    reference: "adr-20250604-111551",
+    warehouse: "Shop 2",
+    product: {
+      title: "2bc",
+      dimension: "10 x 10"      
+    },
+    note: "",
+  },
+];
+
 //for add adjustment page
 export const tableTitle = [
   {

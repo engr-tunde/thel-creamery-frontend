@@ -5,12 +5,14 @@ import { BrowserRouter, Route, Router, Routes } from "react-router-dom";
 import DashboardPage from "./Pages/dashboard";
 import DashboardLayout from "./layouts/DashboardLayout";
 import ProductPageList from "./pages/products/productListPage";
-import PrintBarcodePage from "./pages/products/print_barcode"
+import PrintBarcodePage from "./pages/products/print_barcode";
 import { PrintBarcodeLayout } from "./layouts/PrintBarcodeLayout";
 import { AddAdjustmentLayout } from "./layouts/AddAdjustmentLayout";
 import AddAdjustmentPage from "./pages/products/add-adjustment";
-import CategoryPage from './pages/products/category/index.jsx'
+import CategoryPage from "./pages/products/category/index.jsx";
 import ProductListPageLayout from "./layouts/ProductListPageLayout.jsx";
+import AdjustmentListLayout from "./layouts/AdjustmentListLayout.jsx";
+import AdjustmentListPage from "./pages/products/adjustmentListPage/index.jsx";
 // import LoginPage from "./Pages/auth/Login";
 // import { ProductPage } from "./Pages/products";
 
@@ -31,15 +33,26 @@ function App() {
           <Route path="/category" element={<CategoryPage />} />
         </Route>
 
-        <Route element={<PrintBarcodeLayout />}>
-          <Route path="/products/print_barcode" element={<PrintBarcodePage />} />
-        </Route>
-
         <Route element={<ProductListPageLayout />}>
           <Route path="/product-list" element={<ProductPageList />} />
         </Route>
+
+        <Route element={<PrintBarcodeLayout />}>
+          <Route
+            path="/products/print_barcode"
+            element={<PrintBarcodePage />}
+          />
+        </Route>
+
+        <Route element={<AdjustmentListLayout />}>
+          <Route path="/adjustment-list" element={<AdjustmentListPage />} />
+        </Route>
+
         <Route element={<AddAdjustmentLayout />}>
-          <Route path="/product/add_adjustment" element={<AddAdjustmentPage />} />
+          <Route
+            path="/product/add_adjustment"
+            element={<AddAdjustmentPage />}
+          />
         </Route>
       </Routes>
     </BrowserRouter>
