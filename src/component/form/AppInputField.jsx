@@ -8,6 +8,7 @@ const AppInputField = ({
   error,
   className,
   defaultValue,
+  onChange,
 }) => {
   return (
     <div className={`flex w-full flex-col gap-1 ${className}`}>
@@ -30,6 +31,7 @@ const AppInputField = ({
             type={type}
             placeholder={placeholder}
             className="primary-input w-full h-[35px] p-3"
+            onChange={onChange}
           />
           {error && <span className="error">{error}</span>}
         </div>

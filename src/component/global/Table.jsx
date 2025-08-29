@@ -1,6 +1,6 @@
 import { GoArrowDown, GoArrowUp } from "react-icons/go";
 
-const Table = ({ tableColumn, rowData, rowTemplate }) => {
+ const Table = ({ tableColumn, rowData, rowTemplate }) => {
   return (
     <table className="w-full h-[90px] overflow-y-scroll mt-10">
       <thead className=" text-gray-500">
@@ -38,4 +38,4 @@ const Table = ({ tableColumn, rowData, rowTemplate }) => {
   );
 };
 
-export default Table;
+export default Table

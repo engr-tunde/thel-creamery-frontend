@@ -24,7 +24,7 @@ export const sidebarData = [
       },
       {
         title: "Print Barcode",
-        link: "/print-barcode",
+        link: "/products/print_barcode",
       },
       {
         title: "Adjustment List",
@@ -32,7 +32,7 @@ export const sidebarData = [
       },
       {
         title: "Add Adjustment",
-        link: "/add-adjustment",
+        link: "/product/add_adjustment",
       },
       {
         title: "Stock Count",
@@ -537,6 +537,65 @@ export const plusMenu = [
   },
 ];
 
+export const productSearch = [
+  {heading: "Name"},
+  {heading: "Code"},
+  {heading: "Quantity",}
+  
+]
+
+//for print-barcodeb page
+export const formDetails = [
+  {
+    Name:"Product Name",
+    size: "Size" ,
+    className: "bg-white",
+  },
+  {
+    Name:"Price",
+    size: "Size" ,
+    className: "bg-white",
+  },
+  {
+    Name:"Promotional Price",
+    size: "Size" ,
+    className: "bg-white",
+  },
+  {
+    Name:"Business Name",
+    size: "Size" ,
+    className: "bg-white",
+  },
+  {
+    Name:"Brand",
+    size: "Size" ,
+    className: "bg-white",
+  },
+
+
+]
+
+//print-barcode page
+export const papperSize = [
+  {
+    itemList: "20 Label per Sheet, Sheet Size: 8.5 x 11, Label Size: 4 x 1, Label... "
+  },
+  {
+    itemList: "30 Label per Sheet, Sheet Size: 8.5 x 11, Label Size: 2.625 x 1, Label per sheet: 30 "
+  },
+  {
+    itemList: "42 Label per Sheet, Sheet Size: 8.5 x 11, Label Size: 2 x 1, Label per sheet: 32 "
+  },
+  {
+    itemList: "40 Label per Sheet, Sheet Size: 8.5 x 11, Label Size: 1.5 x 1, Label per sheet: 40 "
+  },
+  {
+    itemList: "continious rolls - 31.75mm x 24.5mm label size:31.75mm x 24.5mm  gap:3.18mm "
+  },
+
+]
+
+//for product list page
 export const tableColumn = [
   {
     accessor: "input",
@@ -669,3 +728,170 @@ export const productListInputData = [
     placeholder: "Submit",
   },
 ];
+
+//for add adjustment page
+export const tableTitle = [
+  {
+    title: "Name"	
+  },
+  {
+    title: "Code"	
+  },
+  {
+    title: "Unit"
+  },
+  {
+    title: "Cost"		
+  },
+  {
+    title: "Quantity"	
+  },
+  {
+    title: "action"		 		
+  },
+]
+
+export const availableSearch = [
+  {
+    title: "Shop1"
+  },
+    {
+    title: "Shop2"
+  }
+]
+
+
+// Category Data
+export const categoryDataArr = [
+  {
+    id: 1,
+    category: "Abc",
+    parentCategory: "N/A",
+    numberOfProducts: 0,
+    stockQuantity: 0,
+    stockWorthPrice: 0,
+    stockWorthCost: 0,
+    image: null,
+    isActive: true,
+    createdAt: "2024-01-15T10:30:00Z",
+    updatedAt: "2024-01-15T10:30:00Z"
+  },
+  {
+    id: 2,
+    category: "accessories",
+    parentCategory: "N/A",
+    numberOfProducts: 0,
+    stockQuantity: 0,
+    stockWorthPrice: 0,
+    stockWorthCost: 0,
+    image: null,
+    isActive: true,
+    createdAt: "2024-01-20T14:15:00Z",
+    updatedAt: "2024-01-20T14:15:00Z"
+  },
+  {
+    id: 3,
+    category: "Appliances",
+    parentCategory: "N/A",
+    numberOfProducts: 4,
+    stockQuantity: 1,
+    stockWorthPrice: 912,
+    stockWorthCost: 920,
+    image: null,
+    isActive: true,
+    createdAt: "2024-01-10T09:00:00Z",
+    updatedAt: "2024-02-01T16:45:00Z"
+  },
+  {
+    id: 4,
+    category: "Electronics",
+    parentCategory: "N/A",
+    numberOfProducts: 15,
+    stockQuantity: 45,
+    stockWorthPrice: 15750,
+    stockWorthCost: 12800,
+    image: null,
+    isActive: true,
+    createdAt: "2024-01-05T08:00:00Z",
+    updatedAt: "2024-02-10T11:20:00Z"
+  },
+  {
+    id: 5,
+    category: "Smartphones",
+    parentCategory: "Electronics",
+    numberOfProducts: 8,
+    stockQuantity: 25,
+    stockWorthPrice: 12500,
+    stockWorthCost: 10000,
+    image: null,
+    isActive: true,
+    createdAt: "2024-01-06T10:15:00Z",
+    updatedAt: "2024-02-08T14:30:00Z"
+  },
+  {
+    id: 6,
+    category: "Laptops",
+    parentCategory: "Electronics",
+    numberOfProducts: 5,
+    stockQuantity: 12,
+    stockWorthPrice: 18000,
+    stockWorthCost: 15500,
+    image: null,
+    isActive: true,
+    createdAt: "2024-01-07T11:00:00Z",
+    updatedAt: "2024-02-05T13:15:00Z"
+  },
+  {
+    id: 7,
+    category: "Clothing",
+    parentCategory: "N/A",
+    numberOfProducts: 32,
+    stockQuantity: 128,
+    stockWorthPrice: 6400,
+    stockWorthCost: 4800,
+    image: null,
+    isActive: true,
+    createdAt: "2024-01-12T13:30:00Z",
+    updatedAt: "2024-02-12T10:45:00Z"
+  },
+  {
+    id: 8,
+    category: "Men's Wear",
+    parentCategory: "Clothing",
+    numberOfProducts: 18,
+    stockQuantity: 72,
+    stockWorthPrice: 3600,
+    stockWorthCost: 2700,
+    image: null,
+    isActive: true,
+    createdAt: "2024-01-13T09:20:00Z",
+    updatedAt: "2024-02-10T15:30:00Z"
+  },
+  {
+    id: 9,
+    category: "Women's Wear",
+    parentCategory: "Clothing",
+    numberOfProducts: 14,
+    stockQuantity: 56,
+    stockWorthPrice: 2800,
+    stockWorthCost: 2100,
+    image: null,
+    isActive: true,
+    createdAt: "2024-01-14T12:45:00Z",
+    updatedAt: "2024-02-09T16:20:00Z"
+  },
+  {
+    id: 10,
+    category: "Kitchen Appliances",
+    parentCategory: "Appliances",
+    numberOfProducts: 12,
+    stockQuantity: 28,
+    stockWorthPrice: 5600,
+    stockWorthCost: 4480,
+    image: null,
+    isActive: true,
+    createdAt: "2024-01-11T10:30:00Z",
+    updatedAt: "2024-02-03T12:15:00Z"
+  },
+];
+
