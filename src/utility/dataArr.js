@@ -634,3 +634,38 @@ export const rowData = [
     stockWorth: "USD-5500 / USD-5000",
   },
 ];
+
+export const productListInputData = [
+  {
+    legendTag: "Warehouse",
+    placeholder: "All Warehouse",
+  },
+  {
+    legendTag: "Product Type",
+    placeholder: "All Types",
+  },
+  {
+    legendTag: "Brand",
+    placeholder: "All Brands",
+  },
+  {
+    legendTag: "Category",
+    placeholder: "All Categories",
+  },
+  {
+    legendTag: "Unit",
+    placeholder: "All Unit",
+  },
+  {
+    legendTag: "Tax",
+    placeholder: "All Tax",
+  },
+  {
+    legendTag: "Product with",
+    placeholder: "Select IMEI/Variant",
+  },
+  {
+    legendTag: "",
+    placeholder: "Submit",
+  },
+];

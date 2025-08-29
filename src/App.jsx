@@ -4,8 +4,8 @@ import { BrowserRouter, Route, Router, Routes } from "react-router-dom";
 // import AuthLayout from "./layouts/AuthLayout";
 import DashboardPage from "./Pages/dashboard";
 import DashboardLayout from "./layouts/DashboardLayout";
-import ProductListPage from "./pages/products/ProductListPage";
 import { ProductPageLayout } from "./layouts/ProductPageLayout";
+import ProductPageList from "./pages/products/productListPage";
 // import LoginPage from "./Pages/auth/Login";
 // import { ProductPage } from "./Pages/products";
 
@@ -26,7 +26,7 @@ function App() {
         </Route>
 
         <Route element={<ProductPageLayout />}>
-          <Route path="/product-list" element={<ProductListPage />} />
+          <Route path="/product-list" element={<ProductPageList />} />
         </Route>
       </Routes>
     </BrowserRouter>

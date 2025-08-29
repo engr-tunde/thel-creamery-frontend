@@ -7,7 +7,7 @@ export const ProductPageLayout = () => {
   const [sidebarOpen, setSidebarOpen] = useState(true);
 
   return (
-    <div className="flex w-screen h-screen">
+    <div className="flex w-screen h-screen relative">
       {/* left side */}
       <div className={`${sidebarOpen ? "block" : "hidden"} flex w-[15%]`}>
         <LeftsideBar />
