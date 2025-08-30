@@ -4,12 +4,10 @@ import { BrowserRouter, Route, Router, Routes } from "react-router-dom";
 // import AuthLayout from "./layouts/AuthLayout";
 import DashboardPage from "./Pages/dashboard";
 import DashboardLayout from "./layouts/DashboardLayout";
-import PrintBarcodePage from "./pages/products/print_barcode"
-import { PrintBarcodeLayout } from "./layouts/PrintBarcodeLayout";
-import ProductListPage from "./pages/ProductListPage";
-import { ProductPageLayout } from "./layouts/ProductPageLayout";
-import { AddAdjustmentLayout } from "./layouts/AddAdjustmentLayout";
+import PrintBarcodePage from "./pages/products/printBarcodePage";
+import ProductListPage from "./pages/products/productListPage";
 import AddAdjustmentPage from "./pages/products/add-adjustment";
+import { ProductPagesLayout } from "./layouts/ProductsPagesLayout";
 // import LoginPage from "./Pages/auth/Login";
 // import { ProductPage } from "./Pages/products";
 
@@ -28,14 +26,9 @@ function App() {
         <Route element={<DashboardLayout />}>
           <Route path="/dashboard" element={<DashboardPage />} />
         </Route>
-        <Route element={<PrintBarcodeLayout />}>
+        <Route element={<ProductPagesLayout />}>
           <Route path="/products/print_barcode" element={<PrintBarcodePage />} />
-        </Route>
-
-        <Route element={<ProductPageLayout />}>
           <Route path="/product-list" element={<ProductListPage />} />
-        </Route>
-        <Route element={<AddAdjustmentLayout />}>
           <Route path="/product/add_adjustment" element={<AddAdjustmentPage />} />
         </Route>
       </Routes>

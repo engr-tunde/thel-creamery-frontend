@@ -1,7 +1,7 @@
 import AppInputField from "../../../component/form/AppInputField";
 import { formDetails, papperSize, productSearch } from "../../../utility/dataArr";
 import AppSubmitButton from "../../../component/form/AppSubmitButton"
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import {  IoIosCheckmark,  } from "react-icons/io";
 import { RiDeleteBinLine } from "react-icons/ri";
 
@@ -9,18 +9,13 @@ import { RiDeleteBinLine } from "react-icons/ri";
 const PrintBarcodePage = () => {
     const dropdownValue = "20 Label per Sheet, Sheet Size: 8.5 x 11, Label Size: 4 x 1, Label..."
         const [selectedValue, setSelectedValue] = useState(dropdownValue);
-
-        const [count, setCount] = useState(0) //initialize state for the input number
-        const [validate, setValidate] = useState(false)
-
-        
+       
         
 
         //handle change
         const handleChanges = (event) => {
             setSelectedValue(event.target.value)
         }
-    
 
     return (
         <div className="w-full flex flex-col p-3 text-[rgb(94,88,115)] border-[2px] border-[rgb(229,229,229)] rounded-lg mr-12"> 
@@ -46,18 +41,18 @@ const PrintBarcodePage = () => {
                 <h1 className="text-[rgb(94,88,115)] font-semibold text-sm">Information on Label *</h1>
                 <div className="w-full grid grid-cols-3 justify-between item-center gap-y-5">
                     {
-                        formDetails?.map((item, i) => {  
-                            const toggleChecks = (e) => {
-                                if (e === i) {
-                                    setValidate( !validate) 
-                                } 
-                               
-                            }
-                            return (
+                        formDetails?.map((item, i) => { 
+                            // to validate the info label 
+                            const [validate, setValidate] = useState(formDetails) //original data
                             
+                            const checkValidate = () => {
+                             setValidate(!validate)
+                            }
+                            
+                            return (
                             <div key={i} className="flex flex-col gap-1 w-[250px]">
                                 <div className="flex items-center gap-1">
-                                    <span key={i} onClick={((e) => toggleChecks(e))} className={`${item.className} border-1  size-4 items-center flex rounded-sm`}><IoIosCheckmark   className={ validate ? "bg-blue-800 text-white" : "hidden"} /></span>
+                                    <span key={i} onClick={checkValidate} className={`${item.className} border-1  size-4 items-center flex rounded-sm`}><IoIosCheckmark   className={ validate ? "bg-blue-800 text-white" : "hidden"} /></span>
                                     <label htmlFor="" className="font-semibold text-[rgb(94,88,115)]">{item.Name}</label>
                                 </div>
                                 <div className="flex gap-[2px]">
@@ -78,7 +73,7 @@ const PrintBarcodePage = () => {
                         <select name="" id="myDropdown" value={selectedValue} className="border-[rgb(118,118,118)] h-10  w-[60%] text-blue-600 border-1 rounded-md" onChange={handleChanges}>
                             {
                                 papperSize?.map((item, i) => (
-                                    <option value={item.itemList} className="p-4 text-sm rounded-md bg-[rgb(248,249,250)]">{item.itemList}</option>
+                                    <option key={i} value={item.itemList} className="p-4 text-sm rounded-md bg-[rgb(248,249,250)]">{item.itemList}</option>
                                     
                                 ))
                             }

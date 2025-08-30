@@ -547,28 +547,38 @@ export const productSearch = [
 //for print-barcodeb page
 export const formDetails = [
   {
+    id:"0",
     Name:"Product Name",
     size: "Size" ,
+    checked: false,
     className: "bg-white",
   },
   {
+    id:"1",
     Name:"Price",
     size: "Size" ,
+    checked: false,
     className: "bg-white",
   },
   {
+    id:"2",
     Name:"Promotional Price",
     size: "Size" ,
+    checked: false,
     className: "bg-white",
   },
   {
+    id:"3",
     Name:"Business Name",
     size: "Size" ,
+    checked: false,
     className: "bg-white",
   },
   {
+    id:"4",
     Name:"Brand",
     size: "Size" ,
+    checked: false,
     className: "bg-white",
   },
 
