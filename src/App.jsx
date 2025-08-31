@@ -4,7 +4,7 @@ import { BrowserRouter, Route, Router, Routes } from "react-router-dom";
 // import AuthLayout from "./layouts/AuthLayout";
 import DashboardPage from "./Pages/dashboard";
 import DashboardLayout from "./layouts/DashboardLayout";
-import ProductPageList from "./pages/products/productListPage";
+import ProductPageList from "./pages/products/ProductListPage";
 import PrintBarcodePage from "./pages/products/print_barcode";
 import { PrintBarcodeLayout } from "./layouts/PrintBarcodeLayout";
 import AddAdjustmentPage from "./pages/products/add-adjustment";
@@ -15,6 +15,7 @@ import AdjustmentListPage from "./pages/products/adjustmentListPage/index.jsx";
 import StockCountLayout from "./layouts/StockCountLayout.jsx";
 import StockCountPage from "./pages/products/stockCountPage/index.jsx";
 import AddAdjustmentLayout from "./layouts/AddAdjustmentLayout.jsx";
+import AddProductPage from "./pages/products/addProductPage/index.jsx";
 // import LoginPage from "./Pages/auth/Login";
 // import { ProductPage } from "./Pages/products";
 
@@ -36,7 +37,10 @@ function App() {
         </Route>
 
         <Route element={<ProductListPageLayout />}>
-          <Route path="/product-list" element={<ProductPageList />} />
+          <Route path="/product-list" element={<ProductPageList />} /> 
+          <Route path="/add-product" element={<AddProductPage />} /> 
+
+
         </Route>
 
         <Route element={<PrintBarcodeLayout />}>
@@ -56,6 +60,8 @@ function App() {
             element={<AddAdjustmentPage />}
           />
         </Route>
+
+       
 
         <Route element={<StockCountLayout />}>
           <Route path="/stock-count" element={<StockCountPage />} />
