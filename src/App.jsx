@@ -6,14 +6,13 @@ import DashboardPage from "./Pages/dashboard";
 import DashboardLayout from "./layouts/DashboardLayout";
 import ProductPageList from "./pages/products/ProductListPage";
 import PrintBarcodePage from "./pages/products/print_barcode";
-import { PrintBarcodeLayout } from "./layouts/PrintBarcodeLayout";
+// import { PrintBarcodeLayout } from "./layouts/PrintBarcodeLayout";
 import AddAdjustmentPage from "./pages/products/add-adjustment";
 import CategoryPage from "./pages/products/category/index.jsx";
-import ProductListPageLayout from "./layouts/ProductListPageLayout.jsx";
-import AdjustmentListLayout from "./layouts/AdjustmentListLayout.jsx";
 import AdjustmentListPage from "./pages/products/adjustmentListPage/index.jsx";
-import StockCountLayout from "./layouts/StockCountLayout.jsx";
 import StockCountPage from "./pages/products/stockCountPage/index.jsx";
+// import AddAdjustmentLayout from "./layouts/AddAdjustmentLayout.jsx";
+import ProductPagesLayout from "./layouts/ProductPagesLayout.jsx";
 import AddAdjustmentLayout from "./layouts/AddAdjustmentLayout.jsx";
 import AddProductPage from "./pages/products/addProductPage/index.jsx";
 // import LoginPage from "./Pages/auth/Login";
@@ -36,35 +35,21 @@ function App() {
           <Route path="/category" element={<CategoryPage />} />
         </Route>
 
-        <Route element={<ProductListPageLayout />}>
-          <Route path="/product-list" element={<ProductPageList />} /> 
-          <Route path="/add-product" element={<AddProductPage />} /> 
-
-
-        </Route>
-
-        <Route element={<PrintBarcodeLayout />}>
+        <Route element={<ProductPagesLayout />}>
           <Route
-            path="/products/print_barcode"
-            element={<PrintBarcodePage />}
+            path="/products/print_barcode" element={<PrintBarcodePage />}
           />
-        </Route>
-
-        <Route element={<AdjustmentListLayout />}>
-          <Route path="/adjustment-list" element={<AdjustmentListPage />} />
-        </Route>
-
-        <Route element={<AddAdjustmentLayout />}>
+           <Route
+            path="/products/add-product"element={<AddProductPage />}
+          />
           <Route
-            path="/product/add_adjustment"
-            element={<AddAdjustmentPage />}
+            path="/products/add_adjustment"element={<AddAdjustmentPage />}
           />
-        </Route>
-
-       
-
-        <Route element={<StockCountLayout />}>
-          <Route path="/stock-count" element={<StockCountPage />} />
+          <Route path="/products/product-list" element={<ProductPageList />} />
+          <Route
+            path="/products/adjustment-list" element={<AdjustmentListPage />}
+          />
+          <Route path="/products/stock-count" element={<StockCountPage />} />
         </Route>
       </Routes>
     </BrowserRouter>

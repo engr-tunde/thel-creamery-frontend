@@ -15,11 +15,11 @@ import {
 } from "react-icons/md";
 import { RiArrowDownSFill, RiDeleteBin6Line } from "react-icons/ri";
 import {
-  adjustmentListTableCol,
-  adjustmentRowData,
+  adjustListRowData,
+  adjustListTableCol,
 } from "../../../utility/dataArr";
-import Table from "../../../component/global/Table";
 import { useState } from "react";
+import AdjustmentListTable from "../../../component/global/AdjustmentListTable";
 
 const AdjustmentListPage = () => {
   const [eyeBtnOpen, setEyeBtnOpen] = useState(false);
@@ -28,7 +28,6 @@ const AdjustmentListPage = () => {
   const handleActionClick = (i) => {
     setActionOpen(actionOpen === i ? null : i);
   };
-
 
   const rowTemplate = (item, i) => {
     return (
@@ -95,7 +94,7 @@ const AdjustmentListPage = () => {
 
   return (
     <div className="w-full">
-      {/* The three form modals buttons */}
+      {/* The Add Adjustment form modals buttons */}
       <div className="w-fit flex items-center mt-9 gap-2 py-2 px-3 rounded-sm bg-[#17a2b8] text-[15px] text-white cursor-pointer">
         <span>
           <FaPlus />
@@ -167,9 +166,9 @@ const AdjustmentListPage = () => {
       </div>
 
       {/* Table section */}
-      <Table
-        tableColumn={adjustmentListTableCol}
-        rowData={adjustmentRowData}
+      <AdjustmentListTable
+        adjustListTableCol={adjustListTableCol}
+        adjustListRowData={adjustListRowData}
         rowTemplate={rowTemplate}
       />
 

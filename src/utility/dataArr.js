@@ -1,3 +1,5 @@
+import { act } from "react";
+
 export const sidebarData = [
   {
     title: "Dashboard",
@@ -12,15 +14,15 @@ export const sidebarData = [
     children: [
       {
         title: "Category",
-        link: "/category",
+        link: "/products/category",
       },
       {
         title: "Product List",
-        link: "/product-list",
+        link: "/products/product-list",
       },
       {
         title: "Add Product",
-        link: "/add-product",
+        link: "/products/add-product",
       },
       {
         title: "Print Barcode",
@@ -28,15 +30,15 @@ export const sidebarData = [
       },
       {
         title: "Adjustment List",
-        link: "/adjustment-list",
+        link: "/products/adjustment-list",
       },
       {
         title: "Add Adjustment",
-        link: "/product/add_adjustment",
+        link: "/products/add_adjustment",
       },
       {
         title: "Stock Count",
-        link: "/stock-count",
+        link: "/products/stock-count",
       },
     ],
   },
@@ -537,66 +539,72 @@ export const plusMenu = [
   },
 ];
 
+// for dashboard page
+
+
+
+
 export const productSearch = [
-  {heading: "Name"},
-  {heading: "Code"},
-  {heading: "Quantity",}
-  
-]
+  { heading: "Name" },
+  { heading: "Code" },
+  { heading: "Quantity" },
+];
 
 //for print-barcodeb page
 export const formDetails = [
   {
-    Name:"Product Name",
-    size: "Size" ,
+    Name: "Product Name",
+    size: "Size",
     className: "bg-white",
   },
   {
-    Name:"Price",
-    size: "Size" ,
+    Name: "Price",
+    size: "Size",
     className: "bg-white",
   },
   {
-    Name:"Promotional Price",
-    size: "Size" ,
+    Name: "Promotional Price",
+    size: "Size",
     className: "bg-white",
   },
   {
-    Name:"Business Name",
-    size: "Size" ,
+    Name: "Business Name",
+    size: "Size",
     className: "bg-white",
   },
   {
-    Name:"Brand",
-    size: "Size" ,
+    Name: "Brand",
+    size: "Size",
     className: "bg-white",
   },
-
-
-]
+];
 
 //print-barcode page
 export const papperSize = [
   {
-    itemList: "20 Label per Sheet, Sheet Size: 8.5 x 11, Label Size: 4 x 1, Label... "
+    itemList:
+      "20 Label per Sheet, Sheet Size: 8.5 x 11, Label Size: 4 x 1, Label... ",
   },
   {
-    itemList: "30 Label per Sheet, Sheet Size: 8.5 x 11, Label Size: 2.625 x 1, Label per sheet: 30 "
+    itemList:
+      "30 Label per Sheet, Sheet Size: 8.5 x 11, Label Size: 2.625 x 1, Label per sheet: 30 ",
   },
   {
-    itemList: "42 Label per Sheet, Sheet Size: 8.5 x 11, Label Size: 2 x 1, Label per sheet: 32 "
+    itemList:
+      "42 Label per Sheet, Sheet Size: 8.5 x 11, Label Size: 2 x 1, Label per sheet: 32 ",
   },
   {
-    itemList: "40 Label per Sheet, Sheet Size: 8.5 x 11, Label Size: 1.5 x 1, Label per sheet: 40 "
+    itemList:
+      "40 Label per Sheet, Sheet Size: 8.5 x 11, Label Size: 1.5 x 1, Label per sheet: 40 ",
   },
   {
-    itemList: "continious rolls - 31.75mm x 24.5mm label size:31.75mm x 24.5mm  gap:3.18mm "
+    itemList:
+      "continious rolls - 31.75mm x 24.5mm label size:31.75mm x 24.5mm  gap:3.18mm ",
   },
-
-]
+];
 
 //for product list page
-export const tableColumn = [
+export const proListTableColumn = [
   {
     accessor: "input",
     title: "checkbox",
@@ -607,6 +615,7 @@ export const tableColumn = [
     accessor: "product",
     title: "Product",
     className: "font-semibold",
+    icon: "GoArrowDown",
   },
   {
     accessor: "Code",
@@ -655,7 +664,7 @@ export const tableColumn = [
   },
 ];
 
-export const rowData = [
+export const proListRowData = [
   {
     image: "product-1.png",
     productTitle: "Zenbook 14 OLED (UX3402)｜Laptops For Home – ASUS",
@@ -730,7 +739,7 @@ export const productListInputData = [
 ];
 
 // for adjustment list page
-export const adjustmentListTableCol = [
+export const adjustListTableCol = [
   {
     accessor: "input",
     title: "checkbox",
@@ -769,14 +778,14 @@ export const adjustmentListTableCol = [
   },
 ];
 
-export const adjustmentRowData = [
+export const adjustListRowData = [
   {
     date: "04-06-2025 05:15:51",
     reference: "adr-20250604-111551",
     warehouse: "Shop 2",
     product: {
       title: "2bc",
-      dimension: "10 x 10"      
+      dimension: "10 x 10",
     },
     note: "",
   },
@@ -786,7 +795,7 @@ export const adjustmentRowData = [
     warehouse: "Shop 2",
     product: {
       title: "2bc",
-      dimension: "10 x 10"      
+      dimension: "10 x 10",
     },
     note: "",
   },
@@ -795,34 +804,33 @@ export const adjustmentRowData = [
 //for add adjustment page
 export const tableTitle = [
   {
-    title: "Name"	
+    title: "Name",
   },
   {
-    title: "Code"	
+    title: "Code",
   },
   {
-    title: "Unit"
+    title: "Unit",
   },
   {
-    title: "Cost"		
+    title: "Cost",
   },
   {
-    title: "Quantity"	
+    title: "Quantity",
   },
   {
-    title: "action"		 		
+    title: "action",
   },
-]
+];
 
 export const availableSearch = [
   {
-    title: "Shop1"
+    title: "Shop1",
   },
-    {
-    title: "Shop2"
-  }
-]
-
+  {
+    title: "Shop2",
+  },
+];
 
 // Category Data
 export const categoryDataArr = [
@@ -837,7 +845,7 @@ export const categoryDataArr = [
     image: null,
     isActive: true,
     createdAt: "2024-01-15T10:30:00Z",
-    updatedAt: "2024-01-15T10:30:00Z"
+    updatedAt: "2024-01-15T10:30:00Z",
   },
   {
     id: 2,
@@ -850,7 +858,7 @@ export const categoryDataArr = [
     image: null,
     isActive: true,
     createdAt: "2024-01-20T14:15:00Z",
-    updatedAt: "2024-01-20T14:15:00Z"
+    updatedAt: "2024-01-20T14:15:00Z",
   },
   {
     id: 3,
@@ -863,7 +871,7 @@ export const categoryDataArr = [
     image: null,
     isActive: true,
     createdAt: "2024-01-10T09:00:00Z",
-    updatedAt: "2024-02-01T16:45:00Z"
+    updatedAt: "2024-02-01T16:45:00Z",
   },
   {
     id: 4,
@@ -876,7 +884,7 @@ export const categoryDataArr = [
     image: null,
     isActive: true,
     createdAt: "2024-01-05T08:00:00Z",
-    updatedAt: "2024-02-10T11:20:00Z"
+    updatedAt: "2024-02-10T11:20:00Z",
   },
   {
     id: 5,
@@ -889,7 +897,7 @@ export const categoryDataArr = [
     image: null,
     isActive: true,
     createdAt: "2024-01-06T10:15:00Z",
-    updatedAt: "2024-02-08T14:30:00Z"
+    updatedAt: "2024-02-08T14:30:00Z",
   },
   {
     id: 6,
@@ -902,7 +910,7 @@ export const categoryDataArr = [
     image: null,
     isActive: true,
     createdAt: "2024-01-07T11:00:00Z",
-    updatedAt: "2024-02-05T13:15:00Z"
+    updatedAt: "2024-02-05T13:15:00Z",
   },
   {
     id: 7,
@@ -915,7 +923,7 @@ export const categoryDataArr = [
     image: null,
     isActive: true,
     createdAt: "2024-01-12T13:30:00Z",
-    updatedAt: "2024-02-12T10:45:00Z"
+    updatedAt: "2024-02-12T10:45:00Z",
   },
   {
     id: 8,
@@ -928,7 +936,7 @@ export const categoryDataArr = [
     image: null,
     isActive: true,
     createdAt: "2024-01-13T09:20:00Z",
-    updatedAt: "2024-02-10T15:30:00Z"
+    updatedAt: "2024-02-10T15:30:00Z",
   },
   {
     id: 9,
@@ -941,7 +949,7 @@ export const categoryDataArr = [
     image: null,
     isActive: true,
     createdAt: "2024-01-14T12:45:00Z",
-    updatedAt: "2024-02-09T16:20:00Z"
+    updatedAt: "2024-02-09T16:20:00Z",
   },
   {
     id: 10,
@@ -954,7 +962,98 @@ export const categoryDataArr = [
     image: null,
     isActive: true,
     createdAt: "2024-01-11T10:30:00Z",
-    updatedAt: "2024-02-03T12:15:00Z"
+    updatedAt: "2024-02-03T12:15:00Z",
   },
 ];
 
+//Stock count page
+export const stockCountTableCol = [
+  {
+    accessor: "input",
+    title: "checkbox",
+    className: "font-semibold",
+    maxWidth: "150px",
+  },
+  {
+    accessor: "Date",
+    title: "Date",
+    className: "font-semibold",
+    icon: "GoArrowDown",
+  },
+  {
+    accessor: "Reference",
+    title: "Reference",
+    className: "font-semibold",
+  },
+  {
+    accessor: "warehouse",
+    title: "warehouse",
+    className: "font-semibold",
+  },
+  {
+    accessor: "Category",
+    title: "Category",
+    className: "font-semibold",
+  },
+  {
+    accessor: "Brand",
+    title: "Brand",
+    className: "font-semibold",
+  },
+  {
+    accessor: "Type",
+    title: "Type",
+    className: "font-semibold",
+  },
+  {
+    accessor: "Initial File",
+    title: "Initial File",
+    className: "font-semibold",
+  },
+  {
+    accessor: "Final File",
+    title: "Final File",
+    className: "font-semibold",
+  },
+  {
+    accessor: "Action",
+    title: "Action",
+    className: "font-semibold",
+  },
+];
+
+export const stockCountRowData = [
+  {
+    date: { day: "04-06-2025", time: "05:15:51" },
+    reference: "adr-20250604-111551",
+    warehouse: "Shop 2",
+    category: "",
+    brand: "",
+    type: "Full",
+    initialFile: "",
+    finalFile: "",
+    action: "Finalize",
+  },
+  {
+    date: { day: "04-06-2025", time: "05:15:51" },
+    reference: "adr-20250604-111551",
+    warehouse: "Shop 2",
+    category: "",
+    brand: "",
+    type: "Full",
+    initialFile: "",
+    finalFile: "",
+    action: "Finalize",
+  },
+  {
+    date: { day: "04-06-2025", time: "05:15:51" },
+    reference: "adr-20250604-111551",
+    warehouse: "Shop 2",
+    category: "",
+    brand: "",
+    type: "Full",
+    initialFile: "",
+    finalFile: "",
+    action: "Finalize",
+  },
+];
