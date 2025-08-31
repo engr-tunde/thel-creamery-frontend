@@ -18,11 +18,11 @@ import {
 import { RiArrowDownSFill, RiDeleteBin6Line } from "react-icons/ri";
 import {
   productListInputData,
-  rowData,
-  tableColumn,
+  proListRowData,
+  proListTableColumn,
 } from "../../../utility/dataArr";
 import ProductListFilterInput from "../../../component/form/ProductListFilterInput";
-import Table from "../../../component/global/Table";
+import ProListTable from "../../../component/global/ProListTable";
 import { useState } from "react";
 
 const ProductPageList = () => {
@@ -164,10 +164,7 @@ const ProductPageList = () => {
       {/* import modal section */}
       <div>
         {importOpen && (
-          <div
-            className="w-full h-full absolute top-0 left-0 z-20 bg-black/40"
-            onClick={() => handleImportClick()}
-          >
+          <div className="w-full h-full absolute top-0 left-0 z-20 bg-black/40">
             <div className="w-[55%] py-5 mx-auto mt-10 bg-white rounded-md flex flex-col items-center justify-center gap-5 shadow-2xl">
               <div className="w-full px-3 pb-5 border-[#8d5ccd1f] border-b-[1px] flex justify-between">
                 <span className="text-[15px] text-stone-900 text-extrabold">
@@ -290,9 +287,9 @@ const ProductPageList = () => {
       </div>
 
       {/* Table section */}
-      <Table
-        tableColumn={tableColumn}
-        rowData={rowData}
+      <ProListTable
+        proListTableColumn={proListTableColumn}
+        proListRowData={proListRowData}
         rowTemplate={rowTemplate}
       />
 
