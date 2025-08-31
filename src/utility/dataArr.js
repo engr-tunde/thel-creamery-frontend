@@ -539,6 +539,11 @@ export const plusMenu = [
   },
 ];
 
+// for dashboard page
+
+
+
+
 export const productSearch = [
   { heading: "Name" },
   { heading: "Code" },
