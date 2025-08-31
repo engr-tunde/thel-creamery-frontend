@@ -24,7 +24,7 @@ export const sidebarData = [
       },
       {
         title: "Print Barcode",
-        link: "/products/print_barcode",
+        link: "/print_barcode",
       },
       {
         title: "Adjustment List",
@@ -32,7 +32,7 @@ export const sidebarData = [
       },
       {
         title: "Add Adjustment",
-        link: "/product/add_adjustment",
+        link: "/add_adjustment",
       },
       {
         title: "Stock Count",
@@ -732,3 +732,45 @@ export const availableSearch = [
     title: "Shop2"
   }
 ]
+
+export const availableSearchFilter = [
+  {
+    title: "All Warehouse"
+  },
+  {
+    title: "Shop1"
+  },
+    {
+    title: "Shop2"
+  }
+]
+export const purchaseStatus = [
+  {
+    title: "All"
+  },
+  {
+    title: "Received"
+  },
+  {
+    title: "Patial"
+  },
+  {
+    title: "Pending"
+  },
+  {
+    title: "Order"
+  },
+]
+export const paymentStatus = [
+  {
+    title: "All"
+  },
+  {
+    title: "Due"
+  },
+  {
+    title: "Paid"
+  },
+]
+
+

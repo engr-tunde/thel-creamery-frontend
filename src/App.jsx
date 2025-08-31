@@ -8,6 +8,8 @@ import PrintBarcodePage from "./pages/products/printBarcodePage";
 import ProductListPage from "./pages/products/productListPage";
 import AddAdjustmentPage from "./pages/products/add-adjustment";
 import { ProductPagesLayout } from "./layouts/ProductsPagesLayout";
+import { PurchaseLayout } from "./layouts/PurchaseLayout";
+import PurchaseListPage from "./pages/purchase/purchaseListpage";
 // import LoginPage from "./Pages/auth/Login";
 // import { ProductPage } from "./Pages/products";
 
@@ -27,10 +29,14 @@ function App() {
           <Route path="/dashboard" element={<DashboardPage />} />
         </Route>
         <Route element={<ProductPagesLayout />}>
-          <Route path="/products/print_barcode" element={<PrintBarcodePage />} />
+          <Route path="/print_barcode" element={<PrintBarcodePage />} />
           <Route path="/product-list" element={<ProductListPage />} />
-          <Route path="/product/add_adjustment" element={<AddAdjustmentPage />} />
+          <Route path="/add_adjustment" element={<AddAdjustmentPage />} />
         </Route>
+        <Route element={<PurchaseLayout />}>
+          <Route path="/purchase-list" element={<PurchaseListPage />} />
+        </Route>
+
       </Routes>
     </BrowserRouter>
   );
