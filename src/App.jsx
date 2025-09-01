@@ -30,7 +30,6 @@ function App() {
 
         <Route element={<DashboardLayout />}>
           <Route path="/dashboard" element={<DashboardPage />} />
-          <Route path="/category" element={<CategoryPage />} />
         </Route>
 
         <Route element={<ProductPagesLayout />}>
@@ -48,6 +47,7 @@ function App() {
             path="/products/adjustment-list" element={<AdjustmentListPage />}
           />
           <Route path="/products/stock-count" element={<StockCountPage />} />
+          <Route path="/products/category" element={<CategoryPage />} />
         </Route>
       </Routes>
     </BrowserRouter>
