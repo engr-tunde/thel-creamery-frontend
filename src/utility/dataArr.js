@@ -10,7 +10,7 @@ export const sidebarData = [
   {
     title: "Products",
     icon: "FaHouseUser",
-    link: "/dashboard",
+    link: "/products",
     children: [
       {
         title: "Category",
@@ -68,43 +68,43 @@ export const sidebarData = [
     children: [
       {
         title: "Sale List",
-        link: "/sale-list",
+        link: "/sales/sale-list",
       },
       {
         title: "Pos",
-        link: "/pos",
+        link: "/sales/pos",
       },
       {
         title: "Add Sale",
-        link: "/add-sale",
+        link: "/sales/add-sale",
       },
       {
         title: "Import Sale By CVS",
-        link: "/import-sale-by-cvs",
+        link: "/sales/import-sale-by-cvs",
       },
       {
         title: "Packing Slip List",
-        link: "/packing-slip-list",
+        link: "/sales/packing-slip-list",
       },
       {
         title: "Challan List",
-        link: "/challan-list",
+        link: "/sales/challan-list",
       },
       {
         title: "Delivery List",
-        link: "/delivery-list",
+        link: "/sales/delivery-list",
       },
       {
         title: "Gift Card List",
-        link: "/gift-card-list",
+        link: "/sales/gift-card-list",
       },
       {
         title: "Coupon List",
-        link: "/coupon-list",
+        link: "/sales/coupon-list",
       },
       {
         title: "Courier List",
-        link: "/courier-list",
+        link: "/sales/courier-list",
       },
     ],
   },
