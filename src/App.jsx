@@ -33,6 +33,7 @@ function App() {
 
         <Route element={<DashboardLayout />}>
           <Route path="/dashboard" element={<DashboardPage />} />
+<<<<<<< HEAD
         </Route>
         <Route element={<ProductPagesLayout />}>
           <Route path="/product-list" element={<ProductPageList />} />
@@ -49,6 +50,27 @@ function App() {
            <Route path="/purchase-list" element={<PurchaseListPage />} />
         </Route>
 
+=======
+        </Route>
+
+        <Route element={<ProductPagesLayout />}>
+          <Route
+            path="/products/print_barcode" element={<PrintBarcodePage />}
+          />
+           <Route
+            path="/products/add-product"element={<AddProductPage />}
+          />
+          <Route
+            path="/products/add_adjustment"element={<AddAdjustmentPage />}
+          />
+          <Route path="/products/product-list" element={<ProductPageList />} />
+          <Route
+            path="/products/adjustment-list" element={<AdjustmentListPage />}
+          />
+          <Route path="/products/stock-count" element={<StockCountPage />} />
+          <Route path="/products/category" element={<CategoryPage />} />
+        </Route>
+>>>>>>> e9b7a0efa40c71cfe1451892811506b046ed6181
       </Routes>
     </BrowserRouter>
   );
