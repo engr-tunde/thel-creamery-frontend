@@ -1,6 +1,5 @@
-import { AiFillEdit, AiFillPrinter } from "react-icons/ai";
+import { AiFillPrinter } from "react-icons/ai";
 import {
-  FaPlus,
   FaRegEye,
   FaRegFile,
   FaRegFileAlt,
@@ -10,15 +9,11 @@ import { LiaTimesSolid } from "react-icons/lia";
 import {
   MdKeyboardArrowLeft,
   MdKeyboardArrowRight,
-  MdLocalPrintshop,
-  MdNotes,
-  MdOutlineFileDownload,
   MdOutlineFilterAlt,
 } from "react-icons/md";
-import { RiArrowDownSFill, RiDeleteBin6Line } from "react-icons/ri";
+import { RiArrowDownSFill } from "react-icons/ri";
 import { productListInputData } from "@/utility/dataArr";
 import ProductListFilterInput from "@/component/form/ProductListFilterInput";
-import ProListTable from "@/component/global/ProListTable";
 import { useState } from "react";
 import FormModal from "../../component/form/FormModal";
 import ImportProduct from "../../component/products/ImportProduct";
@@ -28,13 +23,8 @@ import ProductRowTemplate from "../../component/products/ProductRowTemplate";
 
 const ProductPageList = () => {
   const [eyeBtnOpen, setEyeBtnOpen] = useState(false);
-  const [actionOpen, setActionOpen] = useState(null);
   const [filterOpen, setfilterOpen] = useState(false);
   const [importOpen, setimportOpen] = useState(false);
-
-  const handleActionClick = (i) => {
-    setActionOpen(actionOpen === i ? null : i);
-  };
 
   const handleImportClick = () => {
     setimportOpen(!importOpen);

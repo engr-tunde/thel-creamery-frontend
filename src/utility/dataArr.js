@@ -21,20 +21,16 @@ export const sidebarData = [
         link: "/products/category",
       },
       {
-        title: "Add Product",
-        link: "/products/add-product",
-      },
-      {
         title: "Print Barcode",
         link: "/print_barcode",
       },
       {
         title: "Adjustment List",
-        link: "/adjustment-list",
+        link: "/products/adjustment-list",
       },
       {
         title: "Add Adjustment",
-        link: "/add_adjustment",
+        link: "/products/add_adjustment",
       },
       {
         title: "Stock Count",

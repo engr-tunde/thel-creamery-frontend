@@ -33,7 +33,6 @@ export const validateAddProduct = () => {
       .string()
       .required("Product embeddedBarcode is missing"),
     initialStock: yup.string().required("Product initialStock is missing"),
-    productImage: yup.string().required("Product productImage is missing"),
   });
 
   return validationSchema;

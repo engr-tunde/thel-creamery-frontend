@@ -23,7 +23,6 @@ export const addProductValues = (data) => {
     featured: data ? data.featured : "",
     embeddedBarcode: data ? data.embeddedBarcode : "",
     initialStock: data ? data.initialStock : "",
-    productImage: data ? data.productImage : "",
   };
   return initialValues;
 };

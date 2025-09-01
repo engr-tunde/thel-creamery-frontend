@@ -320,11 +320,12 @@ const AddProductForm = ({ onSubmit }) => {
 
         <div>
           <label className="flex items-center gap-2">
-            <input
+            <AddInputField name="initialStock" type="checkbox" />
+            {/* <input
               type="checkbox"
               checked={formData.initialStock}
               onChange={(e) => handleChange("initialStock", e.target.checked)}
-            />
+            /> */}
             Initial Stock
           </label>
           <p className="text-gray-500 text-sm italic mt-1">

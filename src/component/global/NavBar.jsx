@@ -8,7 +8,7 @@ import { useState } from "react";
 const NavBar = ({ onToggleSidebar }) => {
   const [showDropdown, setShowDropdown] = useState(false);
   return (
-    <div className="flex p-2 justify-between items-center">
+    <div className="flex p-2 justify-between items-center ">
       <div>
         <FaBars
           className="text-4xl p-2 border-[1px] border-purple-600 rounded-md text-purple-600 hover:bg-purple-600 hover:text-white"

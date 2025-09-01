@@ -1,20 +1,19 @@
 import { useState } from "react";
 import "../public/styles/global.css";
-import { BrowserRouter, Route, Router, Routes } from "react-router-dom";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
 // import AuthLayout from "./layouts/AuthLayout";
 import DashboardPage from "./pages/dashboard";
 import DashboardLayout from "./layouts/DashboardLayout";
 import PrintBarcodePage from "./pages/products/printBarcodePage";
 // import ProductPageList from "./pages/products";
-import AddProductPage from "./pages/products/addProductPage";
 import ProductPagesLayout from "./layouts/ProductPagesLayout";
-import AddAdjustmentPage from "./pages/products/adjustmentListPage";
 import PurchasePagesLayout from "./layouts/PurchaseLayout";
 import PurchaseListPage from "./pages/purchase/purchaseListpage";
-import AdjustmentListPage from "./pages/products/adjustmentListPage";
 import CategoryPage from "./pages/products/category";
 import StockCountPage from "./pages/products/stockCountPage";
 import ProductPageList from "./pages/products";
+import AdjustmentListPage from "./pages/products/adjustmentListPage";
+import AddAdjustmentPage from "./pages/products/add-adjustment";
 
 // import LoginPage from "./Pages/auth/Login";
 // import { ProductPage } from "./Pages/products";
@@ -35,6 +34,10 @@ function App() {
           <Route path="/dashboard" element={<DashboardPage />} />
           <Route path="/products" element={<ProductPageList />} />
           <Route path="/products/category" element={<CategoryPage />} />
+          <Route
+            path="/products/adjustment-list"
+            element={<AdjustmentListPage />}
+          />
         </Route>
 
         <Route element={<ProductPagesLayout />}>
@@ -42,7 +45,6 @@ function App() {
             path="/products/print_barcode"
             element={<PrintBarcodePage />}
           />
-          <Route path="/products/add-product" element={<AddProductPage />} />
           <Route
             path="/products/add_adjustment"
             element={<AddAdjustmentPage />}
