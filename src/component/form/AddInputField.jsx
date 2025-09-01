@@ -1,3 +1,4 @@
+import { useFormikContext } from "formik";
 import { FaEye } from "react-icons/fa";
 
 const AddInputField = ({
@@ -5,14 +6,18 @@ const AddInputField = ({
   label,
   type = "text",
   placeholder,
-  error,
   className,
-  value,
   defaultValue,
-  onChange,
   options,
   required,
 }) => {
+  const { errors, values, touched, handleBlur, handleChange } =
+    useFormikContext();
+
+  const value = values[name];
+  const error = errors[name];
+  const isInputTouched = touched[name];
+
   return (
     <div className={`flex flex-col gap-1 ${className}`}>
       {label && (
@@ -25,7 +30,7 @@ const AddInputField = ({
         <select
           name={name}
           value={value}
-          onChange={onChange}
+          onChange={handleChange}
           className="primary-input w-full h-[35px] p-2 border rounded"
         >
           <option value="">Select {label}</option>
@@ -42,7 +47,7 @@ const AddInputField = ({
             name={name}
             placeholder={placeholder}
             defaultValue={defaultValue}
-            onChange={onChange}
+            onChange={handleChange}
             className="h-full w-[90%] bg-transparent border-0 border-white p-3"
           />
           <FaEye />
@@ -53,11 +58,11 @@ const AddInputField = ({
           type={type}
           placeholder={placeholder}
           defaultValue={defaultValue}
-          onChange={onChange}
+          onChange={handleChange}
           className="w-full h-[35px] p-3 border rounded"
         />
       )}
-      {error && <span className="error">{error}</span>}
+      {error && isInputTouched && <span className="error">{error}</span>}
     </div>
   );
 };

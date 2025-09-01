@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { sidebarData } from "../../utility/dataArr";
+import { sidebarData } from "@/utility/dataArr";
 import * as FaIcons from "react-icons/fa";
 import { MdKeyboardArrowLeft, MdKeyboardArrowDown } from "react-icons/md";
 import { useState } from "react";

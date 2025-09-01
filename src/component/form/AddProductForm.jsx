@@ -40,12 +40,14 @@ const AddProductForm = ({ onSubmit }) => {
   };
 
   return (
-  
-    <form onSubmit={handleSubmit} className="p-4 border border-gray-300 rounded-lg">
+    <form
+      onSubmit={handleSubmit}
+      className="p-4 border border-gray-300 rounded-lg"
+    >
       <p className="text-gray-500 mb-3">
         The field labels marked with * are required input fields.
       </p>
-    
+
       <div className="grid grid-cols-3 gap-4">
         {/* Product Type */}
         <div>
@@ -182,177 +184,175 @@ const AddProductForm = ({ onSubmit }) => {
           />
         </div>
 
-
         {/* Wholesale Price */}
-  <div>
-    <label className="text-gray-600 text-sm">Wholesale Price *</label>
-    <AddInputField
-      name="wholesalePrice"
-      type="number"
-      value={formData.wholesalePrice}
-      onChange={(e) => handleChange("wholesalePrice", e.target.value)}
-    />
-  </div>
+        <div>
+          <label className="text-gray-600 text-sm">Wholesale Price *</label>
+          <AddInputField
+            name="wholesalePrice"
+            type="number"
+            value={formData.wholesalePrice}
+            onChange={(e) => handleChange("wholesalePrice", e.target.value)}
+          />
+        </div>
 
-  {/* Daily Sale Objective */}
-  <div>
-    <label className="text-gray-600 text-sm">Daily Sale Objective</label>
-    <AddInputField
-      name="dailySaleObjective"
-      type="number"
-      value={formData.dailySaleObjective}
-      onChange={(e) => handleChange("dailySaleObjective", e.target.value)}
-    />
-  </div>
+        {/* Daily Sale Objective */}
+        <div>
+          <label className="text-gray-600 text-sm">Daily Sale Objective</label>
+          <AddInputField
+            name="dailySaleObjective"
+            type="number"
+            value={formData.dailySaleObjective}
+            onChange={(e) => handleChange("dailySaleObjective", e.target.value)}
+          />
+        </div>
 
-  {/* Alert Quantity */}
-  <div>
-    <label className="text-gray-600 text-sm">Alert Quantity</label>
-    <AddInputField
-      name="alertQuantity"
-      type="number"
-      value={formData.alertQuantity}
-      onChange={(e) => handleChange("alertQuantity", e.target.value)}
-    />
-  </div>
+        {/* Alert Quantity */}
+        <div>
+          <label className="text-gray-600 text-sm">Alert Quantity</label>
+          <AddInputField
+            name="alertQuantity"
+            type="number"
+            value={formData.alertQuantity}
+            onChange={(e) => handleChange("alertQuantity", e.target.value)}
+          />
+        </div>
 
-  {/* Product Tax */}
-  <div>
-    <label className="text-gray-600 text-sm">Product Tax</label>
-    <AddInputField
-      name="productTax"
-      options={[
-        { label: "No Tax", value: "none" },
-        { label: "5%", value: "5" },
-        { label: "10%", value: "10" },
-      ]}
-      value={formData.productTax}
-      onChange={(e) => handleChange("productTax", e.target.value)}
-    />
-  </div>
+        {/* Product Tax */}
+        <div>
+          <label className="text-gray-600 text-sm">Product Tax</label>
+          <AddInputField
+            name="productTax"
+            options={[
+              { label: "No Tax", value: "none" },
+              { label: "5%", value: "5" },
+              { label: "10%", value: "10" },
+            ]}
+            value={formData.productTax}
+            onChange={(e) => handleChange("productTax", e.target.value)}
+          />
+        </div>
 
-  {/* Tax Method */}
-  <div>
-    <label className="text-gray-600 text-sm">Tax Method</label>
-    <AddInputField
-      name="taxMethod"
-      options={[
-        { label: "Exclusive", value: "exclusive" },
-        { label: "Inclusive", value: "inclusive" },
-      ]}
-      value={formData.taxMethod}
-      onChange={(e) => handleChange("taxMethod", e.target.value)}
-    />
-  </div>
+        {/* Tax Method */}
+        <div>
+          <label className="text-gray-600 text-sm">Tax Method</label>
+          <AddInputField
+            name="taxMethod"
+            options={[
+              { label: "Exclusive", value: "exclusive" },
+              { label: "Inclusive", value: "inclusive" },
+            ]}
+            value={formData.taxMethod}
+            onChange={(e) => handleChange("taxMethod", e.target.value)}
+          />
+        </div>
 
-  {/* Warranty */}
-  <div className="flex gap-2">
-    <div>
-      <label className="text-gray-600 text-sm">Warranty</label>
-      <AddInputField
-        name="warrantyPeriod"
-        type="number"
-        placeholder="eg: 1"
-        value={formData.warrantyPeriod}
-        onChange={(e) => handleChange("warrantyPeriod", e.target.value)}
-      />
-    </div>
-    <div>
-      <label className="text-gray-600 text-sm">&nbsp;</label>
-      <AddInputField
-        name="warrantyUnit"
-        options={[
-          { label: "Months", value: "months" },
-          { label: "Years", value: "years" },
-        ]}
-        value={formData.warrantyUnit}
-        onChange={(e) => handleChange("warrantyUnit", e.target.value)}
-      />
-    </div>
-  </div>
+        {/* Warranty */}
+        <div className="flex gap-2">
+          <div>
+            <label className="text-gray-600 text-sm">Warranty</label>
+            <AddInputField
+              name="warrantyPeriod"
+              type="number"
+              placeholder="eg: 1"
+              value={formData.warrantyPeriod}
+              onChange={(e) => handleChange("warrantyPeriod", e.target.value)}
+            />
+          </div>
+          <div>
+            <label className="text-gray-600 text-sm">&nbsp;</label>
+            <AddInputField
+              name="warrantyUnit"
+              options={[
+                { label: "Months", value: "months" },
+                { label: "Years", value: "years" },
+              ]}
+              value={formData.warrantyUnit}
+              onChange={(e) => handleChange("warrantyUnit", e.target.value)}
+            />
+          </div>
+        </div>
 
-  {/* Guarantee */}
-  <div className="flex gap-2">
-    <div>
-      <label className="text-gray-600 text-sm">Guarantee</label>
-      <AddInputField
-        name="guaranteePeriod"
-        type="number"
-        placeholder="eg: 1"
-        value={formData.guaranteePeriod}
-        onChange={(e) => handleChange("guaranteePeriod", e.target.value)}
-      />
-    </div>
-    <div>
-      <label className="text-gray-600 text-sm">&nbsp;</label>
-      <AddInputField
-        name="guaranteeUnit"
-        options={[
-          { label: "Months", value: "months" },
-          { label: "Years", value: "years" },
-        ]}
-        value={formData.guaranteeUnit}
-        onChange={(e) => handleChange("guaranteeUnit", e.target.value)}
-      />
-    </div>
-  </div>
+        {/* Guarantee */}
+        <div className="flex gap-2">
+          <div>
+            <label className="text-gray-600 text-sm">Guarantee</label>
+            <AddInputField
+              name="guaranteePeriod"
+              type="number"
+              placeholder="eg: 1"
+              value={formData.guaranteePeriod}
+              onChange={(e) => handleChange("guaranteePeriod", e.target.value)}
+            />
+          </div>
+          <div>
+            <label className="text-gray-600 text-sm">&nbsp;</label>
+            <AddInputField
+              name="guaranteeUnit"
+              options={[
+                { label: "Months", value: "months" },
+                { label: "Years", value: "years" },
+              ]}
+              value={formData.guaranteeUnit}
+              onChange={(e) => handleChange("guaranteeUnit", e.target.value)}
+            />
+          </div>
+        </div>
 
-  {/* Checkboxes */}
-  
-    <label className="flex items-center gap-2">
-      <input
-        type="checkbox"
-        checked={formData.featured}
-        onChange={(e) => handleChange("featured", e.target.checked)}
-      />
-      Featured
-    </label>
+        {/* Checkboxes */}
 
-    <label className="flex items-center gap-2">
-      <input
-        type="checkbox"
-        checked={formData.embeddedBarcode}
-        onChange={(e) => handleChange("embeddedBarcode", e.target.checked)}
-      />
-      Embedded Barcode
-    </label>
+        <label className="flex items-center gap-2">
+          <input
+            type="checkbox"
+            checked={formData.featured}
+            onChange={(e) => handleChange("featured", e.target.checked)}
+          />
+          Featured
+        </label>
 
-     <div>
-    <label className="flex items-center gap-2">
-      <input
-        type="checkbox"
-        checked={formData.initialStock}
-        onChange={(e) => handleChange("initialStock", e.target.checked)}
-      />
-      Initial Stock
-    </label>
-    <p className="text-gray-500 text-sm italic mt-1">
-      This feature will not work for product with variants and batches
-    </p>
-  </div>
+        <label className="flex items-center gap-2">
+          <input
+            type="checkbox"
+            checked={formData.embeddedBarcode}
+            onChange={(e) => handleChange("embeddedBarcode", e.target.checked)}
+          />
+          Embedded Barcode
+        </label>
 
-
+        <div>
+          <label className="flex items-center gap-2">
+            <input
+              type="checkbox"
+              checked={formData.initialStock}
+              onChange={(e) => handleChange("initialStock", e.target.checked)}
+            />
+            Initial Stock
+          </label>
+          <p className="text-gray-500 text-sm italic mt-1">
+            This feature will not work for product with variants and batches
+          </p>
+        </div>
       </div>
 
-        {/* Product Image Upload */}
-<div className="col-span-3">
-  <label className="text-gray-600 text-sm">Product Image</label>
-  <label
-    htmlFor="productImage"
-    className="mt-2 flex items-center justify-center border-2 border-dashed border-gray-300 rounded-lg h-32 cursor-pointer hover:border-purple-500 transition"
-  >
-    <span className="text-gray-400">Drop files here or click to upload</span>
-    <input
-      id="productImage"
-      name="productImage"
-      type="file"
-      accept="image/*"
-      className="hidden"
-      onChange={(e) => handleChange("productImage", e.target.files[0])}
-    />
-  </label>
-</div>
-
+      {/* Product Image Upload */}
+      <div className="col-span-3">
+        <label className="text-gray-600 text-sm">Product Image</label>
+        <label
+          htmlFor="productImage"
+          className="mt-2 flex items-center justify-center border-2 border-dashed border-gray-300 rounded-lg h-32 cursor-pointer hover:border-purple-500 transition"
+        >
+          <span className="text-gray-400">
+            Drop files here or click to upload
+          </span>
+          <input
+            id="productImage"
+            name="productImage"
+            type="file"
+            accept="image/*"
+            className="hidden"
+            onChange={(e) => handleChange("productImage", e.target.files[0])}
+          />
+        </label>
+      </div>
 
       <div className="mt-6">
         <AppSubmitButton title="Add Product" className="bg-purple-500" />

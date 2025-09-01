@@ -1,5 +1,12 @@
+import { useFormikContext } from "formik";
+
 const AppSubmitButton = ({ title }) => {
-  return <button className="primary-btn p-2 ">{title}</button>;
+  const { handleSubmit, isSubmitting } = useFormikContext();
+  return (
+    <button type="button" onClick={handleSubmit} className="primary-btn p-2 ">
+      {isSubmitting ? "Submitting..." : title}
+    </button>
+  );
 };
 
 export default AppSubmitButton;

@@ -1,11 +1,16 @@
-const Table = ({ tableColumn, rowData, rowTemplate }) => {
+const Table = ({ tableColumn, rowData, rowTemplate, checkAll }) => {
   return (
-    <table className="w-full h-[90px] overflow-y-scroll">
-      <thead className="mb-3 text-gray-400">
+    <table className="w-full overflow-y-scroll">
+      <thead className="bg-gray-50 mb-3 text-gray-700">
         <tr className="">
+          {checkAll && (
+            <th className={`p-4 text-start`}>
+              <input type="checkbox" className="rounded border-gray-300" />
+            </th>
+          )}
           {tableColumn?.map((item, i) => (
-            <th key={i} className={`${item.className} text-start`}>
-              {item.title}
+            <th key={i} className={`p-4 ${item.className} text-start`}>
+              <span>{item.title}</span>
             </th>
           ))}
         </tr>

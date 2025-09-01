@@ -1,11 +1,20 @@
-import { useState } from 'react'
-import { FaPlus, FaUpload, FaSearch, FaDownload, FaFileWord, FaCopy, FaPrint, FaEye} from "react-icons/fa";     // FontAwesome
-import { categoryDataArr } from '../../../utility/dataArr.js'
-import { FaChevronDown, FaX } from 'react-icons/fa6';
+import { useState } from "react";
+import {
+  FaPlus,
+  FaUpload,
+  FaSearch,
+  FaDownload,
+  FaFileWord,
+  FaCopy,
+  FaPrint,
+  FaEye,
+} from "react-icons/fa"; // FontAwesome
+import { categoryDataArr } from "@/utility/dataArr.js";
+import { FaChevronDown, FaX } from "react-icons/fa6";
 
 const CategoryPage = () => {
   const [categories, setCategories] = useState(categoryDataArr);
-  const [searchTerm, setSearchTerm] = useState('');
+  const [searchTerm, setSearchTerm] = useState("");
   const [recordsPerPage, setRecordsPerPage] = useState(10);
 
   const formatCurrency = (amount) => `USD ${amount.toLocaleString()}`;
@@ -16,15 +25,11 @@ const CategoryPage = () => {
         <div className="p-6 border-b border-gray-200">
           <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-4">
             <div className="flex gap-3">
-              <button
-                className="flex items-center gap-2 bg-teal-500 hover:bg-teal-600 text-white px-4 py-2 rounded-lg transition-colors"
-              >
+              <button className="flex items-center gap-2 bg-teal-500 hover:bg-teal-600 text-white px-4 py-2 rounded-lg transition-colors">
                 <FaPlus size={20} />
                 Add Category
               </button>
-              <button
-                className="flex items-center gap-2 bg-purple-500 hover:bg-purple-600 text-white px-4 py-2 rounded-lg transition-colors"
-              >
+              <button className="flex items-center gap-2 bg-purple-500 hover:bg-purple-600 text-white px-4 py-2 rounded-lg transition-colors">
                 <FaUpload size={20} />
                 Import Category
               </button>
@@ -39,7 +44,10 @@ const CategoryPage = () => {
               </div>
 
               <div className="relative">
-                <FaSearch className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400" size={20} />
+                <FaSearch
+                  className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400"
+                  size={20}
+                />
                 <input
                   type="text"
                   placeholder="Search"
@@ -95,19 +103,34 @@ const CategoryPage = () => {
             <thead className="bg-gray-50">
               <tr>
                 <th className="w-12 p-4">
-                  <input type="checkbox" className="rounded border-gray-300"/>
+                  <input type="checkbox" className="rounded border-gray-300" />
                 </th>
-                <th className="text-left p-4 font-medium text-gray-700">Category</th>
-                <th className="text-left p-4 font-medium text-gray-700">Parent Category</th>
-                <th className="text-left p-4 font-medium text-gray-700">Number of Product</th>
-                <th className="text-left p-4 font-medium text-gray-700">Stock Quantity</th>
-                <th className="text-left p-4 font-medium text-gray-700">Stock Worth(Price/Cost)</th>
-                <th className="text-left p-4 font-medium text-gray-700">action</th>
+                <th className="text-left p-4 font-medium text-gray-700">
+                  Category
+                </th>
+                <th className="text-left p-4 font-medium text-gray-700">
+                  Parent Category
+                </th>
+                <th className="text-left p-4 font-medium text-gray-700">
+                  Number of Product
+                </th>
+                <th className="text-left p-4 font-medium text-gray-700">
+                  Stock Quantity
+                </th>
+                <th className="text-left p-4 font-medium text-gray-700">
+                  Stock Worth(Price/Cost)
+                </th>
+                <th className="text-left p-4 font-medium text-gray-700">
+                  action
+                </th>
               </tr>
             </thead>
             <tbody>
               {categories.map((category) => (
-                <tr key={category.id} className="border-t border-gray-200 hover:bg-gray-50">
+                <tr
+                  key={category.id}
+                  className="border-t border-gray-200 hover:bg-gray-50"
+                >
                   <td className="p-4">
                     <input
                       type="checkbox"
@@ -117,16 +140,19 @@ const CategoryPage = () => {
                   <td className="p-4">
                     <div className="flex items-center gap-3">
                       <div className="w-8 h-8 bg-gray-100 rounded flex items-center justify-center text-sm">
-                        {category.image || '📦'}
+                        {category.image || "📦"}
                       </div>
                       <span className="font-medium">{category.category}</span>
                     </div>
                   </td>
-                  <td className="p-4 text-gray-600">{category.parentCategory}</td>
+                  <td className="p-4 text-gray-600">
+                    {category.parentCategory}
+                  </td>
                   <td className="p-4">{category.numberOfProducts}</td>
                   <td className="p-4">{category.stockQuantity}</td>
                   <td className="p-4">
-                    {formatCurrency(category.stockWorthPrice)} / {formatCurrency(category.stockWorthCost)}
+                    {formatCurrency(category.stockWorthPrice)} /{" "}
+                    {formatCurrency(category.stockWorthCost)}
                   </td>
                   <td className="p-4">
                     <div className="relative">
@@ -146,4 +172,4 @@ const CategoryPage = () => {
   );
 };
 
-export default CategoryPage
+export default CategoryPage;

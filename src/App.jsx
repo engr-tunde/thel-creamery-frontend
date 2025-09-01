@@ -4,17 +4,17 @@ import { BrowserRouter, Route, Router, Routes } from "react-router-dom";
 // import AuthLayout from "./layouts/AuthLayout";
 import DashboardPage from "./pages/dashboard";
 import DashboardLayout from "./layouts/DashboardLayout";
-import PrintBarcodePage from "./pages/products/printBarcodePage"
-import ProductPageList from "./pages/products/productListPage";
+import PrintBarcodePage from "./pages/products/printBarcodePage";
+// import ProductPageList from "./pages/products";
 import AddProductPage from "./pages/products/addProductPage";
-import ProductPagesLayout from "./layouts/ProductPagesLayout"
-import AddAdjustmentPage from "./pages/products/adjustmentListPage"
+import ProductPagesLayout from "./layouts/ProductPagesLayout";
+import AddAdjustmentPage from "./pages/products/adjustmentListPage";
 import PurchasePagesLayout from "./layouts/PurchaseLayout";
 import PurchaseListPage from "./pages/purchase/purchaseListpage";
 import AdjustmentListPage from "./pages/products/adjustmentListPage";
 import CategoryPage from "./pages/products/category";
 import StockCountPage from "./pages/products/stockCountPage";
-
+import ProductPageList from "./pages/products";
 
 // import LoginPage from "./Pages/auth/Login";
 // import { ProductPage } from "./Pages/products";
@@ -33,44 +33,28 @@ function App() {
 
         <Route element={<DashboardLayout />}>
           <Route path="/dashboard" element={<DashboardPage />} />
-<<<<<<< HEAD
-        </Route>
-        <Route element={<ProductPagesLayout />}>
-          <Route path="/product-list" element={<ProductPageList />} />
-          <Route path="/add-product" element={<AddProductPage />} />
-          <Route path="/add_adjustment" element={<AddAdjustmentPage />} />
-          <Route path="/print_barcode" element={<PrintBarcodePage />} />
-          <Route path="/adjustment-list" element={<AdjustmentListPage />} />
-          <Route path="/category" element={<CategoryPage/>} />
-          <Route path="/stock-count" element={<StockCountPage/>} />
-
-
-        </Route>
-        <Route element={<PurchasePagesLayout/>}>
-           <Route path="/purchase-list" element={<PurchaseListPage />} />
-        </Route>
-
-=======
+          <Route path="/products" element={<ProductPageList />} />
+          <Route path="/products/category" element={<CategoryPage />} />
         </Route>
 
         <Route element={<ProductPagesLayout />}>
           <Route
-            path="/products/print_barcode" element={<PrintBarcodePage />}
+            path="/products/print_barcode"
+            element={<PrintBarcodePage />}
           />
-           <Route
-            path="/products/add-product"element={<AddProductPage />}
-          />
+          <Route path="/products/add-product" element={<AddProductPage />} />
           <Route
-            path="/products/add_adjustment"element={<AddAdjustmentPage />}
+            path="/products/add_adjustment"
+            element={<AddAdjustmentPage />}
           />
           <Route path="/products/product-list" element={<ProductPageList />} />
           <Route
-            path="/products/adjustment-list" element={<AdjustmentListPage />}
+            path="/products/adjustment-list"
+            element={<AdjustmentListPage />}
           />
           <Route path="/products/stock-count" element={<StockCountPage />} />
           <Route path="/products/category" element={<CategoryPage />} />
         </Route>
->>>>>>> e9b7a0efa40c71cfe1451892811506b046ed6181
       </Routes>
     </BrowserRouter>
   );

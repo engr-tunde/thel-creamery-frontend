@@ -1,7 +1,8 @@
 import { useState } from "react";
 import ProductForm from "./ProductForm";
+import { FaPlus, FaTimesCircle } from "react-icons/fa";
 
-const FormModal = ({ table, type, id, data }) => {
+const FormModal = ({ table, type, id, data, title }) => {
   const [open, setopen] = useState(false);
   const bgColor =
     type == "create"
@@ -43,27 +44,35 @@ const FormModal = ({ table, type, id, data }) => {
 
   return (
     <>
-      <button
+      {/* <button
         onClick={() => setopen(true)}
         className={`${bgColor} h-7 w-7 flex items-center justify-center rounded-full cursor-pointer`}
+      > */}
+      <button
+        onClick={() => setopen(true)}
+        className="flex items-center gap-2 py-2 px-3 rounded-sm bg-[#17a2b8] text-[15px] text-white cursor-pointer"
       >
-        <img src={`/images/${type}.png`} className="h-[16px]" alt="" />
+        <span>
+          <FaPlus />
+        </span>
+        <span>{title}</span>
       </button>
+
+      {/* <img src={`/images/${type}.png`} className="h-[16px]" alt="" />
+      </button> */}
 
       {open && (
         <div className="w-screen h-screen bg-black/65 absolute top-0 left-0 z-50 flex items-center justify-center">
-          <div className="bg-black w-[50%] p-5 relative">
+          <div className="bg-white  w-[75%] p-5 relative ">
             <div
               className="absolute top-4 right-4 cursor-pointer"
               onClick={() => setopen(false)}
             >
-              <img
-                src="/images/close.png"
-                alt=""
-                className="w-[14px] h-[14px] hover:scale-110 ease-in duration-200"
-              />
+              <FaTimesCircle size={30} />
             </div>
-            <Form />
+            <div className="max-h-[80vh] overflow-y-scroll">
+              <Form />
+            </div>
           </div>
         </div>
       )}
