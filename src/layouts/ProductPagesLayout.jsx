@@ -3,7 +3,7 @@ import LeftsideBar from "../component/global/LeftsideBar";
 import NavBar from "../component/global/NavBar";
 import { useState } from "react";
 
-export const ProductPagesLayout = () => {
+const ProductPagesLayout = () => {
   const [sidebarOpen, setSidebarOpen] = useState(true);
 
   return (
@@ -23,3 +23,5 @@ export const ProductPagesLayout = () => {
     </div>
   );
 };
+
+export default ProductPagesLayout;

@@ -1,3 +1,5 @@
+import { act } from "react";
+
 export const sidebarData = [
   {
     title: "Dashboard",
@@ -537,12 +539,16 @@ export const plusMenu = [
   },
 ];
 
+// for dashboard page
+
+
+
+
 export const productSearch = [
-  {heading: "Name"},
-  {heading: "Code"},
-  {heading: "Quantity",}
-  
-]
+  { heading: "Name" },
+  { heading: "Code" },
+  { heading: "Quantity" },
+];
 
 //for print-barcodeb page
 export const formDetails = [
@@ -579,32 +585,35 @@ export const formDetails = [
     Name:"Brand",
     size: "Size" ,
     checked: false,
-    className: "bg-white",
   },
-
-
-]
+];
 
 //print-barcode page
 export const papperSize = [
   {
-    itemList: "20 Label per Sheet, Sheet Size: 8.5 x 11, Label Size: 4 x 1, Label... "
+    itemList:
+      "20 Label per Sheet, Sheet Size: 8.5 x 11, Label Size: 4 x 1, Label... ",
   },
   {
-    itemList: "30 Label per Sheet, Sheet Size: 8.5 x 11, Label Size: 2.625 x 1, Label per sheet: 30 "
+    itemList:
+      "30 Label per Sheet, Sheet Size: 8.5 x 11, Label Size: 2.625 x 1, Label per sheet: 30 ",
   },
   {
-    itemList: "42 Label per Sheet, Sheet Size: 8.5 x 11, Label Size: 2 x 1, Label per sheet: 32 "
+    itemList:
+      "42 Label per Sheet, Sheet Size: 8.5 x 11, Label Size: 2 x 1, Label per sheet: 32 ",
   },
   {
-    itemList: "40 Label per Sheet, Sheet Size: 8.5 x 11, Label Size: 1.5 x 1, Label per sheet: 40 "
+    itemList:
+      "40 Label per Sheet, Sheet Size: 8.5 x 11, Label Size: 1.5 x 1, Label per sheet: 40 ",
   },
   {
-    itemList: "continious rolls - 31.75mm x 24.5mm label size:31.75mm x 24.5mm  gap:3.18mm "
+    itemList:
+      "continious rolls - 31.75mm x 24.5mm label size:31.75mm x 24.5mm  gap:3.18mm ",
   },
+];
 
-]
-export const tableColumn = [
+//for product list page
+export const proListTableColumn = [
   {
     accessor: "input",
     title: "checkbox",
@@ -615,6 +624,7 @@ export const tableColumn = [
     accessor: "product",
     title: "Product",
     className: "font-semibold",
+    icon: "GoArrowDown",
   },
   {
     accessor: "Code",
@@ -663,7 +673,7 @@ export const tableColumn = [
   },
 ];
 
-export const rowData = [
+export const proListRowData = [
   {
     image: "product-1.png",
     productTitle: "Zenbook 14 OLED (UX3402)｜Laptops For Home – ASUS",
@@ -702,31 +712,129 @@ export const rowData = [
   },
 ];
 
+export const productListInputData = [
+  {
+    legendTag: "Warehouse",
+    placeholder: "All Warehouse",
+  },
+  {
+    legendTag: "Product Type",
+    placeholder: "All Types",
+  },
+  {
+    legendTag: "Brand",
+    placeholder: "All Brands",
+  },
+  {
+    legendTag: "Category",
+    placeholder: "All Categories",
+  },
+  {
+    legendTag: "Unit",
+    placeholder: "All Unit",
+  },
+  {
+    legendTag: "Tax",
+    placeholder: "All Tax",
+  },
+  {
+    legendTag: "Product with",
+    placeholder: "Select IMEI/Variant",
+  },
+  {
+    legendTag: "",
+    placeholder: "Submit",
+  },
+];
+
+// for adjustment list page
+export const adjustListTableCol = [
+  {
+    accessor: "input",
+    title: "checkbox",
+    className: "font-semibold",
+    maxWidth: "150px",
+  },
+  {
+    accessor: "Date",
+    title: "Date",
+    className: "font-semibold",
+  },
+  {
+    accessor: "Reference",
+    title: "Reference",
+    className: "font-semibold",
+  },
+  {
+    accessor: "Warehouse",
+    title: "Warehouse",
+    className: "font-semibold",
+  },
+  {
+    accessor: "Products",
+    title: "Products",
+    className: "font-semibold",
+  },
+  {
+    accessor: "Note",
+    title: "Note",
+    className: "font-semibold",
+  },
+  {
+    accessor: "Action",
+    title: "Action",
+    className: "font-semibold",
+  },
+];
+
+export const adjustListRowData = [
+  {
+    date: "04-06-2025 05:15:51",
+    reference: "adr-20250604-111551",
+    warehouse: "Shop 2",
+    product: {
+      title: "2bc",
+      dimension: "10 x 10",
+    },
+    note: "",
+  },
+  {
+    date: "04-06-2025 05:15:51",
+    reference: "adr-20250604-111551",
+    warehouse: "Shop 2",
+    product: {
+      title: "2bc",
+      dimension: "10 x 10",
+    },
+    note: "",
+  },
+];
+
 //for add adjustment page
 export const tableTitle = [
   {
-    title: "Name"	
+    title: "Name",
   },
   {
-    title: "Code"	
+    title: "Code",
   },
   {
-    title: "Unit"
+    title: "Unit",
   },
   {
-    title: "Cost"		
+    title: "Cost",
   },
   {
-    title: "Quantity"	
+    title: "Quantity",
   },
   {
-    title: "action"		 		
+    title: "action",
   },
-]
+];
 
 export const availableSearch = [
   {
-    title: "Shop1"
+    title: "Shop1",
   },
     {
     title: "Shop2"
@@ -771,6 +879,231 @@ export const paymentStatus = [
   {
     title: "Paid"
   },
-]
+];
 
+// Category Data
+export const categoryDataArr = [
+  {
+    id: 1,
+    category: "Abc",
+    parentCategory: "N/A",
+    numberOfProducts: 0,
+    stockQuantity: 0,
+    stockWorthPrice: 0,
+    stockWorthCost: 0,
+    image: null,
+    isActive: true,
+    createdAt: "2024-01-15T10:30:00Z",
+    updatedAt: "2024-01-15T10:30:00Z",
+  },
+  {
+    id: 2,
+    category: "accessories",
+    parentCategory: "N/A",
+    numberOfProducts: 0,
+    stockQuantity: 0,
+    stockWorthPrice: 0,
+    stockWorthCost: 0,
+    image: null,
+    isActive: true,
+    createdAt: "2024-01-20T14:15:00Z",
+    updatedAt: "2024-01-20T14:15:00Z",
+  },
+  {
+    id: 3,
+    category: "Appliances",
+    parentCategory: "N/A",
+    numberOfProducts: 4,
+    stockQuantity: 1,
+    stockWorthPrice: 912,
+    stockWorthCost: 920,
+    image: null,
+    isActive: true,
+    createdAt: "2024-01-10T09:00:00Z",
+    updatedAt: "2024-02-01T16:45:00Z",
+  },
+  {
+    id: 4,
+    category: "Electronics",
+    parentCategory: "N/A",
+    numberOfProducts: 15,
+    stockQuantity: 45,
+    stockWorthPrice: 15750,
+    stockWorthCost: 12800,
+    image: null,
+    isActive: true,
+    createdAt: "2024-01-05T08:00:00Z",
+    updatedAt: "2024-02-10T11:20:00Z",
+  },
+  {
+    id: 5,
+    category: "Smartphones",
+    parentCategory: "Electronics",
+    numberOfProducts: 8,
+    stockQuantity: 25,
+    stockWorthPrice: 12500,
+    stockWorthCost: 10000,
+    image: null,
+    isActive: true,
+    createdAt: "2024-01-06T10:15:00Z",
+    updatedAt: "2024-02-08T14:30:00Z",
+  },
+  {
+    id: 6,
+    category: "Laptops",
+    parentCategory: "Electronics",
+    numberOfProducts: 5,
+    stockQuantity: 12,
+    stockWorthPrice: 18000,
+    stockWorthCost: 15500,
+    image: null,
+    isActive: true,
+    createdAt: "2024-01-07T11:00:00Z",
+    updatedAt: "2024-02-05T13:15:00Z",
+  },
+  {
+    id: 7,
+    category: "Clothing",
+    parentCategory: "N/A",
+    numberOfProducts: 32,
+    stockQuantity: 128,
+    stockWorthPrice: 6400,
+    stockWorthCost: 4800,
+    image: null,
+    isActive: true,
+    createdAt: "2024-01-12T13:30:00Z",
+    updatedAt: "2024-02-12T10:45:00Z",
+  },
+  {
+    id: 8,
+    category: "Men's Wear",
+    parentCategory: "Clothing",
+    numberOfProducts: 18,
+    stockQuantity: 72,
+    stockWorthPrice: 3600,
+    stockWorthCost: 2700,
+    image: null,
+    isActive: true,
+    createdAt: "2024-01-13T09:20:00Z",
+    updatedAt: "2024-02-10T15:30:00Z",
+  },
+  {
+    id: 9,
+    category: "Women's Wear",
+    parentCategory: "Clothing",
+    numberOfProducts: 14,
+    stockQuantity: 56,
+    stockWorthPrice: 2800,
+    stockWorthCost: 2100,
+    image: null,
+    isActive: true,
+    createdAt: "2024-01-14T12:45:00Z",
+    updatedAt: "2024-02-09T16:20:00Z",
+  },
+  {
+    id: 10,
+    category: "Kitchen Appliances",
+    parentCategory: "Appliances",
+    numberOfProducts: 12,
+    stockQuantity: 28,
+    stockWorthPrice: 5600,
+    stockWorthCost: 4480,
+    image: null,
+    isActive: true,
+    createdAt: "2024-01-11T10:30:00Z",
+    updatedAt: "2024-02-03T12:15:00Z",
+  },
+];
+
+//Stock count page
+export const stockCountTableCol = [
+  {
+    accessor: "input",
+    title: "checkbox",
+    className: "font-semibold",
+    maxWidth: "150px",
+  },
+  {
+    accessor: "Date",
+    title: "Date",
+    className: "font-semibold",
+    icon: "GoArrowDown",
+  },
+  {
+    accessor: "Reference",
+    title: "Reference",
+    className: "font-semibold",
+  },
+  {
+    accessor: "warehouse",
+    title: "warehouse",
+    className: "font-semibold",
+  },
+  {
+    accessor: "Category",
+    title: "Category",
+    className: "font-semibold",
+  },
+  {
+    accessor: "Brand",
+    title: "Brand",
+    className: "font-semibold",
+  },
+  {
+    accessor: "Type",
+    title: "Type",
+    className: "font-semibold",
+  },
+  {
+    accessor: "Initial File",
+    title: "Initial File",
+    className: "font-semibold",
+  },
+  {
+    accessor: "Final File",
+    title: "Final File",
+    className: "font-semibold",
+  },
+  {
+    accessor: "Action",
+    title: "Action",
+    className: "font-semibold",
+  },
+];
+
+export const stockCountRowData = [
+  {
+    date: { day: "04-06-2025", time: "05:15:51" },
+    reference: "adr-20250604-111551",
+    warehouse: "Shop 2",
+    category: "",
+    brand: "",
+    type: "Full",
+    initialFile: "",
+    finalFile: "",
+    action: "Finalize",
+  },
+  {
+    date: { day: "04-06-2025", time: "05:15:51" },
+    reference: "adr-20250604-111551",
+    warehouse: "Shop 2",
+    category: "",
+    brand: "",
+    type: "Full",
+    initialFile: "",
+    finalFile: "",
+    action: "Finalize",
+  },
+  {
+    date: { day: "04-06-2025", time: "05:15:51" },
+    reference: "adr-20250604-111551",
+    warehouse: "Shop 2",
+    category: "",
+    brand: "",
+    type: "Full",
+    initialFile: "",
+    finalFile: "",
+    action: "Finalize",
+  },
+];
 
