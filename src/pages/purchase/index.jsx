@@ -8,16 +8,16 @@ import { BsFiletypeCsv } from "react-icons/bs";
 import { MdOutlineVisibility } from "react-icons/md";
 import { TfiPrinter } from "react-icons/tfi";
 import { RiChatDeleteLine } from "react-icons/ri";
-import AppInputField from "../../../component/form/AppInputField";
+import AppInputField from "../../component/form/AppInputField";
 import { useState } from "react";
 import {
   availableSearchFilter,
   paymentStatus,
   purchaseStatus,
-} from "../../../utility/dataArr";
-import AppSubmitButton from "../../../component/form/AppSubmitButton";
-import Table2 from "../../../component/purchase/Table2";
-import { purchaserowData } from "../../../utility/purchaseData";
+} from "../../utility/dataArr";
+import AppSubmitButton from "../../component/form/AppSubmitButton";
+import Table2 from "../../component/purchase/Table2";
+import { purchaserowData } from "../../utility/purchaseData";
 import { IoMdArrowDropdown } from "react-icons/io";
 import { IoIosCheckmark } from "react-icons/io";
 

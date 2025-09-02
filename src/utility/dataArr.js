@@ -519,7 +519,7 @@ export const sidebarData = [
     ],
   },
 ];
-
+// for nav bar plus menu
 export const plusMenu = [
   {
     title: "Add Product",
@@ -535,7 +535,24 @@ export const plusMenu = [
   },
 ];
 
-// for dashboard page
+// for nav bar admin menu
+export const adminMenuDropdown = [
+  {
+    title: "Profile",
+    link: "/profile",
+    icon: "FaUserCircle",
+  },
+  {
+    title: "Settings",
+    link: "/settings",
+    icon: "FaCog",
+  },
+  {
+    title: "My Transactions",
+    link: "/my-transactions",
+    icon: "FaExchangeAlt",
+  },
+];
 
 export const productSearch = [
   { heading: "Name" },
