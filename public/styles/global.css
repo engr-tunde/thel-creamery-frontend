@@ -1,0 +1,9 @@
+@import "tailwindcss";
+
+.primary-input {
+  @apply rounded-sm bg-transparent border-[1px] border-white;
+}
+
+.error {
+  @apply text-red-400 text-xs;
+}
