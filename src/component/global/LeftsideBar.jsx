@@ -3,9 +3,11 @@ import { sidebarData } from "@/utility/dataArr";
 import * as FaIcons from "react-icons/fa";
 import { MdKeyboardArrowLeft, MdKeyboardArrowDown } from "react-icons/md";
 import { useState } from "react";
+import AddExpenseSideBarFormModal from "../expense/AddExpenseSideBarFormModal";
 
 const LeftsideBar = () => {
   const [openIndex, setOpenIndex] = useState(null);
+  const [showExpenseModal, setShowExpenseModal] = useState(false);
 
   return (
     <div className="bg-white p-3 overflow-y-auto w-full">
@@ -50,12 +52,22 @@ const LeftsideBar = () => {
                   <ul className="px-3 mx-3 mt-2 flex flex-col gap-2 bg-gray-200 w-[85%] rounded-md">
                     {item.children.map((child, childidx) => (
                       <li key={childidx}>
-                        <Link
-                          to={child.link}
-                          className="text-[14px] text-gray-600 hover:text-purple-600 transition-all duration-50  hover:pl-4"
-                        >
-                          {child.title}
-                        </Link>
+                        {child.title === "Add Expense" ||
+                        child.title === "Add Income" ? (
+                          <button
+                            onClick={() => setShowExpenseModal(true)}
+                            className="text-[14px] text-gray-600 hover:text-purple-600 transition-all duration-50 hover:pl-4 w-full text-left"
+                          >
+                            {child.title}
+                          </button>
+                        ) : (
+                          <Link
+                            to={child.link}
+                            className="text-[14px] text-gray-600 hover:text-purple-600 transition-all duration-50 hover:pl-4"
+                          >
+                            {child.title}
+                          </Link>
+                        )}
                       </li>
                     ))}
                   </ul>
@@ -65,6 +77,10 @@ const LeftsideBar = () => {
           })}
         </div>
       </div>
+      <AddExpenseSideBarFormModal
+        show={showExpenseModal}
+        onClose={() => setShowExpenseModal(false)}
+      />
     </div>
   );
 };

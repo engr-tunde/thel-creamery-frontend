@@ -8,12 +8,18 @@ import PrintBarcodePage from "./pages/products/printBarcodePage";
 // import ProductPageList from "./pages/products";
 import ProductPagesLayout from "./layouts/ProductPagesLayout";
 import PurchasePagesLayout from "./layouts/PurchaseLayout";
-import PurchaseListPage from "./pages/purchase/purchaseListpage";
+// import PurchaseListPage from "./pages/purchase/purchaseListpage";
 import CategoryPage from "./pages/products/category";
 import StockCountPage from "./pages/products/stockCountPage";
 import ProductPageList from "./pages/products";
 import AdjustmentListPage from "./pages/products/adjustmentListPage";
 import AddAdjustmentPage from "./pages/products/add-adjustment";
+import ExpenseLayout from "./layouts/ExpenseLayout";
+import ExpenseCategory from "./pages/expense/ExpenseCategory";
+import ExpenseList from "./pages/expense/ExpenseList";
+import AddExpenseFormModal from "./component/expense/AddExpenseFormModal";
+import IncomeCategory from "./pages/income/IncomeCategory";
+import IncomeList from "./pages/income/IncomeList";
 
 // import LoginPage from "./Pages/auth/Login";
 // import { ProductPage } from "./Pages/products";
@@ -38,6 +44,11 @@ function App() {
             path="/products/adjustment-list"
             element={<AdjustmentListPage />}
           />
+          <Route path="/expense-category" element={<ExpenseCategory />} />
+          <Route path="/expense-list" element={<ExpenseList />} />
+          <Route path="/" element={<AddExpenseFormModal />} />
+          <Route path="/income-category" element={<IncomeCategory />} />
+          <Route path="/income-list" element={<IncomeList />} />
         </Route>
 
         <Route element={<ProductPagesLayout />}>
