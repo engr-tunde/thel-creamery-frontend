@@ -24,6 +24,13 @@ import IncomeList from "./pages/income/IncomeList";
 // import LoginPage from "./Pages/auth/Login";
 // import { ProductPage } from "./Pages/products";
 
+// Sale Imports 
+import SalePagesLayout from './layouts/SalePagesLayout.jsx'
+import SaleListPage from "./pages/sale/SaleList.jsx";
+
+
+
+
 function App() {
   const [count, setCount] = useState(0);
 
@@ -67,6 +74,9 @@ function App() {
           />
           <Route path="/products/stock-count" element={<StockCountPage />} />
           <Route path="/products/category" element={<CategoryPage />} />
+        </Route>
+        <Route element={<SalePagesLayout />}>
+          <Route path="/sales/sale-list" element={<SaleListPage />} />
         </Route>
       </Routes>
     </BrowserRouter>

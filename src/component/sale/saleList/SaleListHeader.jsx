@@ -5,14 +5,16 @@ import {
   FaDownload,
   FaEye,
   FaFileWord,
+  FaFilter,
   FaPlus,
   FaPrint,
   FaSearch,
+  FaTrash,
   FaUpload,
 } from "react-icons/fa";
 import { FaX } from "react-icons/fa6";
 
-function CategoryHeader() {
+function SaleListHeader() {
   const [recordsPerPage, setRecordsPerPage] = useState(10);
   return (
     <div className="p-6 border-b border-gray-200">
@@ -20,15 +22,23 @@ function CategoryHeader() {
         <div className="flex gap-3 mb-2 border-gray-300 border-b-2 pb-4">
           <button className="flex items-center gap-2 bg-teal-500 hover:bg-teal-600 text-white px-4 py-2 rounded-lg transition-colors">
             <FaPlus size={20} />
-            Add Category
+            Add Sale
           </button>
           <button className="flex items-center gap-2 bg-purple-500 hover:bg-purple-600 text-white px-4 py-2 rounded-lg transition-colors whitspace-nowrap">
-            <FaUpload size={20} />
-            Import Category
+            <FaCopy size={20} />
+            Import Sale
+          </button>
+          <button className="flex items-center gap-2 bg-purple-500 hover:bg-purple-600 text-white px-4 py-2 rounded-lg transition-colors whitspace-nowrap">
+            <FaTrash size={20} />
+            Deleted Sales
+          </button>
+          <button className="flex items-center gap-2 bg-purple-500 hover:bg-purple-600 text-white px-4 py-2 rounded-lg transition-colors whitspace-nowrap">
+            <FaFilter size={20} />
+            Filter Sales
           </button>
         </div>
 
-        <div className="flex flex-col sm:flex-row items-start sm:items-center gap-4 justify-between py-3">
+        <div className="flex flex-col sm:flex-row items-start sm:items-center gap-4 justify-between py-3 w-full">
           <div className="flex items-center gap-2">
             <select 
               className="border border-gray-300 rounded-lg px-3 py-2 bg-white focus:bg-gray-200"
@@ -100,4 +110,4 @@ function CategoryHeader() {
   );
 }
 
-export default CategoryHeader;
+export default SaleListHeader;
