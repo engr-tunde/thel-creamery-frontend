@@ -13,6 +13,7 @@ import {
   FaUpload,
 } from "react-icons/fa";
 import { FaX } from "react-icons/fa6";
+import { FiFilter, FiTrash2 } from "react-icons/fi";
 
 function SaleListHeader() {
   const [recordsPerPage, setRecordsPerPage] = useState(10);
@@ -28,12 +29,12 @@ function SaleListHeader() {
             <FaCopy size={20} />
             Import Sale
           </button>
-          <button className="flex items-center gap-2 bg-purple-500 hover:bg-purple-600 text-white px-4 py-2 rounded-lg transition-colors whitspace-nowrap">
-            <FaTrash size={20} />
+          <button className="flex items-center gap-2 bg-gray-500 hover:bg-gray-600 text-white px-4 py-2 rounded-lg transition-colors whitspace-nowrap">
+            <FiTrash2 size={20} />
             Deleted Sales
           </button>
-          <button className="flex items-center gap-2 bg-purple-500 hover:bg-purple-600 text-white px-4 py-2 rounded-lg transition-colors whitspace-nowrap">
-            <FaFilter size={20} />
+          <button className="flex items-center gap-2 bg-yellow-500 hover:bg-yellow-600 text-white px-4 py-2 rounded-lg transition-colors whitspace-nowrap">
+            <FiFilter size={20} />
             Filter Sales
           </button>
         </div>
