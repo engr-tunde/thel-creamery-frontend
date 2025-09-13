@@ -30,7 +30,6 @@ import SaleListPage from "./pages/sale/SaleList.jsx";
 
 
 
-
 function App() {
   const [count, setCount] = useState(0);
 
