@@ -28,6 +28,7 @@ import IncomeList from "./pages/income/IncomeList";
 import SalePagesLayout from './layouts/SalePagesLayout.jsx'
 import SaleListPage from "./pages/sale/SaleList.jsx";
 import TransferList from "./pages/transfer/TransferList.jsx";
+import AddTransfer from "./pages/transfer/AddTransfer.jsx";
 
 
 
@@ -57,6 +58,7 @@ function App() {
           <Route path="/income-category" element={<IncomeCategory />} />
           <Route path="/income-list" element={<IncomeList />} />
           <Route path="/transfer-list" element={<TransferList />} />
+          <Route path="/add-transfer" element={<AddTransfer />} />
         </Route>
 
         <Route element={<ProductPagesLayout />}>
