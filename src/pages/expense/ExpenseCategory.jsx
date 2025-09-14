@@ -206,7 +206,7 @@ const ExpenseCategory = () => {
         <input type="checkbox" />
       </td>
       <td className="py-3 pr-3 text-start">{item.Code}</td>
-      <td className="py-3 pr-3 text-start">{item.Name}</td>
+       <td className="py-3 pr-3 text-start">{item.Name}</td>
       <td className="py-3 pr-3 text-start">
         <div
           className="relative flex gap-2 items-center border text-[#7c5cc4] border-[#7c5cc4] p-2 rounded-sm w-fit cursor-pointer"

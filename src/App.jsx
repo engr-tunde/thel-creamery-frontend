@@ -8,7 +8,7 @@ import PrintBarcodePage from "./pages/products/printBarcodePage";
 // import ProductPageList from "./pages/products";
 import ProductPagesLayout from "./layouts/ProductPagesLayout";
 import PurchasePagesLayout from "./layouts/PurchaseLayout";
-// import PurchaseListPage from "./pages/purchase/purchaseListpage";
+import PurchaseListPage from "./pages/purchase";
 import CategoryPage from "./pages/products/category";
 import StockCountPage from "./pages/products/stockCountPage";
 import ProductPageList from "./pages/products";
@@ -56,6 +56,8 @@ function App() {
           <Route path="/" element={<AddExpenseFormModal />} />
           <Route path="/income-category" element={<IncomeCategory />} />
           <Route path="/income-list" element={<IncomeList />} />
+          <Route path="/purchases" element={<PurchaseListPage />} />
+
         </Route>
 
         <Route element={<ProductPagesLayout />}>

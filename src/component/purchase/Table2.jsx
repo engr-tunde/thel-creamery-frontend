@@ -1,17 +1,22 @@
 import { useState } from "react";
 import { GoArrowDown, GoArrowUp } from "react-icons/go";
 import {  IoIosCheckmark,  } from "react-icons/io";
+import { purchaserowData } from "../../utility/purchaseData";
 
- const Table2 = ({ tableColumn, rowData, rowTemplate }) => {
+ const Table2 = ({ tableColumn, rowData, rowTemplate,validateHead, setValidateHead }) => 
+  {
+      
+     [validateHead, setValidateHead] = useState(tableColumn)
   return (
     <table className="w-full h-[90px] overflow-y-scroll mt-10">
       <thead className="w-full text-gray-500">
         <tr className="w-full">
           {tableColumn?.map((item, i) => {
-            const [validate, setValidate] = useState(tableColumn) //original data
+            //original data
+               
                 const checkValidate = () => {
-                setValidate(!validate)
-            }
+                setValidateHead(!validateHead)
+          }
           
           return (
             <th
@@ -29,7 +34,7 @@ import {  IoIosCheckmark,  } from "react-icons/io";
               ) : (
                 <div className=" px-2 w-[80px] ">
                   {item.title === "checkbox" ? (
-                    <span key={i} onClick={checkValidate} className={`${item.className} border-1  size-5 items-center flex rounded-sm`}><IoIosCheckmark   className={ validate ? "bg-blue-800 text-white size-full" : "hidden"} /></span>
+                    <span key={i} onClick={checkValidate} className={`${item.className} border-1  size-5 items-center flex rounded-sm`}><IoIosCheckmark   className={ validateHead ? "bg-blue-800 text-white size-full" : "hidden"} /></span>
                   ) : (
                     item.title
                   )}
@@ -38,13 +43,16 @@ import {  IoIosCheckmark,  } from "react-icons/io";
               )}
             </th>
           )})}
-        </tr>
+        </tr> 
       </thead>
       <tbody className="mt-20 overflow-y-scroll">
-        {rowData?.map((item, i) => rowTemplate(item, i))}
+        {rowData?.map((item, i) => 
+            rowTemplate(item, i)
+          )}
+          
       </tbody>
     </table>
   );
 };
 
-export default Table2
+export default Table2 

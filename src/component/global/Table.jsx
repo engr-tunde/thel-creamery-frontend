@@ -1,7 +1,8 @@
-const Table = ({ tableColumn, rowData, rowTemplate, checkAll }) => {
+import { RiDeleteBin6Line } from "react-icons/ri";
+const Table = ({ tableColumn, rowData, rowTemplate, checkAll, deleIcon }) => {
   return (
     <table className="overflow-x-auto max-w-full">
-      <thead className="bg-gray-50 mb-3 text-gray-700 w-full border-collapse">
+      <thead className="bg-white mb-3 text-gray-700 w-full border-collapse border-b border-gray-700">
         <tr className="">
           {checkAll && (
             <th className={`p-4 text-start`}>
@@ -9,10 +10,15 @@ const Table = ({ tableColumn, rowData, rowTemplate, checkAll }) => {
             </th>
           )}
           {tableColumn?.map((item, i) => (
-            <th key={i} className={`p-4 ${item.className} text-start`}>
-              <span>{item.title}</span>
+            <th key={i} className={`p-[8px] ${item.className} text-start text-[13px]  w-full`}>
+              <div className="w-max">{item.title}</div>
             </th>
           ))}
+          {
+            deleIcon && (
+              <th><RiDeleteBin6Line/></th>
+            )
+          }
         </tr>
       </thead>
       <tbody className="mt-20 overflow-y-scroll">

@@ -37,3 +37,29 @@ export const validateAddProduct = () => {
 
   return validationSchema;
 };
+
+export const validateAddPurchase = () => {
+  const validationSchema = yup.object({
+    purchaseStatus: yup.string().required("Purchae status is missing"),
+    referenceNumber: yup.string().required("Reference number is missing"),
+    date: yup
+      .string()
+      .required(" the date is missing"),
+    supplier: yup.string().required("suppliers name must be provided"),
+    AttachDocument: yup.string().required("attached the neccessary document"),
+    currency: yup.string().required("select currency"),
+    exchangeRate: yup.string().required("select exchange rate"),
+    selectProduct: yup.string().required("specify the selected product"),
+    orderTax: yup.string().required("Provide the order tax"),
+    discount: yup.string().required("discount prices is misssing"),
+    shippingCost: yup.string().required("shipping cost is missing"),
+    paymentStatue: yup
+      .string()
+      .required("Payment status is missing"),
+    note: yup
+      .string()
+      .required("Add short note"),
+  });
+
+  return validationSchema;
+};

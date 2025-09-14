@@ -22,7 +22,7 @@ export const sidebarData = [
       },
       {
         title: "Print Barcode",
-        link: "/print_barcode",
+        link: "/products/print_barcode",
       },
       {
         title: "Adjustment List",
@@ -41,11 +41,11 @@ export const sidebarData = [
   {
     title: "Purchase",
     icon: "FaHouseUser",
-    link: "/purchase",
+    link: "/purchases",
     children: [
       {
         title: "Purchase List",
-        link: "/purchase-list",
+        link: "/purchases",
       },
       {
         title: "Add Purchase",

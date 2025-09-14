@@ -75,7 +75,7 @@ const AddExpenseSideBarFormModal = ({ show, onClose }) => {
                 as="select"
                 className="w-full border border-gray-300 rounded px-3 py-2"
               >
-                <option value="">Select Warehouse...</option>
+                 <option value="">Select Warehouse...</option>
                 <option value="Main">Main</option>
                 <option value="Branch">Branch</option>
               </Field>

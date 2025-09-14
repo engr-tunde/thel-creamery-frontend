@@ -1,13 +1,12 @@
 import { Link } from "react-router-dom";
 import { IoAddSharp } from "react-icons/io5";
-import { RiDeleteBin6Line } from "react-icons/ri";
-import { BiSolidFileImport } from "react-icons/bi";
 import { FiFilter } from "react-icons/fi";
 import { AiOutlineFilePdf, AiOutlineFileExcel } from "react-icons/ai";
 import { BsFiletypeCsv } from "react-icons/bs";
 import { MdOutlineVisibility } from "react-icons/md";
 import { TfiPrinter } from "react-icons/tfi";
 import { RiChatDeleteLine } from "react-icons/ri";
+
 import AppInputField from "../../component/form/AppInputField";
 import { useState } from "react";
 import {
@@ -20,6 +19,7 @@ import Table2 from "../../component/purchase/Table2";
 import { purchaserowData } from "../../utility/purchaseData";
 import { IoMdArrowDropdown } from "react-icons/io";
 import { IoIosCheckmark } from "react-icons/io";
+import FormModal from "../../component/purchase/FormModal";
 
 const PurchaseListPage = () => {
   const [selectedValue, setSelectedValue] = useState("All Warehouse");
@@ -112,7 +112,7 @@ const PurchaseListPage = () => {
         key={i}
         className="text-[rgb(177,117,115)] pb-4 cursor-pointer item  text-[15px] p-1 border-b-[rgb(222,226,230)] border-b-[1px]"
       >
-        <td className="table-cell p-1">
+        <td className="table-cell p-3">
           <span
             key={i}
             onClick={checkValidate}
@@ -120,7 +120,7 @@ const PurchaseListPage = () => {
           >
             <IoIosCheckmark
               className={
-                validate ? "bg-blue-800 text-white size-full" : "hidden"
+                validate ?  "bg-blue-800 text-white size-full" : "hidden"
               }
             />
           </span>
@@ -137,7 +137,7 @@ const PurchaseListPage = () => {
         <td className="p-3">{item.returnedAmount}</td>
         <td className="p-3 ">{item.paid}</td>
         <td className="p-3">{item.due}</td>
-        <td className="p-3 table-cell">
+         <td className="p-3 table-cell">
           <div className="text-white text-[11px] bg-[rgb(255,117,136)] rounded-sm w-[30px] px-[3px]">
             {item.paymentStatus}
           </div>
@@ -190,27 +190,23 @@ const PurchaseListPage = () => {
       {/* main first section */}
       <div className="flex flex-col">
         <div className="flex gap-2 pb-5">
-          <Link
-            to=""
-            className="w-[150px] h-[40px] rounded-sm bg-[rgb(23,162,184)] text-white font-md text-[14px] text-center flex gap-2 items-center justify-center"
-          >
-            <IoAddSharp />
-            <span>Add Purchase</span>
-          </Link>
-          <Link
+          <FormModal type="Add" table="product" />
+          {/* <Link
             to=""
             className="w-[150px] h-[40px] rounded-sm bg-[rgb(124,92,196)] text-white font-md text-[14px] text-center flex gap-2 items-center justify-center"
           >
             {<BiSolidFileImport />}
             <span>Imported Purchase</span>
-          </Link>
-          <Link
+          </Link> */}
+          <FormModal type="Import" table="product" />
+          {/* <Link
             to=""
             className="w-[150px] h-[40px] rounded-sm bg-[rgb(134,142,150)] text-white font-md text-[14px] text-center flex gap-2 items-center justify-center"
           >
             <RiDeleteBin6Line />
             <span> Deleted Purchases</span>
-          </Link>
+          </Link> */}
+          <FormModal type="Delete" table="product" />
           <div
             onClick={handlefilterToggle}
             className="w-[150px] h-[40px] rounded-sm bg-[rgb(255,193,7))] text-black font-md text-[14px] text-center flex gap-2 items-center justify-center"

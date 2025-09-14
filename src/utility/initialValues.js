@@ -26,3 +26,24 @@ export const addProductValues = (data) => {
   };
   return initialValues;
 };
+
+export const addPurchaseValues = (data) => {
+  const initialValues = {
+    purchaseStatus: data ? data.purchaseStatus : "",
+    referenceNumber: data ? data.referenceNumber : "",
+    warehouse: data ? data.warehouse : "",
+    date: data ? data.date : "",
+    supplier: data ? data.supplier : "",
+    attachDocument: data ? data.attachDocument: "",
+    currency: data ? data.currency : "",
+    exchangeRate: data ? data.exchangeRate : "",
+    selectProduct: data ? data.selectProduct : "",
+    orderTax: data ? data.orderTax : "",
+    discount: data ? data.discount : "",
+    shippingCost: data ? data.shippingCost: "",
+    paymentStatus: data ? data.paymentStatus: "",
+    note: data ? data.note : ""
+    
+  };
+  return initialValues;
+};
