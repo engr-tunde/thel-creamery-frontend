@@ -29,6 +29,7 @@ import SalePagesLayout from './layouts/SalePagesLayout.jsx'
 import SaleListPage from "./pages/sale/SaleList.jsx";
 import TransferList from "./pages/transfer/TransferList.jsx";
 import AddTransfer from "./pages/transfer/AddTransfer.jsx";
+import ImportTransferByCSV from "./pages/transfer/ImportTransferByCSV.jsx";
 
 
 
@@ -59,6 +60,7 @@ function App() {
           <Route path="/income-list" element={<IncomeList />} />
           <Route path="/transfer-list" element={<TransferList />} />
           <Route path="/add-transfer" element={<AddTransfer />} />
+          <Route path="/import-transfer-by-CSV" element={<ImportTransferByCSV />} />
         </Route>
 
         <Route element={<ProductPagesLayout />}>

@@ -3,13 +3,15 @@ import { act } from "react";
 export const sidebarData = [
   {
     title: "Dashboard",
-    icon: "FaHouseUser",
+    // icon: "FaHouseUser",
+    icon: "FaTachometerAlt",
     link: "/dashboard",
   },
 
   {
     title: "Products",
-    icon: "FaHouseUser",
+    icon: "FaBoxes",
+    // icon: "FaHouseUser",
     link: "/products",
     children: [
       {
@@ -40,7 +42,8 @@ export const sidebarData = [
   },
   {
     title: "Purchase",
-    icon: "FaHouseUser",
+    // icon: "FaHouseUser",
+    icon: "FaShoppingCart",
     link: "/purchase",
     children: [
       {
@@ -59,7 +62,8 @@ export const sidebarData = [
   },
   {
     title: "Sale",
-    icon: "FaHouseUser",
+    icon: "FaShoppingBag",
+    // icon: "FaHouseUser",
     link: "/sale",
     children: [
       {
@@ -106,7 +110,8 @@ export const sidebarData = [
   },
   {
     title: "Expense",
-    icon: "FaHouseUser",
+    icon: "FaMoneyBillWave",
+    // icon: "FaHouseUser",
     link: "/expense",
     children: [
       {
@@ -125,7 +130,8 @@ export const sidebarData = [
   },
   {
     title: "Income",
-    icon: "FaHouseUser",
+    icon: "FaCoins",
+    // icon: "FaHouseUser",
     link: "/income",
     children: [
       {
@@ -144,7 +150,8 @@ export const sidebarData = [
   },
   {
     title: "Quotation",
-    icon: "FaQuoteLeft",
+    icon: "FaFileInvoice",
+    // icon: "FaQuoteLeft",
     link: "/quotation",
     children: [
       {
@@ -159,7 +166,8 @@ export const sidebarData = [
   },
   {
     title: "Transfer",
-    icon: "FaQuoteLeft",
+    icon: "FaExchangeAlt",
+    // icon: "FaQuoteLeft",
     link: "/transfer",
     children: [
       {
