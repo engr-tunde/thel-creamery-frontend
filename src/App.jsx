@@ -27,7 +27,9 @@ import IncomeList from "./pages/income/IncomeList";
 // Sale Imports 
 import SalePagesLayout from './layouts/SalePagesLayout.jsx'
 import SaleListPage from "./pages/sale/SaleList.jsx";
-
+import TransferList from "./pages/transfer/TransferList.jsx";
+import AddTransfer from "./pages/transfer/AddTransfer.jsx";
+import ImportTransferByCSV from "./pages/transfer/ImportTransferByCSV.jsx";
 
 
 
@@ -47,37 +49,22 @@ function App() {
           <Route path="/dashboard" element={<DashboardPage />} />
           <Route path="/products" element={<ProductPageList />} />
           <Route path="/products/category" element={<CategoryPage />} />
-          <Route
-            path="/products/adjustment-list"
-            element={<AdjustmentListPage />}
-          />
+          <Route path="/products/adjustment-list" element={<AdjustmentListPage />}/>
           <Route path="/expense-category" element={<ExpenseCategory />} />
           <Route path="/expense-list" element={<ExpenseList />} />
           <Route path="/" element={<AddExpenseFormModal />} />
           <Route path="/income-category" element={<IncomeCategory />} />
           <Route path="/income-list" element={<IncomeList />} />
           <Route path="/purchases" element={<PurchaseListPage />} />
-
-        </Route>
-
-        <Route element={<ProductPagesLayout />}>
-          <Route
-            path="/products/print_barcode"
-            element={<PrintBarcodePage />}
-          />
-          <Route
-            path="/products/add_adjustment"
-            element={<AddAdjustmentPage />}
-          />
+          <Route path="/transfer-list" element={<TransferList />} />
+          <Route path="/add-transfer" element={<AddTransfer />} />
+          <Route path="/products/print_barcode" element={<PrintBarcodePage />}/>
+          <Route path="/import-transfer-by-CSV" element={<ImportTransferByCSV />} />
+          <Route path="/products/add_adjustment"element={<AddAdjustmentPage />}/>
           <Route path="/products/product-list" element={<ProductPageList />} />
-          <Route
-            path="/products/adjustment-list"
-            element={<AdjustmentListPage />}
-          />
+          <Route path="/products/adjustment-list" element={<AdjustmentListPage />}/>
           <Route path="/products/stock-count" element={<StockCountPage />} />
           <Route path="/products/category" element={<CategoryPage />} />
-        </Route>
-        <Route element={<SalePagesLayout />}>
           <Route path="/sales/sale-list" element={<SaleListPage />} />
         </Route>
       </Routes>
