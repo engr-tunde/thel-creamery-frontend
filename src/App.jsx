@@ -27,6 +27,7 @@ import IncomeList from "./pages/income/IncomeList";
 // Sale Imports 
 import SalePagesLayout from './layouts/SalePagesLayout.jsx'
 import SaleListPage from "./pages/sale/SaleList.jsx";
+import TransferList from "./pages/transfer/TransferList.jsx";
 
 
 
@@ -55,6 +56,7 @@ function App() {
           <Route path="/" element={<AddExpenseFormModal />} />
           <Route path="/income-category" element={<IncomeCategory />} />
           <Route path="/income-list" element={<IncomeList />} />
+          <Route path="/transfer-list" element={<TransferList />} />
         </Route>
 
         <Route element={<ProductPagesLayout />}>
