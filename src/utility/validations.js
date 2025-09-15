@@ -37,3 +37,15 @@ export const validateAddProduct = () => {
 
   return validationSchema;
 };
+
+export const validateStockCount = () => {
+  const validationSchema = yup.object({
+    warehouse: yup.string().required("Warehouse name is missing"),
+    category: yup.string().required("Category is missing"),
+    brand: yup
+      .string()
+      .required("Brand is not provided"),
+  });
+
+  return validationSchema;
+};

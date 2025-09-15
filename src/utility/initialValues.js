@@ -26,3 +26,11 @@ export const addProductValues = (data) => {
   };
   return initialValues;
 };
+export const addStockCountValues = (data) => {
+  const initialValues = {
+    warehouse: data ? data.warehouse : "",
+    category: data ? data.category : "",
+    brand: data ? data.brand : "",
+  };
+  return initialValues;
+};

@@ -20,11 +20,15 @@ import ImportProduct from "../../component/products/ImportProduct";
 import { productTableColumn, proListRowData } from "../../data/productData";
 import Table from "../../component/global/Table";
 import ProductRowTemplate from "../../component/products/ProductRowTemplate";
+import useFetch from "../../api/useFetch";
 
 const ProductPageList = () => {
   const [eyeBtnOpen, setEyeBtnOpen] = useState(false);
   const [filterOpen, setfilterOpen] = useState(false);
   const [importOpen, setimportOpen] = useState(false);
+
+  const { data } = useFetch("products");
+  console.log("data", data);
 
   const handleImportClick = () => {
     setimportOpen(!importOpen);

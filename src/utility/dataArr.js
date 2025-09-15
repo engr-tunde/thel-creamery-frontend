@@ -34,7 +34,7 @@ export const sidebarData = [
       },
       {
         title: "Stock Count",
-        link: "/stock-count",
+        link: "/products/stock-count",
       },
     ],
   },

@@ -1,6 +1,15 @@
 import { useState } from "react";
-import ProductForm from "./ProductForm";
+import ProductForm from "./product-form/ProductForm";
 import { FaPlus, FaTimesCircle } from "react-icons/fa";
+import axios from "axios";
+import { AiFillEdit } from "react-icons/ai";
+import { RiDeleteBin6Line } from "react-icons/ri";
+import {
+  DELETE_CATEGORY,
+  DELETE_PRODUCT,
+  DELETE_STOCKCOUNT,
+} from "../../constants/constants";
+import StockCountForm from "../products/stockCount/StockCountForm";
 
 const FormModal = ({ table, type, id, data, title }) => {
   const [open, setopen] = useState(false);
@@ -14,13 +23,38 @@ const FormModal = ({ table, type, id, data, title }) => {
       : "bg-[#d8d5ff]";
 
   const forms = {
-    product: (type, data) => (
-      <ProductForm type={type} data={data} setopen={setopen} />
-    ),
+    product: (type, data) =>
+      type == "update" ? (
+        data && <ProductForm type={type} data={data} setopen={setopen} />
+      ) : (
+        <ProductForm type={type} data={data} setopen={setopen} />
+      ),
+    stockcount: (type, data) =>
+      type == "update" ? (
+        data && <StockCountForm type={type} data={data} setopen={setopen} />
+      ) : (
+        <StockCountForm type={type} data={data} setopen={setopen} />
+      ),
   };
 
-  const handleDelete = () => {
-    console.log("deleting an item");
+  const handleDelete = async () => {
+    const res =
+      table === "product"
+        ? await axios.delete(`${DELETE_PRODUCT}/${id}`)
+        : table === "category"
+        ? await axios.delete(`${DELETE_CATEGORY}/${id}`)
+        : table === "stockcount"
+        ? await axios.delete(`${DELETE_STOCKCOUNT}/${id}`)
+        : null;
+    if (res.status.toString().includes("20")) {
+      successMessage("Successfully deleted data");
+      setopen(false);
+      setTimeout(() => {
+        window.location.reload();
+      }, 1000);
+    } else {
+      errorMessage("Unable to delete data");
+    }
   };
 
   const Form = () => {
@@ -50,10 +84,20 @@ const FormModal = ({ table, type, id, data, title }) => {
       > */}
       <button
         onClick={() => setopen(true)}
-        className="flex items-center gap-2 py-2 px-3 rounded-sm bg-[#17a2b8] text-[15px] text-white cursor-pointer"
+        className={
+          type == "create"
+            ? "flex items-center gap-2 py-2 px-3 rounded-sm bg-[#17a2b8] text-[15px] text-white cursor-pNointer`"
+            : "flex items-center gap-1"
+        }
       >
         <span>
-          <FaPlus />
+          {type == "create" ? (
+            <FaPlus />
+          ) : type == "update" ? (
+            <AiFillEdit />
+          ) : type == "delete" ? (
+            <RiDeleteBin6Line />
+          ) : null}
         </span>
         <span>{title}</span>
       </button>
