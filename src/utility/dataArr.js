@@ -42,14 +42,8 @@ export const sidebarData = [
   },
   {
     title: "Purchase",
-<<<<<<< HEAD
     icon: "FaHouseUser",
     link: "/purchases",
-=======
-    // icon: "FaHouseUser",
-    icon: "FaShoppingCart",
-    link: "/purchase",
->>>>>>> efc273515a811b4a49fb84b7d0f14e8f9cbd38a1
     children: [
       {
         title: "Purchase List",
@@ -196,11 +190,11 @@ export const sidebarData = [
     children: [
       {
         title: "Sale",
-        link: "/sale",
+        link: "return-sale",
       },
       {
         title: "Purchase",
-        link: "/purchase",
+        link: "/return-purchase",
       },
     ],
   },
