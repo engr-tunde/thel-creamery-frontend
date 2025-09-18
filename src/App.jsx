@@ -30,6 +30,7 @@ import SaleListPage from "./pages/sale/SaleList.jsx";
 import TransferList from "./pages/transfer/TransferList.jsx";
 import AddTransfer from "./pages/transfer/AddTransfer.jsx";
 import ImportTransferByCSV from "./pages/transfer/ImportTransferByCSV.jsx";
+import { ToastContainer } from "react-toastify";
 
 
 
@@ -37,9 +38,21 @@ function App() {
   const [count, setCount] = useState(0);
 
   return (
-    <BrowserRouter>
-      <Routes>
-        {/* <Route element={<AuthLayout />}>
+    <>
+      <ToastContainer
+        position="bottom-right"
+        autoClose={3000}
+        hideProgressBar={false}
+        newestOnTop={false}
+        closeOnClick
+        rtl={false}
+        pauseOnFocusLoss
+        draggable
+        pauseOnHover
+      />
+      <BrowserRouter>
+        <Routes>
+          {/* <Route element={<AuthLayout />}>
           <Route path="/login" element={<LoginPage />} />
           <Route path="/forget-password" element={<null />} />
           <Route path="/reset-password" element={<null />} />
@@ -69,6 +82,7 @@ function App() {
         </Route>
       </Routes>
     </BrowserRouter>
+    </>
   );
 }
 

@@ -23,6 +23,7 @@ export const addProductValues = (data) => {
     featured: data ? data.featured : "",
     embeddedBarcode: data ? data.embeddedBarcode : "",
     initialStock: data ? data.initialStock : "",
+    productDetails: data ? data.productDetails : "",
   };
   return initialValues;
 };
@@ -42,8 +43,24 @@ export const addPurchaseValues = (data) => {
     discount: data ? data.discount : "",
     shippingCost: data ? data.shippingCost: "",
     paymentStatus: data ? data.paymentStatus: "",
-    note: data ? data.note : ""
+    note: data ? data.note : "",
+  };
+  return initialValues;
+}
     
+export const addStockCountValues = (data) => {
+  const initialValues = {
+    warehouse: data ? data.warehouse : "",
+    category: data ? data.category : "",
+    brand: data ? data.brand : "",
+  };
+  return initialValues;
+};
+export const adjustmentValues = (data) => {
+  const initialValues = {
+    warehouse: data ? data.warehouse : "",
+    selectProduct: data ? data.selectProduct : "",
+    productDetail: data ? data.productDetails : "",
   };
   return initialValues;
 };

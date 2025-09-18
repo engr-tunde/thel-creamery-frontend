@@ -1,7 +1,7 @@
 import { useFormikContext } from "formik";
 import { FaEye } from "react-icons/fa";
 
-const AppInputField = ({name, type, id, placeholder, className, defaultValue, options}) => {
+const AddInputField = ({name, type, id, placeholder, className, defaultValue, options}) => {
 
     const { errors, values, touched, handleChange, handleBlur } = useFormikContext();
     console.log(values)
@@ -76,4 +76,4 @@ const AppInputField = ({name, type, id, placeholder, className, defaultValue, op
     )
 }
 
-export default AppInputField;
+export default AddInputField;

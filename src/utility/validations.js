@@ -33,6 +33,7 @@ export const validateAddProduct = () => {
       .string()
       .required("Product embeddedBarcode is missing"),
     initialStock: yup.string().required("Product initialStock is missing"),
+    productDetails: yup.string().required("Product details is missing"),
   });
 
   return validationSchema;
@@ -58,7 +59,31 @@ export const validateAddPurchase = () => {
       .required("Payment status is missing"),
     note: yup
       .string()
-      .required("Add short note"),
+      .required("Add short note"),});
+
+  return validationSchema;
+};
+
+export const validateStockCount = () => {
+  const validationSchema = yup.object({
+    warehouse: yup.string().required("Warehouse name is missing"),
+    category: yup.string().required("Category is missing"),
+    brand: yup
+      .string()
+      .required("Brand is not provided"),
+  });
+
+  return validationSchema;
+};
+export const validateAdjustment = () => {
+  const validationSchema = yup.object({
+    warehouse: yup.string().required("Warehouse name is missing"),
+    selectProduct: yup
+      .string()
+      .required("Product is not provided"),
+    productDetails: yup
+      .string()
+      .required("Product details is not provided"),
   });
 
   return validationSchema;
