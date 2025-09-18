@@ -191,11 +191,11 @@ export const sidebarData = [
     children: [
       {
         title: "Sale",
-        link: "/sale",
+        link: "return-sale",
       },
       {
         title: "Purchase",
-        link: "/purchase",
+        link: "/return-purchase",
       },
     ],
   },

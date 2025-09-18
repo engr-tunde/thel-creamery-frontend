@@ -31,6 +31,8 @@ import TransferList from "./pages/transfer/TransferList.jsx";
 import AddTransfer from "./pages/transfer/AddTransfer.jsx";
 import ImportTransferByCSV from "./pages/transfer/ImportTransferByCSV.jsx";
 import { ToastContainer } from "react-toastify";
+import ReturnSaleList from "./pages/return/ReturnSaleList.jsx";
+import ReturnPurchaseList from "./pages/return/ReturnPurchaseList.jsx";
 
 
 
@@ -79,6 +81,10 @@ function App() {
           <Route path="/products/stock-count" element={<StockCountPage />} />
           <Route path="/products/category" element={<CategoryPage />} />
           <Route path="/sales/sale-list" element={<SaleListPage />} />
+          <Route path="/return-sale" element={<ReturnSaleList />} />
+          <Route path="/return-purchase" element={<ReturnPurchaseList />} />
+
+
         </Route>
       </Routes>
     </BrowserRouter>
