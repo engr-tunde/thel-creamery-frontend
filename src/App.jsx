@@ -33,6 +33,7 @@ import ImportTransferByCSV from "./pages/transfer/ImportTransferByCSV.jsx";
 import { ToastContainer } from "react-toastify";
 import ReturnSaleList from "./pages/return/ReturnSaleList.jsx";
 import ReturnPurchaseList from "./pages/return/ReturnPurchaseList.jsx";
+import AddSale from "./pages/sale/AddSale.jsx";
 
 
 
@@ -83,8 +84,7 @@ function App() {
           <Route path="/sales/sale-list" element={<SaleListPage />} />
           <Route path="/return-sale" element={<ReturnSaleList />} />
           <Route path="/return-purchase" element={<ReturnPurchaseList />} />
-
-
+          <Route path="/sales/add-sale" element={<AddSale />} />
         </Route>
       </Routes>
     </BrowserRouter>
