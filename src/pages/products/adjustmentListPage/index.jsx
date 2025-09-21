@@ -95,13 +95,7 @@ const AdjustmentListPage = () => {
 
   return (
     <div className="w-full">
-      {/* The Add Adjustment form modals buttons */}
-      {/* <div className="w-fit flex items-center mt-9 gap-2 py-2 px-3 rounded-sm bg-[#17a2b8] text-[15px] text-white cursor-pointer">
-        <span>
-          <FaPlus />
-        </span>
-        <span>Add Adjustment</span>
-      </div> */}
+      
       <FormModal type="create" table="adjustment" title="Add Adjustment" />
 
       {/* Records per page */}

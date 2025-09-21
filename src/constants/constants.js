@@ -18,6 +18,21 @@ const CREATE_ADJUSTMENT = `${API_URL}/adjustment`;
 const UPDATE_ADJUSTMENT = `${API_URL}/adjustment`;
 const DELETE_ADJUSTMENT = `${API_URL}/adjustment`;
 
+// Accounting
+const CREATE_ACCOUNTING = `${API_URL}/accounting`;
+const UPDATE_ACCOUNTING = `${API_URL}/accounting`;
+const DELETE_ACCOUNTING = `${API_URL}/accounting`;
+
+// Money Transfer
+const CREATE_TRANSFER = `${API_URL}/transfer`;
+const UPDATE_TRANSFER = `${API_URL}/transfer`;
+const DELETE_TRANSFER = `${API_URL}/transfer`;
+
+// Money Transfer
+const CREATE_STATEMENT= `${API_URL}/statement`;
+const UPDATE_STATEMENT= `${API_URL}/statement`;
+const DELETE_STATEMENT= `${API_URL}/statement`;
+
 export {
   API_URL,
   CREATE_PRODUCT,
@@ -32,4 +47,13 @@ export {
   CREATE_ADJUSTMENT,
   UPDATE_ADJUSTMENT,
   DELETE_ADJUSTMENT,
+  CREATE_ACCOUNTING,
+  UPDATE_ACCOUNTING,
+  DELETE_ACCOUNTING,
+  CREATE_TRANSFER,
+  DELETE_TRANSFER,
+  UPDATE_TRANSFER,
+  CREATE_STATEMENT,
+  UPDATE_STATEMENT,
+  DELETE_STATEMENT
 };

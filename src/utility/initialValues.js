@@ -35,19 +35,19 @@ export const addPurchaseValues = (data) => {
     warehouse: data ? data.warehouse : "",
     date: data ? data.date : "",
     supplier: data ? data.supplier : "",
-    attachDocument: data ? data.attachDocument: "",
+    attachDocument: data ? data.attachDocument : "",
     currency: data ? data.currency : "",
     exchangeRate: data ? data.exchangeRate : "",
     selectProduct: data ? data.selectProduct : "",
     orderTax: data ? data.orderTax : "",
     discount: data ? data.discount : "",
-    shippingCost: data ? data.shippingCost: "",
-    paymentStatus: data ? data.paymentStatus: "",
+    shippingCost: data ? data.shippingCost : "",
+    paymentStatus: data ? data.paymentStatus : "",
     note: data ? data.note : "",
   };
   return initialValues;
-}
-    
+};
+
 export const addStockCountValues = (data) => {
   const initialValues = {
     warehouse: data ? data.warehouse : "",
@@ -56,11 +56,40 @@ export const addStockCountValues = (data) => {
   };
   return initialValues;
 };
+
 export const adjustmentValues = (data) => {
   const initialValues = {
     warehouse: data ? data.warehouse : "",
     selectProduct: data ? data.selectProduct : "",
     productDetail: data ? data.productDetails : "",
+  };
+  return initialValues;
+};
+
+export const accountingValues = (data) => {
+  const initialValues = {
+    accountNumber: data ? data.accountNumber : "",
+    name: data ? data.name : "",
+    initialBalance: data ? data.initialBalance : "",
+    note: data ? data.note : "",
+  };
+  return initialValues;
+};
+
+export const transferValues = (data) => {
+  const initialValues = {
+    fromAccount: data ? data.fromAccount : "",
+    toAccount: data ? data.toAccount : "",
+    amount: data ? data.amount : "",
+  };
+  return initialValues;
+};
+
+export const statementValues = (data) => {
+  const initialValues = {
+    account: data ? data.account : "",
+    type: data ? data.type : "",
+    chooseDate: data ? data.chooseDate : "",
   };
   return initialValues;
 };
