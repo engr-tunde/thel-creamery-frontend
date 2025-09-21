@@ -1,7 +1,7 @@
 import { RiDeleteBin6Line } from "react-icons/ri";
 const Table = ({ tableColumn, rowData, rowTemplate, checkAll, deleIcon }) => {
   return (
-    <table className="overflow-x-auto max-w-full">
+    <table className="overflow-x-auto max-w-full my-3">
       <thead className="bg-white mb-3 text-gray-700 w-full border-collapse border-b border-gray-700">
         <tr className="">
           {checkAll && (
