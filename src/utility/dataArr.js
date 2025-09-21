@@ -7,7 +7,7 @@ export const sidebarData = [
     icon: "FaTachometerAlt",
     link: "/dashboard",
   },
-
+  
   {
     title: "Products",
     icon: "FaBoxes",
@@ -42,27 +42,23 @@ export const sidebarData = [
   },
   {
     title: "Purchase",
-<<<<<<< HEAD
-    icon: "FaHouseUser",
+    // icon: "FaHouseUser",
     link: "/purchases",
-=======
     // icon: "FaHouseUser",
     icon: "FaShoppingCart",
-    link: "/purchase",
->>>>>>> efc273515a811b4a49fb84b7d0f14e8f9cbd38a1
     children: [
       {
         title: "Purchase List",
         link: "/purchases",
       },
-      {
-        title: "Add Purchase",
-        link: "/add-purchase",
-      },
-      {
-        title: "Import Purchase By CVS",
-        link: "/import-purchase-by-cvs",
-      },
+      // {
+      //   title: "Add Purchase",
+      //   link: "/add-purchase",
+      // },
+      // {
+      //   title: "Import Purchase By CVS",
+      //   link: "/import-purchase-by-cvs",
+      // },
     ],
   },
   {

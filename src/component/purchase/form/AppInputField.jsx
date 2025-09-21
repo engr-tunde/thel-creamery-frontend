@@ -7,7 +7,7 @@ const AppInputField = ({name, type, id, placeholder, className, defaultValue, op
     console.log(values)
     console.log(errors)
     const value = values[name];
-    console.log(value)
+    // console.log(value)
     const error = errors[name];
     const isInputTouched = touched[name];
     return ( 

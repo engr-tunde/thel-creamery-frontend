@@ -88,7 +88,7 @@ const rowTemplate = (item, i) => {
         
 }
     return (
-        <div className="flex flex-col border-[1px] border-[rgb(228,230,252)] rounded-sm">
+        <div className="flex flex-col border-[1px] border-[rgb(228,230,252)] rounded-sm p-9">
             <div className="flex w-full justify-between bg-[rgb(248,249,250)] p-3 items-center">
                 <div>Deleted Purchases</div>
                 <div><FormModal  type = "delete" /></div>

@@ -1,5 +1,5 @@
 import CustomFormik from "../../../global/CustomFormik"
-import AppInputField from "../AddInputField"
+import AppInputField from "../AppInputField"
 import AppSubmitButton from "../../AppSubmitButton";
 import {orderTax, purchaseStatus, supplier, warehouse } from "../../../../data/purchases";
 import { RiDeleteBin6Line } from "react-icons/ri";
@@ -21,7 +21,7 @@ const ImportInner = ({
             initialValues={initialValues}
             validationSchema={validationSchema}
         >
-          <div>
+          <div className="p-8">
             <div className="w-full flex flex-col gap-5 p-5 border-[1px] border-[rgb(228,230,252)] rounded-sm">
               <div className="flex flex-col gap-4">
                 <div>Import Purchase</div>

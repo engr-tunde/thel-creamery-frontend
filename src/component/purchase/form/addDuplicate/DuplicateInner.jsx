@@ -1,13 +1,12 @@
 import CustomFormik from "../../../global/CustomFormik"
 import AppInputField from "../AppInputField"
 import AppSubmitButton from "../../AppSubmitButton";
-import { currency, orderTax, paymentStatus, purchaseStatus, supplier, warehouse } from "../../../../data/purchases";
-import { rowData } from "../../../../data/purchases";
+import { currency, duplicateData, orderTax, paymentStatus, purchaseStatus, supplier, warehouse } from "../../../../data/purchases";
 import Table from "../../../global/Table";
 import { RiDeleteBin6Line } from "react-icons/ri";
 
 
-const ProductInner = ({
+const DuplicateInner = ({
     options,
     type,
     handleSubmit,
@@ -22,47 +21,51 @@ const ProductInner = ({
     //   className: "text-start text-[13px]  w-full"
     // },
     {
-    title: "Product"
+    title: "Name",
+    className: "px-2 bg-red-700 w-[150px]"
     },
     {
-      title: "Quantity"
+    title: "Code",
+    className: "px-2"
     },
     {
-      title: "Net Unit Cost"
+      title: "Quantity",
+      className: "px-2 w-[30px]"
     },
     {
-      title: "Profit Margin"
+    title: "Batch No",
+    className: "px-2"
     },
     {
-      title: "Product Price"
+    title: "Expired Date",
+    className: "px-2 ml-2"
     },
     {
-      title: "Discount"
+      title: "Net Unit Cost",
+      className: "px-2"
     },
     {
-      title: "Tax"
+      title: "Discount",
+      className: "px-2"
     },
     {
-      title: "Tax	SubTotal"
+      title: "Tax",
+      className: "px-2"
+    },
+    {
+      title: "SubTotal",
+      className: "px-2"
     },
 ]
 
-    const rowTemplate = (item, i) => {
+const rowTemplate = (item, i) => {
         return (
-            <tr key={i} className=" text-[rgb(94,88,133)]">
-                <td className="text-[rgb(94,88,133)] p-3">{item.product}</td>
-                <td className="text-[rgb(94,88,133)] p-3">{item.quantity}</td>
-                <td className="text-[rgb(94,88,133)] p-3">{item.netUnitCost}</td>
-                <td className="text-[rgb(94,88,133)] p-3">{item.profitMargin}</td>
-                <td className="text-[rgb(94,88,133)] p-3">{item.productPrice}</td>
-                <td className="p-3">{item.discount}</td>
-                <td className="p-3">{item.tax}</td>
-                <td className="p-3">{item.subTotal}</td>
-                <td className=""><RiDeleteBin6Line/></td>  
+            <tr key={i} className=" text-[rgb(94,88,133)] border-b-[1px] border-[rgb(222,226,230)] p-4">
+             
             </tr>
         )
+        
     }
-
     return (
         <CustomFormik
             onSubmit={handleSubmit}
@@ -70,9 +73,9 @@ const ProductInner = ({
             validationSchema={validationSchema}
         >
           <div className="w-full flex flex-col gap-10 p-8">
-            <div className="w-full flex flex-col gap-5 p-5 border-[1px] border-[rgb(228,230,252)] rounded-sm">
+            <div className="w-full flex flex-col gap-5 p-5 text-[rgb(136,136,136)] border-[1px] border-[rgb(228,230,252)] rounded-sm">
               <div className="flex flex-col gap-4">
-                <div>Add Purchase</div>
+                <div>Add Duplicate Purchase</div>
                 <div>The field labels marked with * are required input fields.</div>
               </div>
               <div className="grid grid-cols-3 gap-3 justify-center">
@@ -86,7 +89,7 @@ const ProductInner = ({
                   <label htmlFor="" className="text-[#785873] text-sm">
                   Reference No.
                   </label>
-                  <AppInputField name="referenceNumber" />
+                  <div>pr-data from the databased, when product is added</div> 
                 </div>
                 <div className="flex flex-col gap-1 w-full">
                   <label htmlFor="" className="text-[#785873] text-sm">
@@ -111,23 +114,6 @@ const ProductInner = ({
                   Attach Document
                   </label>
                 <AppInputField name="attachDocument" type="file"/>
-                </div>
-                <div className="flex gap-3">
-                  <div className="flex flex-col gap-1 w-[45%]">
-                    <label htmlFor="" className="text-[#785873] text-sm">
-                    Currency *
-                    </label>
-                    <AppInputField name="currency" options={currency}/>
-                  </div>
-                  <div className="flex flex-col gap-1 w-[45%]">
-                    <label htmlFor="" className="text-[#785873] text-sm">
-                      Exchange Rate *
-                    </label>
-                    <div className="flex">
-                      <AppInputField name="exchangeRate" type="text"/> 
-                      <div className="h-[38px] border-[rgb(228,230,252)] border-[2px] border-l-0 p-2 text-center">i</div>
-                    </div>
-                  </div>
                 </div> 
               </div>
               <div className="flex flex-col gap-1 w-full">
@@ -151,7 +137,7 @@ const ProductInner = ({
                   (
                   <Table 
                     tableColumn={tableColumn} 
-                    rowData={rowData}
+                    rowData={duplicateData}
                     rowTemplate={rowTemplate}
                     deleIcon = "icon"
                   />
@@ -198,7 +184,7 @@ const ProductInner = ({
               disabled={disabled}
               />
             </div>
-            <div className="w-full h-[45px] border-[1px] text-sm border-[rgb(228,230,252)] rounded-sm flex justify-between ">
+            <div className="w-full h-[45px] border-[1px] text-[rgb(136,136,136)] text-sm border-[rgb(228,230,252)] rounded-sm flex justify-between ">
               <div className="flex p-1 w-[100px] justify-between border-r-[1px] border-[rgb(228,230,252)] items-center">
                     <div className="font-semibold ">items</div>
                     <div>0.00</div>
@@ -235,4 +221,4 @@ const ProductInner = ({
     
 }
 
-export default ProductInner;
+export default DuplicateInner;

@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { GoArrowDown, GoArrowUp } from "react-icons/go";
 import {  IoIosCheckmark,  } from "react-icons/io";
-import { purchaserowData } from "../../utility/purchaseData";
+
 
  const Table2 = ({ tableColumn, rowData, rowTemplate,validateHead, setValidateHead }) => 
   {

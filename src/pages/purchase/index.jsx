@@ -5,7 +5,11 @@ import { AiOutlineFilePdf, AiOutlineFileExcel } from "react-icons/ai";
 import { BsFiletypeCsv } from "react-icons/bs";
 import { MdOutlineVisibility } from "react-icons/md";
 import { TfiPrinter } from "react-icons/tfi";
-import { RiChatDeleteLine } from "react-icons/ri";
+import { RiChatDeleteLine, RiDeleteBin6Line} from "react-icons/ri";
+import { FaEye, FaRegMoneyBillAlt, FaEdit } from "react-icons/fa";
+
+import { useEffect } from "react";
+// import { RiDeleteBin6Line } from "react-icons/ri";
 
 import AppInputField from "../../component/form/AppInputField";
 import { useState } from "react";
@@ -16,18 +20,23 @@ import {
 } from "../../utility/dataArr";
 import AppSubmitButton from "../../component/form/AppSubmitButton";
 import Table2 from "../../component/purchase/Table2";
-import { purchaserowData } from "../../utility/purchaseData";
-import { IoMdArrowDropdown } from "react-icons/io";
-import { IoIosCheckmark } from "react-icons/io";
+import { purchaserowData, ViewPurchases } from "../../data/purchases";
+import { IoMdArrowDropdown, IoIosCheckmark, IoMdAdd  } from "react-icons/io";
 import FormModal from "../../component/purchase/FormModal";
 
 const PurchaseListPage = () => {
   const [selectedValue, setSelectedValue] = useState("All Warehouse");
   const [filterForm, setFilterform] = useState(false);
+  const [viewPurchase, setViewPurchase] = useState(false)
 
   //handle change
   const handleChanges = (event) => {
     setSelectedValue(event.target.value);
+  };
+
+  // handle view purchases
+  const handleviewPurchase = () => {
+    setViewPurchase(!viewPurchase);
   };
 
   //hndle filter form pening and closing
@@ -96,6 +105,11 @@ const PurchaseListPage = () => {
   const rowTemplate = (item, i) => {
     const [validate, setValidate] = useState(item); //original data
     const [action, setAction] = useState(false);
+    const [leave, setLeave] = useState(true);
+
+    const handleleave = () => {
+      setLeave(false)
+    }
 
     const checkValidate = () => {
       setValidate(!validate);
@@ -106,6 +120,18 @@ const PurchaseListPage = () => {
         setAction(!action);
       }
     };
+
+    // useEffect(() => {
+
+    //   const original = document.body.style.overflow
+
+    //   if(FormModal){
+    //     document.body.style.overflow = "hidden"
+    //   } else {
+    //     document.body.style.overflow = original
+    //   }
+    // },[])
+    
 
     return (
       <tr
@@ -156,27 +182,34 @@ const PurchaseListPage = () => {
               </div>
             </div>
             <div
+             onMouseLeave={toggleAction}
               className={
                 action
-                  ? "text-blue-800 bg-white w-[120px] z-1 rounded-sm p-8 absolute top-[35px] right-[40px] flex flex-col gap-2 item-center"
+                  ?  (i == 0 ? "text-blue-800 bg-white w-[170px] h-[270px] text-sm z-1 rounded-sm p-2 absolute top-[35px] right-[5px] flex flex-col gap-6 justify-start" : "text-blue-800 bg-white w-[170px] h-[270px] text-sm z-1 rounded-sm p-2 absolute bottom-[35px] right-[5px] flex flex-col gap-6 justify-start")
                   : "hidden"
               }
             >
-              <div className="flex gap-2 items-center justify-center">
-                <eye />
+             < FormModal type="View" table="product"/>
+              {/* <div className="flex gap-2 items-center justify-start">
+                <FaEye />
                 <span>View</span>
-              </div>
-              <div>
-                <eye />
-                <span>Duplicate</span>
-              </div>
-              <div>
-                <eye />
+              </div> */}
+              < FormModal type="Duplicate" table="product"/>
+              <div className="flex gap-2 items-center justify-start">
+                <FaEdit />
                 <span>Edit</span>
               </div>
-              <div>
-                <eye />
+              <div className="flex gap-2 items-center justify-start">
+                <FaRegMoneyBillAlt />
                 <span>View Payment</span>
+              </div>
+              <div className="flex gap-2 items-center justify-start">
+                <IoMdAdd />
+                <span>Add Payment</span>
+              </div>
+              <div className="flex gap-2 items-center justify-start">
+                <RiDeleteBin6Line  />
+                <span>Delete</span>
               </div>
             </div>
           </div>
@@ -336,7 +369,7 @@ const PurchaseListPage = () => {
             <input type="text" className="w-full" />
           </div>
         </div>
-        <div className="flex items-center justify-center gap-[4px]">
+        <div className="flex items-center justify-center gap-[4px] relative">
           <div className=" flex item-center justify-center p-3 bg-[rgb(255,117,136)] hover:bg-[rgb(113,122,131)] rounded-l-sm cursor-pointer">
             <AiOutlineFilePdf className="text-white " />
           </div>
@@ -352,8 +385,15 @@ const PurchaseListPage = () => {
           <div className="flex item-center justify-center p-3 bg-[rgb(235,84,58)] hover:bg-[rgb(113,122,131)]  font-semibold text[14px] cursor-pointer text-white">
             <RiChatDeleteLine className="text-white " />
           </div>
-          <div className="flex item-center justify-center p-3 bg-[rgb(124,92,196)] hover:bg-[rgb(113,122,131)] cursor-pointer rounded-l-s rounded-r-md">
+          <div onClick={handleviewPurchase}  className="flex item-center justify-center p-3 bg-[rgb(124,92,196)] hover:bg-[rgb(113,122,131)] cursor-pointer rounded-l-s rounded-r-md">
             <MdOutlineVisibility className="text-white " />
+          </div>
+          <div onMouseLeave={handleviewPurchase} className={viewPurchase ? "absolute z-50 bg-blue-700 text-white w-[130px] text-sm top-[43px] left-[140px] rounded-sm flex flex-col gap-2 justify-center p-3" : "hidden"}>
+            {
+              ViewPurchases.map((item, i) => (
+                <div key={i}>{item.item}</div>
+              ))
+            }
           </div>
         </div>
       </div>
