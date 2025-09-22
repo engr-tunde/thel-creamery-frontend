@@ -6,10 +6,10 @@ import CategoryHeader from "../../component/products/category/CategoryHeader";
 
 const CategoryPage = () => {
   return (
-    <div className="max-w-7xl mx-auto bg-white rounded-lg shadow-sm">
+    <div className=" w-full h-full bg-white pt-2 rounded-lg shadow-sm">
       <CategoryHeader />
 
-      <div className="overflow-x-auto">
+      <div className="w-full">
         <Table
           tableColumn={categoryTableColumn}
           rowTemplate={CategoryRowTemplate}

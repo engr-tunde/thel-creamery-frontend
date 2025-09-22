@@ -11,14 +11,14 @@
 //     <div className="flex p-2 justify-between items-center ">
 //       <div>
 //         <FaBars
-//           className="text-4xl p-2 border-[1px] border-purple-600 rounded-md text-purple-600 hover:bg-purple-600 hover:text-white"
+//           className="text-4xl p-2 border-[1px] border-[#ff7588] rounded-md text-[#ff7588] hover:bg-[#ff7588] hover:text-white"
 //           onClick={onToggleSidebar}
 //         />
 //       </div>
 
 //       <div className="plus flex items-center gap-3">
 //         <div
-//           className="text-[14px] py-1 px-2 border-[1px] border-purple-600 rounded-md text-purple-600 bg-white hover:bg-purple-600 hover:text-white"
+//           className="text-[14px] py-1 px-2 border-[1px] border-[#ff7588] rounded-md text-[#ff7588] bg-white hover:bg-[#ff7588] hover:text-white"
 //           onClick={() => setShowDropdown((prev) => !prev)}
 //         >
 //           <span>+</span>
@@ -38,7 +38,7 @@
 //             ))}
 //           </ul>
 //         )}
-//         <div className="flex justify-center text-[14px] text-center items-center gap-2 py-1 px-2 border-[1px] border-purple-600 rounded-md text-purple-600 bg-white hover:bg-purple-600 hover:text-white">
+//         <div className="flex justify-center text-[14px] text-center items-center gap-2 py-1 px-2 border-[1px] border-[#ff7588] rounded-md text-[#ff7588] bg-white hover:bg-[#ff7588] hover:text-white">
 //           <FaCartFlatbed />
 //           <span>POS</span>
 //         </div>
@@ -68,7 +68,7 @@ const NavBar = ({ onToggleSidebar }) => {
     <div className="flex py-2 px-6 justify-between items-center">
       <div>
         <FaBars
-          className="text-4xl p-2 border-[1px] border-purple-600 rounded-md text-purple-600 hover:bg-purple-600 hover:text-white"
+          className="text-4xl p-2 border-[1px] border-[#ff7588] rounded-md text-[#ff7588] hover:bg-[#ff7588] hover:text-white"
           onClick={onToggleSidebar}
         />
       </div>
@@ -76,7 +76,7 @@ const NavBar = ({ onToggleSidebar }) => {
       <div className="plus flex items-center gap-3 relative">
         {/* Plus Dropdown */}
         <div
-          className="text-[14px] py-1 px-2 border-[1px] border-purple-600 rounded-md text-purple-600 bg-white hover:bg-purple-600 hover:text-white"
+          className="text-[14px] py-1 px-2 border-[1px] border-[#ff7588] rounded-md text-[#ff7588] bg-white hover:bg-[#ff7588] hover:text-white"
           onClick={() => {
             setShowPlusDropdown((prev) => !prev);
             setShowAdminDropdown(false);
@@ -101,15 +101,15 @@ const NavBar = ({ onToggleSidebar }) => {
         )}
 
         {/* POS Button */}
-        <div className="flex justify-center text-[14px] text-center items-center gap-2 py-1 px-2 border-[1px] border-purple-600 rounded-md text-purple-600 bg-white hover:bg-purple-600 hover:text-white">
+        <div className="flex justify-center text-[14px] text-center items-center gap-2 py-1 px-2 border-[1px] border-[#ff7588] rounded-md text-[#ff7588] bg-white hover:bg-[#ff7588] hover:text-white">
           <FaShoppingBag />
           <span>POS</span>
         </div>
 
         {/* Icons */}
-        <MdOutlineLightMode className="text-purple-500 hover:cursor-pointer" />
-        <HiArrowsPointingOut className="text-purple-500 hover:cursor-pointer" />
-        <CiGlobe className="text-purple-500 hover:cursor-pointer" />
+        <MdOutlineLightMode className="text-[#ff7588] hover:cursor-pointer" />
+        <HiArrowsPointingOut className="text-[#ff7588] hover:cursor-pointer" />
+        <CiGlobe className="text-[#ff7588] hover:cursor-pointer" />
 
         {/* Admin Dropdown */}
         <div
@@ -119,9 +119,9 @@ const NavBar = ({ onToggleSidebar }) => {
             setShowPlusDropdown(false);
           }}
         >
-          <FaUser className="text-purple-500" />
+          <FaUser className="text-[#ff7588]" />
           <span>Admin</span>
-          <FaArrowDown className="text-purple-500" />
+          <FaArrowDown className="text-[#ff7588]" />
         </div>
         {showAdminDropdown && (
           <ul className="absolute top-12 right-0 bg-white shadow-md rounded-md w-40 py-2 shadow-gray-400 z-10">

@@ -12,11 +12,11 @@ const DashboardLayout = ({ children }) => {
         <LeftsideBar />
       </div>
       {/* right side */}
-      <div className="w-full flex flex-col gap-3">
+      <div className="w-full flex flex-col gap-1">
         {/* navbar side */}
         <NavBar onToggleSidebar={() => setSidebarOpen((prev) => !prev)} />
         {/* main  */}
-        <div className=" p-3 lg:p-7 min-h-screen">
+        <div className=" p-3 lg:p-5 min-h-screen">
           <Outlet />
         </div>
       </div>

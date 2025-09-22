@@ -1,8 +1,7 @@
 import { useState } from "react";
-import { AiFillEdit } from "react-icons/ai";
 import { FaRegEye } from "react-icons/fa";
 import { MdLocalPrintshop, MdNotes } from "react-icons/md";
-import { RiArrowDownSFill, RiDeleteBin6Line } from "react-icons/ri";
+import { RiArrowDownSFill } from "react-icons/ri";
 import FormModal from "../form/FormModal";
 
 function ProductRowTemplate(item, i) {
@@ -22,7 +21,7 @@ function ProductRowTemplate(item, i) {
       <td className="p-4 pr-2 text-start">
         <input type="checkbox" />
       </td>
-      <td className="p-4 pr-3 flex-row flex items-center gap-3 text-start">
+      <td className="pr-3 flex-row flex items-center gap-3 text-start">
         <img
           src={`/images/product-img/${item?.image}`}
           alt="product"
@@ -30,16 +29,16 @@ function ProductRowTemplate(item, i) {
         />
         {item?.productTitle}
       </td>
-      <td className="p-4 pr-3 table-cell text-start">
+      <td className="pr-3 table-cell text-start">
         <div className="">{item?.code}</div>
       </td>
-      <td className="p-4 pr-3 table-cell text-start">{item?.brand}</td>
-      <td className="p-4 pr-3 table-cell text-start">{item?.category}</td>
-      <td className="p-4 pr-3 table-cell text-start">{item.alertQuantity}</td>
-      <td className="p-4 pr-3 table-cell text-start">{item?.unit}</td>
-      <td className="p-4 pr-3 table-cell text-start">{item?.price}</td>
-      <td className="p-4 pr-3 table-cell text-start">{item?.cost}</td>
-      <td className="p-4 pr-3 table-cell text-start">{item?.stockWorth}</td>
+      <td className="pr-3 table-cell text-start">{item?.brand}</td>
+      <td className="pr-3 table-cell text-start">{item?.category}</td>
+      <td className="pr-3 table-cell text-start">{item.alertQuantity}</td>
+      <td className="pr-3 table-cell text-start">{item?.unit}</td>
+      <td className="pr-3 table-cell text-start">{item?.price}</td>
+      <td className="pr-3 table-cell text-start">{item?.cost}</td>
+      <td className="pr-3 table-cell text-start">{item?.stockWorth}</td>
       <td className="">
         <div
           className="relative flex gap-2 items-center border-[1px] text-[#7c5cc4] border-[#7c5cc4] p-2 rounded-sm w-fit"
@@ -77,7 +76,12 @@ function ProductRowTemplate(item, i) {
                 <div className="flex items-center gap-1">
                   {/* <RiDeleteBin6Line />
                   <span>Delete</span> */}
-                  <FormModal type="delete" id={item?.id} table="product" title="Delete"/>
+                  <FormModal
+                    type="delete"
+                    id={item?.id}
+                    table="product"
+                    title="Delete"
+                  />
                 </div>
               </div>
             )}

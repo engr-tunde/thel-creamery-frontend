@@ -1,4 +1,8 @@
 export const categoryTableColumn = [
+  // {
+  //   title: "",
+  //   className: "",
+  // },
   {
     title: "Category",
     className: "",

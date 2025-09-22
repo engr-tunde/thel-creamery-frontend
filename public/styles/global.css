@@ -14,3 +14,8 @@
 .primary-btn {
   @apply bg-blue-800 text-center text-white hover:scale-110 ease-in duration-200 rounded-md cursor-pointer;
 }
+
+::-webkit-scrollbar {
+  width: 6px;
+  background: #f8f9fa;
+}

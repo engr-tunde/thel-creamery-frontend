@@ -31,7 +31,8 @@ export default function MetricsGrid() {
       {metrics.map((metric) => (
         <div
           key={metric.label}
-          className={`p-4 rounded shadow ${metric.color} flex items-center gap-6`}
+          className={`p-4 ${metric.color} flex items-center  gap-6`}
+          style={{ boxShadow: "3px 3px 4px #b1b1b1b3" }}
         >
           <div className="text-3xl">{metric.icon}</div>
           <div>
