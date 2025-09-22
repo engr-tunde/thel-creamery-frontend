@@ -142,7 +142,7 @@ const ProductInner = ({
             </label>
             <div className="flex h-[40px] border-[1px] gap-0 border-[rgb(229,229,229)] items-center">
               <div className="bg-[rgb(94,88,115)] w-[6%] h-full"></div>
-              <AddInputField
+              <AppInputField
                 name="add-product"
                 placeholder="please type product code and select"
                 className=" bg-[rgb(253,253,255)]"
@@ -167,25 +167,25 @@ const ProductInner = ({
               <label htmlFor="" className="text-[#785873] text-sm">
                 Order Tax *
               </label>
-              <AddInputField name="orderTax" options={orderTax} />
+              <AppInputField name="orderTax" options={orderTax} />
             </div>
             <div className="flex flex-col gap-1 w-full">
               <label htmlFor="" className="text-[#785873] text-sm">
                 Discount
               </label>
-              <AddInputField name="discount" type="number" />
+              <AppInputField name="discount" type="number" />
             </div>
             <div className="flex flex-col gap-1 w-full">
               <label htmlFor="" className="text-[#785873] text-sm">
                 Shipping Cost
               </label>
-              <AddInputField name="shippingCost" type="number" />
+              <AppInputField name="shippingCost" type="number" />
             </div>
             <div className="flex flex-col gap-1 w-full">
               <label htmlFor="" className="text-[#785873] text-sm">
                 Payment Status *
               </label>
-              <AddInputField name="paymentStatus" options={paymentStatus} />
+              <AppInputField name="paymentStatus" options={paymentStatus} />
             </div>
           </div>
           <div className="flex flex-col gap-1 w-full">
