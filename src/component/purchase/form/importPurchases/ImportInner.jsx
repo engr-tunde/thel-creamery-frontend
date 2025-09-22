@@ -1,19 +1,24 @@
+
 import CustomFormik from "../../../global/CustomFormik"
 import AppInputField from "../AppInputField"
 import AppSubmitButton from "../../AppSubmitButton";
-import {orderTax, purchaseStatus, supplier, warehouse } from "../../../../data/purchases";
+import {
+  orderTax,
+  purchaseStatus,
+  supplier,
+  warehouse,
+} from "../../../../data/purchases";
 import { RiDeleteBin6Line } from "react-icons/ri";
 import { FaDownload } from "react-icons/fa";
 
-
 const ImportInner = ({
-    options,
-    type,
-    handleSubmit,
-    initialValues,
-    validationSchema,
-    disabled,
-    itemData,
+  options,
+  type,
+  handleSubmit,
+  initialValues,
+  validationSchema,
+  disabled,
+  itemData,
 }) => {
     return (
         <CustomFormik
@@ -96,15 +101,11 @@ const ImportInner = ({
                 title={type == "Add" || "Import" ? "Submit" : null}
                 disabled={disabled}
               />
-            </div>
+        </div>
           </div>
-          
-          
         </CustomFormik>
-        
-    )
-
     
-}
+  );
+};
 
 export default ImportInner;

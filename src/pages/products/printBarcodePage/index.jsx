@@ -1,4 +1,3 @@
-import AppInputField from "../../../component/form/AppInputField";
 import {
   formDetails,
   papperSize,
@@ -8,6 +7,10 @@ import AppSubmitButton from "../../../component/form/AppSubmitButton";
 import { useEffect, useState } from "react";
 import { IoIosCheckmark } from "react-icons/io";
 import { RiDeleteBinLine } from "react-icons/ri";
+import CustomFormik from "../../../component/global/CustomFormik";
+import Table from "../../../component/global/Table";
+// import { printbarcode } from "../../../utility/initialValues";
+// import { validateAddProduct } from "../../../utility/validations";
 
 const PrintBarcodePage = () => {
   const dropdownValue =
@@ -19,34 +22,63 @@ const PrintBarcodePage = () => {
     setSelectedValue(event.target.value);
   };
 
+  const tableColumn = [
+    {
+      accessor: "input",
+      title: "Name",
+      className: "font-semibold p-2",
+    },
+    {
+      accessor: "Date",
+      title: "Code",
+      className: "font-semibold p-2",
+    },
+    {
+      accessor: "Refrence",
+      title: "Quantity",
+      className: "font-semibold p-2",
+    },
+  ]
+
+    // const initialValues = printbarcode()
+    // const validationSchema = validateAddProduct()
   return (
-    <div className="w-full flex flex-col p-3 text-[rgb(94,88,115)] border-[2px] border-[rgb(229,229,229)] rounded-lg mr-12">
+     <CustomFormik >
+      <div className="w-full flex flex-col p-6 text-[rgb(94,88,115)] bg-white border-[2px] border-[rgb(229,229,229)] rounded-lg mr-12">
       <h1 className="font-bold text-3xl mb-4">Print Barcode</h1>
       <p className="text-sm mb-2">
         The field labels marked with * are required input fields.
       </p>
-      <div className="flex flex-col gap-1 mb-12">
+      <div className="flex flex-col gap-1 mb-8">
         <label htmlFor="" className="font-semibold text-[14px]">
           Add Product *
         </label>
         <div className=" flex h-[50px] border-[1px] gap-0 border-[rgb(229,229,229)] items-center">
           <div className="bg-[rgb(94,88,115)] w-[6%] h-full"></div>
-          <AppInputField
+          <input
             name="add-product"
             placeholder="please type product code and select"
-            className=" bg-[rgb(253,253,255)]"
+            className=" bg-[rgb(253,253,255)] w-full h-full"
+            type="text"
+            
           />
         </div>
       </div>
-      <div className="w-full grid grid-cols-4 h-36 border-[rgb(229,229,229)] border-b-[1px]">
+      <Table
+        tableColumn={tableColumn}
+        deleIcon={true}
+        // rowData={printBarode}
+        // rowTemplate={rowTemplate}
+      />
+      {/* <div className="w-full grid grid-cols-4 h-36 border-[rgb(229,229,229)] border-b-[1px]">
         {productSearch?.map((item, i) => (
           <div key={i} className="">
             {item.heading}
           </div>
         ))}
         <RiDeleteBinLine />
-      </div>
-      <div className="w-full flex flex-col gap-3 pt-4 border-b-1 border-b-[rgb(229,229,229)] pb-6">
+      </div> */}
+      <div className="w-full flex flex-col gap-3 pt-4 border-b-1 border-b-[rgb(229,229,229)] pb-6 mt-4">
         <h1 className="text-[rgb(94,88,115)] font-semibold text-sm">
           Information on Label *
         </h1>
@@ -80,8 +112,8 @@ const PrintBarcodePage = () => {
                 </div>
                 <div className="flex gap-[2px]">
                   <span>{item.size}:</span>
-                  <div className="border-[rgb(118,118,118)] border-1 rounded-sm relative">
-                    <AppInputField
+                  <div className="border-[rgb(118,118,118)] border-1 rounded-sm relative h-[35px]">
+                    <input
                       className={`${item.className}  h-full`}
                       type="number"
                     />
@@ -118,12 +150,14 @@ const PrintBarcodePage = () => {
             </select>
             <p>Selected value: {selectedValue}</p>
           </div>
-          <div className="border-1 border-[rgb(118,118,118)] rounded-md w-[85px] flex justify-center bg-blue-800 text-white">
+          <div  className="border-1 border-[rgb(118,118,118)] rounded-md w-[85px] flex justify-center bg-blue-800 text-white">
             <AppSubmitButton title="submit" />
           </div>
         </div>
       </div>
     </div>
+     </CustomFormik>
+    
   );
 };
 

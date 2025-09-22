@@ -20,6 +20,7 @@ import {
 } from "../../../utility/dataArr";
 import { useState } from "react";
 import AdjustmentListTable from "../../../component/global/AdjustmentListTable";
+import FormModal from "../../../component/form/FormModal";
 
 const AdjustmentListPage = () => {
   const [eyeBtnOpen, setEyeBtnOpen] = useState(false);
@@ -94,15 +95,10 @@ const AdjustmentListPage = () => {
 
   return (
     <div className="w-full">
-      {/* The Add Adjustment form modals buttons */}
-      <div className="w-fit flex items-center mt-9 gap-2 py-2 px-3 rounded-sm bg-[#17a2b8] text-[15px] text-white cursor-pointer">
-        <span>
-          <FaPlus />
-        </span>
-        <span>Add Adjustment</span>
-      </div>
+      
+      <FormModal type="create" table="adjustment" title="Add Adjustment" />
 
-    {/* Records per page */}
+      {/* Records per page */}
       <div className="flex items-center justify-between mt-10">
         {/* {left side */}
         <div className="flex items-center gap-1">
@@ -112,7 +108,7 @@ const AdjustmentListPage = () => {
             <option value="30">50</option>
             <option value="40">All</option>
           </select>
-          <  span className="text-[#858c85]">records per page</span>
+          <span className="text-[#858c85]">records per page</span>
         </div>
 
         {/* middle side */}

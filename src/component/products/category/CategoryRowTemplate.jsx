@@ -19,7 +19,7 @@ function CategoryRowTemplate(category) {
       <td className="p-4">{category.numberOfProducts}</td>
       <td className="p-4">{category.stockQuantity}</td>
       <td className="p-4">
-        {currencyFormatter(category.stockWorthPrice)} /{" "}
+        {currencyFormatter(category.stockWorthPrice)}
         {currencyFormatter(category.stockWorthCost)}
       </td>
       <td className="p-4">

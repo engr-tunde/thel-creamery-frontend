@@ -24,22 +24,41 @@ import IncomeList from "./pages/income/IncomeList";
 // import LoginPage from "./Pages/auth/Login";
 // import { ProductPage } from "./Pages/products";
 
-// Sale Imports 
-import SalePagesLayout from './layouts/SalePagesLayout.jsx'
+// Sale Imports
+import SalePagesLayout from "./layouts/SalePagesLayout.jsx";
 import SaleListPage from "./pages/sale/SaleList.jsx";
 import TransferList from "./pages/transfer/TransferList.jsx";
 import AddTransfer from "./pages/transfer/AddTransfer.jsx";
 import ImportTransferByCSV from "./pages/transfer/ImportTransferByCSV.jsx";
+import { ToastContainer } from "react-toastify";
+import ReturnSaleList from "./pages/return/ReturnSaleList.jsx";
+import ReturnPurchaseList from "./pages/return/ReturnPurchaseList.jsx";
+import AddSale from "./pages/sale/AddSale.jsx";
 
 
+import AccountListPage from "./pages/accounting/index.jsx";
+import BalanceSheetPage from "./pages/accounting/balance-sheet/index.jsx";
+import MoneyTransferPage from "./pages/accounting/money-transfer/index.jsx";
 
 function App() {
   const [count, setCount] = useState(0);
 
   return (
-    <BrowserRouter>
-      <Routes>
-        {/* <Route element={<AuthLayout />}>
+    <>
+      <ToastContainer
+        position="bottom-right"
+        autoClose={3000}
+        hideProgressBar={false}
+        newestOnTop={false}
+        closeOnClick
+        rtl={false}
+        pauseOnFocusLoss
+        draggable
+        pauseOnHover
+      />
+      <BrowserRouter>
+        <Routes>
+          {/* <Route element={<AuthLayout />}>
           <Route path="/login" element={<LoginPage />} />
           <Route path="/forget-password" element={<null />} />
           <Route path="/reset-password" element={<null />} />
@@ -66,9 +85,16 @@ function App() {
           <Route path="/products/stock-count" element={<StockCountPage />} />
           <Route path="/products/category" element={<CategoryPage />} />
           <Route path="/sales/sale-list" element={<SaleListPage />} />
+          <Route path="/return-sale" element={<ReturnSaleList />} />
+          <Route path="/return-purchase" element={<ReturnPurchaseList />} />
+          <Route path="/sales/add-sale" element={<AddSale />} />
+          <Route path="/account-list" element={<AccountListPage />} />
+          <Route path="/money-transfer" element={<MoneyTransferPage />} />
+          <Route path="/balance-sheet" element={<BalanceSheetPage />} />
         </Route>
       </Routes>
     </BrowserRouter>
+    </>
   );
 }
 

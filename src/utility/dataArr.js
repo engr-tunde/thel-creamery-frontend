@@ -36,15 +36,13 @@ export const sidebarData = [
       },
       {
         title: "Stock Count",
-        link: "/stock-count",
+        link: "/products/stock-count",
       },
     ],
   },
   {
     title: "Purchase",
-    // icon: "FaHouseUser",
     link: "/purchases",
-    // icon: "FaHouseUser",
     icon: "FaShoppingCart",
     children: [
       {
@@ -192,11 +190,11 @@ export const sidebarData = [
     children: [
       {
         title: "Sale",
-        link: "/sale",
+        link: "return-sale",
       },
       {
         title: "Purchase",
-        link: "/purchase",
+        link: "/return-purchase",
       },
     ],
   },

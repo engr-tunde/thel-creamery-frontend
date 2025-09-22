@@ -16,7 +16,7 @@ const DashboardLayout = ({ children }) => {
         {/* navbar side */}
         <NavBar onToggleSidebar={() => setSidebarOpen((prev) => !prev)} />
         {/* main  */}
-        <div className="bg-gray-50 p-3 lg:p-7 min-h-screen">
+        <div className=" p-3 lg:p-7 min-h-screen">
           <Outlet />
         </div>
       </div>

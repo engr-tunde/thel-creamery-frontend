@@ -3,6 +3,7 @@ import { AiFillEdit } from "react-icons/ai";
 import { FaRegEye } from "react-icons/fa";
 import { MdLocalPrintshop, MdNotes } from "react-icons/md";
 import { RiArrowDownSFill, RiDeleteBin6Line } from "react-icons/ri";
+import FormModal from "../form/FormModal";
 
 function ProductRowTemplate(item, i) {
   const [actionOpen, setActionOpen] = useState(null);
@@ -10,9 +11,6 @@ function ProductRowTemplate(item, i) {
   const handleActionClick = (i) => {
     setActionOpen(actionOpen === i ? null : i);
   };
-
-  console.log("item", item);
-  console.log("i", i);
 
   return (
     <tr
@@ -37,7 +35,7 @@ function ProductRowTemplate(item, i) {
       </td>
       <td className="p-4 pr-3 table-cell text-start">{item?.brand}</td>
       <td className="p-4 pr-3 table-cell text-start">{item?.category}</td>
-      <td className="p-4 pr-3 table-cell text-start">{item.quantity}</td>
+      <td className="p-4 pr-3 table-cell text-start">{item.alertQuantity}</td>
       <td className="p-4 pr-3 table-cell text-start">{item?.unit}</td>
       <td className="p-4 pr-3 table-cell text-start">{item?.price}</td>
       <td className="p-4 pr-3 table-cell text-start">{item?.cost}</td>
@@ -58,8 +56,15 @@ function ProductRowTemplate(item, i) {
                   <span>view</span>
                 </div>
                 <div className="flex items-center gap-1">
-                  <AiFillEdit />
-                  <span>Edit</span>
+                  {/* <AiFillEdit /> */}
+                  {/* <span>Edit</span> */}
+                  <FormModal
+                    table="product"
+                    id={item?.id}
+                    type="update"
+                    title="Edit"
+                    data={item}
+                  />
                 </div>
                 <div className="flex items-center gap-1">
                   <MdNotes />
@@ -70,8 +75,9 @@ function ProductRowTemplate(item, i) {
                   <span>Print Barcode</span>
                 </div>
                 <div className="flex items-center gap-1">
-                  <RiDeleteBin6Line />
-                  <span>Delete</span>
+                  {/* <RiDeleteBin6Line />
+                  <span>Delete</span> */}
+                  <FormModal type="delete" id={item?.id} table="product" title="Delete"/>
                 </div>
               </div>
             )}

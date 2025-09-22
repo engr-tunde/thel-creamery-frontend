@@ -5,9 +5,6 @@ import CategoryRowTemplate from "../../component/products/category/CategoryRowTe
 import CategoryHeader from "../../component/products/category/CategoryHeader";
 
 const CategoryPage = () => {
-  const [categories, setCategories] = useState(categoryDataArr);
-  const [searchTerm, setSearchTerm] = useState("");
-
   return (
     <div className="max-w-7xl mx-auto bg-white rounded-lg shadow-sm">
       <CategoryHeader />

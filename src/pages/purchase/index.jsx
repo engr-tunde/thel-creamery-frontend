@@ -272,7 +272,7 @@ const PurchaseListPage = () => {
               >
                 Date
               </label>
-              <AppInputField type="date" />
+              <input type="date" />
             </div>
             <div className="w-[240px] h-[40px] text-[rgb(72,79,86)] text-[12px] border-[1px] border-[rgb(228,230,252)] rounded-sm relative">
               <label
@@ -350,9 +350,9 @@ const PurchaseListPage = () => {
               </select>
             </div>
           </div>
-          <div className="bg-[rgb(124,92,196)] text-white flex item-center justify-center rounded-sm w-[80px] ">
+          {/* <div className="bg-[rgb(124,92,196)] text-white flex item-center justify-center rounded-sm w-[80px] ">
             <AppSubmitButton title="submit" />
-          </div>
+          </div> */}
         </div>
       </div>
       {/* main second section */}

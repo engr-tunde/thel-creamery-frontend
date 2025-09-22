@@ -7,3 +7,10 @@
 .error {
   @apply text-red-400 text-xs;
 }
+
+.primary-input {
+  @apply rounded-sm bg-transparent border-[1px] border-black;
+}
+.primary-btn {
+  @apply bg-blue-800 text-center text-white hover:scale-110 ease-in duration-200 rounded-md cursor-pointer;
+}

@@ -1,7 +1,7 @@
 import { useFormikContext } from "formik";
 import { FaEye } from "react-icons/fa";
 
-const AppInputField = ({name, type, id, placeholder, className, defaultValue, options}) => {
+const AddInputField = ({name, type, id, placeholder, className, defaultValue, options}) => {
 
     const { errors, values, touched, handleChange, handleBlur } = useFormikContext();
     console.log(values)
@@ -15,7 +15,7 @@ const AppInputField = ({name, type, id, placeholder, className, defaultValue, op
             className={`flex w-full flex-col gap-1 ${className}`}>
             {options ? (
                 <div className=" flex flex-col gap-2 ">
-                    <div className="border-[2px] border-[rgb(228,230,252)] rounded-sm">
+                    <div className="border-[1px] border-[rgb(228,230,252)] rounded-sm">
                         <select
                             name={name}
                             value={value}
@@ -53,7 +53,7 @@ const AppInputField = ({name, type, id, placeholder, className, defaultValue, op
                 </div>
                 ): (
                     <div className="flex flex-col gap-2">
-                        <div className="border-[2px] border-[rgb(228,230,252)] rounded-sm">
+                        <div className="border-[1px] border-[rgb(228,230,252)] h-[35px] rounded-sm">
                             <input 
                                 defaultValue={defaultValue}
                                 onChange={handleChange(name)}
@@ -61,7 +61,7 @@ const AppInputField = ({name, type, id, placeholder, className, defaultValue, op
                                 value={value}
                                 type={type} 
                                 placeholder={placeholder} 
-                                className="primary-input w-full h-[35px] p-3 bg-[rgb(253,253,255)]" 
+                                className="primary-input w-full h-full p-3 bg-[rgb(253,253,255)]" 
                             />
                         </div>
                     
@@ -76,4 +76,4 @@ const AppInputField = ({name, type, id, placeholder, className, defaultValue, op
     )
 }
 
-export default AppInputField;
+export default AddInputField;

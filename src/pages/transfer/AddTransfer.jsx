@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { FaBarcode, FaTrash } from "react-icons/fa";
 
-export default function AddTransfer() {
+ function AddTransfer() {
     const [date, setDate] = useState("14-09-2025");
     const [fromWarehouse, setFromWarehouse] = useState("");
     const [toWarehouse, setToWarehouse] = useState("");
@@ -175,3 +175,5 @@ export default function AddTransfer() {
         </div>
     );
 }
+
+export default AddTransfer
