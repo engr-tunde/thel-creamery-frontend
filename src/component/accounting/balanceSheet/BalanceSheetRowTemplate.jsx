@@ -29,6 +29,7 @@ const BalanceSheetRowTemplate = (item, i) => {
       <td className="p-4 flex-col table-cell text-start">
         <div className="text-[13px]">{item?.date}</div>
       </td>
+
       <td className="p-4 flex-col table-cell text-start">
         <div>{item?.date}</div>
       </td>
