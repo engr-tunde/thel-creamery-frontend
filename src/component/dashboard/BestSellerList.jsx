@@ -1,8 +1,8 @@
-import { bestSellers } from "../../utility/dashboardData"
+import { bestSellers } from "../../utility/dashboardData";
 
 export default function BestSellerList() {
   return (
-    <div className=" p-4 rounded  w-full border border-gray-200">
+    <div className="col-span-1 p-4 rounded w-full border border-gray-200">
       <div className="flex justify-between items-center mb-4">
         <h2 className="text-lg font-semibold">Best Seller August</h2>
         <span className="bg-purple-600 font-semibold text-[10px] text-white px-2 py-1 rounded hover:bg-purple-700 transition">
@@ -26,9 +26,7 @@ export default function BestSellerList() {
             <tr key={i} className="border-b border-b-gray-200">
               <td className="p-4">{item.qty}</td>
               <td className="p-2">
-                <div className="font-light text-[13px] ">
-                  {item.name}
-                </div>
+                <div className="font-light text-[13px] ">{item.name}</div>
                 <div className="text-sm text-gray-500">{item.code}</div>
               </td>
               <td className="p-2 "> {item.qty}</td>

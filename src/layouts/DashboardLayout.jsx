@@ -6,9 +6,9 @@ import NavBar from "@/component/global/NavBar";
 const DashboardLayout = ({ children }) => {
   const [sidebarOpen, setSidebarOpen] = useState(true);
   return (
-    <div className="flex w-screen h-screen gap-3">
+    <div className="flex w-screen h-screen gap-3 overflow-y-hidden">
       {/* left side */}
-      <div className={`${sidebarOpen ? "block" : "hidden"} flex w-[20%]`}>
+      <div className={`${sidebarOpen ? "block" : "hidden"} flex w-[16%]`}>
         <LeftsideBar />
       </div>
       {/* right side */}

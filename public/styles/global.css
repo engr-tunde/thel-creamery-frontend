@@ -16,6 +16,6 @@
 }
 
 ::-webkit-scrollbar {
-  width: 6px;
-  background: #f8f9fa;
+  width: 0px;
+  background: #f8f9fa6d;
 }

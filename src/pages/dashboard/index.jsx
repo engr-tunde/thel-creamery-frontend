@@ -2,8 +2,6 @@ import Chart from "../../component/dashboard/Chart";
 import Filters from "../../component/dashboard/Filters";
 import Header from "../../component/dashboard/Header";
 import MetricsGrid from "../../component/dashboard/MetricGrid";
-import RecentBestSellerTogether from "../../component/dashboard/RecentBestSellerTogether";
-import RecentTransaction from "../../component/dashboard/RecentTransaction";
 import RecentTransactionTable from "../../component/dashboard/RecentTransactionTable";
 import BestSellerList from "../../component/dashboard/BestSellerList";
 
@@ -19,9 +17,10 @@ const DashboardPage = () => {
       </div>
       <Chart />
       <BestSellerList />
-      <RecentTransactionTable />
-      <RecentBestSellerTogether />
-      {/* <RecentTransaction /> */}
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-10">
+        <RecentTransactionTable />
+        <BestSellerList />
+      </div>
     </div>
   );
 };

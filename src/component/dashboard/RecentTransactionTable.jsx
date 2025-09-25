@@ -101,7 +101,7 @@ export default function RecentTransactionTable() {
   const { columns, rows } = transactionData[activeTab];
 
   return (
-    <div className="p- rounded border-[1px] border-gray-300 w-full bg-white ">
+    <div className="col-span-1 rounded border-[1px] border-gray-300 w-full bg-white ">
       <div className="flex justify-between items-center mb-4 p-4">
         <h2 className="text-lg font-semibold">Recent Transaction</h2>
         <button className="text-white font-semibold text-[10px] bg-purple-500 px-2 py-1 rounded hover:bg-purple-600 transition">

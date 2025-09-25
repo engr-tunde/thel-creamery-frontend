@@ -22,6 +22,7 @@ import Table from "../../component/global/Table";
 import ProductRowTemplate from "../../component/products/ProductRowTemplate";
 import useFetch from "../../api/useFetch";
 import { fetchAllProducts } from "../../api";
+import FilterProduct from "../../component/products/FilterProduct";
 
 const ProductPageList = () => {
   const [eyeBtnOpen, setEyeBtnOpen] = useState(false);
@@ -38,10 +39,10 @@ const ProductPageList = () => {
   };
 
   return (
-    <div className="w-full h-full bg-white pt-2 rounded-lg shadow-sm">
+    <div className="w-full h-full bg-white p-5 rounded-lg shadow-sm">
       <div className="flex h-full flex-col justify-between">
         <div className="flex flex-col">
-          <div className="p-5">
+          <div className="">
             {/* The three form modals buttons */}
             <div className="flex items-center gap-2 w-full">
               <FormModal table="product" type="create" title="Add Product" />
@@ -71,22 +72,7 @@ const ProductPageList = () => {
               }`}
             >
               {filterOpen && (
-                <div className="border-[#8d5ccd1f] border-[1px] rounded-sm w-full grid grid-cols-4 items-center mt-5 gap-3 px-3 py-7">
-                  {productListInputData?.map((item, i) => (
-                    <div key={i}>
-                      {item && item?.placeholder === "Submit" ? (
-                        <div className="text-sm rounded-sm text-white bg-[#7c5cc4] w-fit py-2 px-3">
-                          {item?.placeholder}
-                        </div>
-                      ) : (
-                        <ProductListFilterInput
-                          placeholder={item?.placeholder}
-                          legendTag={item?.legendTag}
-                        />
-                      )}
-                    </div>
-                  ))}
-                </div>
+                <FilterProduct productListInputData={productListInputData} />
               )}
             </div>
 
@@ -101,13 +87,13 @@ const ProductPageList = () => {
             <div className="flex items-center justify-between mt-10">
               {/* {left side */}
               <div className="flex items-center gap-1">
-                <select className="border border-[#858c85] rounded-sm outline-none px-2 py-1">
+                <select className="border border-gray-300 rounded-sm outline-none px-3 py-1">
                   <option value="10">10</option>
                   <option value="20">25</option>
                   <option value="30">50</option>
                   <option value="40">All</option>
                 </select>
-                <span className="text-[#858c85]">records per page</span>
+                <span className="text-gray-600">records per page</span>
               </div>
 
               {/* middle side */}

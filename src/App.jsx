@@ -4,7 +4,6 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 // import AuthLayout from "./layouts/AuthLayout";
 import DashboardPage from "./pages/dashboard";
 import DashboardLayout from "./layouts/DashboardLayout";
-import PrintBarcodePage from "./pages/products/printBarcodePage";
 // import ProductPageList from "./pages/products";
 import ProductPagesLayout from "./layouts/ProductPagesLayout";
 import PurchasePagesLayout from "./layouts/PurchaseLayout";
@@ -35,10 +34,10 @@ import ReturnSaleList from "./pages/return/ReturnSaleList.jsx";
 import ReturnPurchaseList from "./pages/return/ReturnPurchaseList.jsx";
 import AddSale from "./pages/sale/AddSale.jsx";
 
-
 import AccountListPage from "./pages/accounting/index.jsx";
 import BalanceSheetPage from "./pages/accounting/balance-sheet/index.jsx";
 import MoneyTransferPage from "./pages/accounting/money-transfer/index.jsx";
+import PrintBarcodePage from "./pages/products/print-barcode.jsx";
 
 function App() {
   const [count, setCount] = useState(0);
@@ -64,36 +63,56 @@ function App() {
           <Route path="/reset-password" element={<null />} />
         </Route> */}
 
-        <Route element={<DashboardLayout />}>
-          <Route path="/dashboard" element={<DashboardPage />} />
-          <Route path="/products" element={<ProductPageList />} />
-          <Route path="/products/category" element={<CategoryPage />} />
-          <Route path="/products/adjustment-list" element={<AdjustmentListPage />}/>
-          <Route path="/expense-category" element={<ExpenseCategory />} />
-          <Route path="/expense-list" element={<ExpenseList />} />
-          <Route path="/" element={<AddExpenseFormModal />} />
-          <Route path="/income-category" element={<IncomeCategory />} />
-          <Route path="/income-list" element={<IncomeList />} />
-          <Route path="/purchases" element={<PurchaseListPage />} />
-          <Route path="/transfer-list" element={<TransferList />} />
-          <Route path="/add-transfer" element={<AddTransfer />} />
-          <Route path="/products/print_barcode" element={<PrintBarcodePage />}/>
-          <Route path="/import-transfer-by-CSV" element={<ImportTransferByCSV />} />
-          <Route path="/products/add_adjustment"element={<AddAdjustmentPage />}/>
-          <Route path="/products/product-list" element={<ProductPageList />} />
-          <Route path="/products/adjustment-list" element={<AdjustmentListPage />}/>
-          <Route path="/products/stock-count" element={<StockCountPage />} />
-          <Route path="/products/category" element={<CategoryPage />} />
-          <Route path="/sales/sale-list" element={<SaleListPage />} />
-          <Route path="/return-sale" element={<ReturnSaleList />} />
-          <Route path="/return-purchase" element={<ReturnPurchaseList />} />
-          <Route path="/sales/add-sale" element={<AddSale />} />
-          <Route path="/account-list" element={<AccountListPage />} />
-          <Route path="/money-transfer" element={<MoneyTransferPage />} />
-          <Route path="/balance-sheet" element={<BalanceSheetPage />} />
-        </Route>
-      </Routes>
-    </BrowserRouter>
+          <Route element={<DashboardLayout />}>
+            <Route path="/dashboard" element={<DashboardPage />} />
+
+            <Route path="/products" element={<ProductPageList />} />
+            <Route path="/products/category" element={<CategoryPage />} />
+            <Route
+              path="/products/print-barcode"
+              element={<PrintBarcodePage />}
+            />
+
+            <Route
+              path="/products/adjustment-list"
+              element={<AdjustmentListPage />}
+            />
+            <Route path="/expense-category" element={<ExpenseCategory />} />
+            <Route path="/expense-list" element={<ExpenseList />} />
+            <Route path="/" element={<AddExpenseFormModal />} />
+            <Route path="/income-category" element={<IncomeCategory />} />
+            <Route path="/income-list" element={<IncomeList />} />
+            <Route path="/purchases" element={<PurchaseListPage />} />
+            <Route path="/transfer-list" element={<TransferList />} />
+            <Route path="/add-transfer" element={<AddTransfer />} />
+            <Route
+              path="/import-transfer-by-CSV"
+              element={<ImportTransferByCSV />}
+            />
+            <Route
+              path="/products/add_adjustment"
+              element={<AddAdjustmentPage />}
+            />
+            <Route
+              path="/products/product-list"
+              element={<ProductPageList />}
+            />
+            <Route
+              path="/products/adjustment-list"
+              element={<AdjustmentListPage />}
+            />
+            <Route path="/products/stock-count" element={<StockCountPage />} />
+            <Route path="/products/category" element={<CategoryPage />} />
+            <Route path="/sales/sale-list" element={<SaleListPage />} />
+            <Route path="/return-sale" element={<ReturnSaleList />} />
+            <Route path="/return-purchase" element={<ReturnPurchaseList />} />
+            <Route path="/sales/add-sale" element={<AddSale />} />
+            <Route path="/account-list" element={<AccountListPage />} />
+            <Route path="/money-transfer" element={<MoneyTransferPage />} />
+            <Route path="/balance-sheet" element={<BalanceSheetPage />} />
+          </Route>
+        </Routes>
+      </BrowserRouter>
     </>
   );
 }

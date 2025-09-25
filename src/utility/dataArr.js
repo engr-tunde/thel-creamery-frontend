@@ -1,5 +1,3 @@
-import { act } from "react";
-
 export const sidebarData = [
   {
     title: "Dashboard",
@@ -7,7 +5,7 @@ export const sidebarData = [
     icon: "FaTachometerAlt",
     link: "/dashboard",
   },
-  
+
   {
     title: "Products",
     icon: "FaBoxes",
@@ -24,7 +22,7 @@ export const sidebarData = [
       },
       {
         title: "Print Barcode",
-        link: "/products/print_barcode",
+        link: "/products/print-barcode",
       },
       {
         title: "Adjustment List",
@@ -140,10 +138,6 @@ export const sidebarData = [
       {
         title: "Income List",
         link: "/income-list",
-      },
-      {
-        title: "Add Income",
-        link: "/add-income",
       },
     ],
   },

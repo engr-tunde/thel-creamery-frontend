@@ -3,8 +3,9 @@ import { toast } from "react-toastify";
 export const successMessage = (message) => {
   return toast.success(message);
 };
-
 export const errorMessage = (message) => toast.error(message);
+export const infoMessage = (message) => toast.info(message);
+
 export const currencyFormatter = (amount) => {
   const fm = new Intl.NumberFormat("en-US", {
     style: "currency",
@@ -23,10 +24,7 @@ export const saleDateFormatter = (dateString) => {
     hour12: true,
   };
   return new Date(dateString).toLocaleString("en-US", options);
-}
-
-
-
+};
 
 // export const dateFormatter = (date) => {
 //   var dateString = new Date(date).toString();
