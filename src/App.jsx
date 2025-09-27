@@ -38,6 +38,8 @@ import AccountListPage from "./pages/accounting/index.jsx";
 import BalanceSheetPage from "./pages/accounting/balance-sheet/index.jsx";
 import MoneyTransferPage from "./pages/accounting/money-transfer/index.jsx";
 import PrintBarcodePage from "./pages/products/print-barcode.jsx";
+import AuthLayout from "./layouts/AuthLayout.jsx";
+import LoginPage from "./pages/auth/Login.jsx";
 
 function App() {
   const [count, setCount] = useState(0);
@@ -57,11 +59,11 @@ function App() {
       />
       <BrowserRouter>
         <Routes>
-          {/* <Route element={<AuthLayout />}>
-          <Route path="/login" element={<LoginPage />} />
-          <Route path="/forget-password" element={<null />} />
-          <Route path="/reset-password" element={<null />} />
-        </Route> */}
+          <Route element={<AuthLayout />}>
+            <Route path="/login" element={<LoginPage />} />
+            {/* <Route path="/forget-password" element={<null />} />
+            <Route path="/reset-password" element={<null />} /> */}
+          </Route>
 
           <Route element={<DashboardLayout />}>
             <Route path="/dashboard" element={<DashboardPage />} />

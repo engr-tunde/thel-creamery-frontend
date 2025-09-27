@@ -60,7 +60,7 @@ import { HiArrowsPointingOut } from "react-icons/hi2";
 import { CiGlobe } from "react-icons/ci";
 import * as FaIcons from "react-icons/fa";
 
-const NavBar = ({ onToggleSidebar }) => {
+const NavBar = ({ onToggleSidebar, data }) => {
   const [showPlusDropdown, setShowPlusDropdown] = useState(false);
   const [showAdminDropdown, setShowAdminDropdown] = useState(false);
 
@@ -120,7 +120,7 @@ const NavBar = ({ onToggleSidebar }) => {
           }}
         >
           <FaUser className="text-[#ff7588]" />
-          <span>Admin</span>
+          <span>{data ? data?.username : "Admin"}</span>
           <FaArrowDown className="text-[#ff7588]" />
         </div>
         {showAdminDropdown && (

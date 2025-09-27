@@ -1,39 +1,48 @@
 import * as yup from "yup";
 
+export const validateLogin = () => {
+  const validationSchema = yup.object({
+    email: yup
+      .string()
+      .email("Invalid email provided")
+      .required("Email is missing"),
+    password: yup.string().required("Password is missing"),
+  });
+  return validationSchema;
+};
+export const validateAddCategory = () => {
+  const validationSchema = yup.object({
+    category: yup.string().required("Category name is missing"),
+  });
+  return validationSchema;
+};
+
 export const validateAddProduct = () => {
   const validationSchema = yup.object({
-    productName: yup.string().required("Product name is missing"),
-    productCode: yup.string().required("Product code is missing"),
-    barcodeSymbology: yup
-      .string()
-      .required("barcode symbology is not provided"),
+    product_type: yup.string().required("Select product type"),
+    product_name: yup.string().required("Product name is missing"),
+    product_code: yup.string().required("Product code is missing"),
+    barcode_format: yup.string().required("barcode symbology is not provided"),
     brand: yup.string().required("Brand name is missing"),
     category: yup.string().required("Product category is missing"),
-    productUnit: yup.string().required("How many unit does the product have?"),
-    saleUnit: yup.string().required("Sale unit is missing"),
-    productCost: yup.string().required("What is the product cost?"),
-    profitMargin: yup.string().required("Product profit margin is missing"),
-    productPrice: yup.string().required("Product price is missing"),
-    wholesalePrice: yup.string().required("Product wholesale price is missing"),
-    dailySaleObjective: yup
-      .string()
-      .required("Product dailySaleObjective is missing"),
-    alertQuantity: yup.string().required("Product alertQuantity is missing"),
-    productTax: yup.string().required("Product tax is missing"),
-    taxMethod: yup.string().required("Product taxMethod is missing"),
-    warrantyPeriod: yup.string().required("Product warrantyPeriod is missing"),
-    warrantyUnit: yup.string().required("Product warrantyUnit is missing"),
-    guaranteePeriod: yup
-      .string()
-      .required("Product guaranteePeriod is missing"),
-    guaranteeUnit: yup.string().required("Product guaranteeUnit is missing"),
-    purchaseUnit: yup.string().required("Product purchaseUnit is missing"),
-    featured: yup.string().required("Product featured is missing"),
-    embeddedBarcode: yup
-      .string()
-      .required("Product embeddedBarcode is missing"),
-    initialStock: yup.string().required("Product initialStock is missing"),
-    productDetails: yup.string().required("Product details is missing"),
+    unit: yup.string().required("How many unit does the product have?"),
+    purchase_unit: yup.string().required("Purchse unit is missing"),
+    sale_unit: yup.string().required("Sale unit is missing"),
+    quantity: yup.number().required("Available quantity is missing"),
+    product_cost: yup.number().required("What is the product cost?"),
+    profit_margin: yup.number(),
+    product_price: yup.number().required("Product price is missing"),
+    wholesale_price: yup
+      .number()
+      .required("Product wholesale price is missing"),
+    daily_sale_objective: yup.string(),
+    alert_quantity: yup.number().required("Product alert quantity is missing"),
+    product_tax: yup.string(),
+    tax_method: yup.string(),
+    warranty: yup.number(),
+    guarantee: yup.number(),
+    image: yup.mixed().required("Please upload an image"),
+    product_details: yup.string().required("Product details is missing"),
   });
 
   return validationSchema;

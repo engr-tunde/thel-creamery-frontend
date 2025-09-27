@@ -1,19 +1,28 @@
-import { useState } from "react";
-import ProductForm from "./product-form/ProductForm";
+import { useEffect, useState } from "react";
 import { FaPlus, FaTimesCircle } from "react-icons/fa";
 import axios from "axios";
 import { AiFillEdit } from "react-icons/ai";
 import { RiDeleteBin6Line } from "react-icons/ri";
 import {
   DELETE_ADJUSTMENT,
-  DELETE_CATEGORY,
-  DELETE_PRODUCT,
   DELETE_STOCKCOUNT,
 } from "../../constants/constants";
 import StockCountForm from "../products/stockCount/StockCountForm";
 import AdjustmentForm from "../products/adjustment/AdjustmentForm";
+import CategoryForm from "../form-modals/CategoryForm";
+import { deleteCategory, deleteProduct } from "../../api";
+import { errorMessage, successMessage } from "../../utility/helpers";
+import ProductForm from "../form-modals/ProductForm";
 
-const FormModal = ({ table, type, id, data, title }) => {
+const FormModal = ({
+  table,
+  type,
+  id,
+  data,
+  title,
+  closeAction,
+  actionOpen,
+}) => {
   const [open, setopen] = useState(false);
   const bgColor =
     type == "create"
@@ -25,12 +34,13 @@ const FormModal = ({ table, type, id, data, title }) => {
       : "bg-[#d8d5ff]";
 
   const forms = {
-    product: (type, data) =>
-      type == "update" ? (
-        data && <ProductForm type={type} data={data} setopen={setopen} />
-      ) : (
-        <ProductForm type={type} data={data} setopen={setopen} />
-      ),
+    product: (type, data) => (
+      <ProductForm type={type} data={data} setopen={setopen} />
+    ),
+    category: (type, data) => (
+      <CategoryForm type={type} data={data} setopen={setopen} />
+    ),
+    // ),
     stockcount: (type, data) =>
       type == "update" ? (
         data && <StockCountForm type={type} data={data} setopen={setopen} />
@@ -48,28 +58,27 @@ const FormModal = ({ table, type, id, data, title }) => {
   const handleDelete = async () => {
     const res =
       table === "product"
-        ? await axios.delete(`${DELETE_PRODUCT}/${id}`)
+        ? await deleteProduct(id)
         : table === "category"
-        ? await axios.delete(`${DELETE_CATEGORY}/${id}`)
+        ? await deleteCategory(id)
         : table === "stockcount"
         ? await axios.delete(`${DELETE_STOCKCOUNT}/${id}`)
         : table === "adjustment"
         ? await axios.delete(`${DELETE_ADJUSTMENT}/${id}`)
         : null;
-    if (res.status.toString().includes("20")) {
-      successMessage("Successfully deleted data");
+    console.log("res", res);
+    if (res.status === 200) {
+      successMessage(res?.data?.message);
       setopen(false);
-      setTimeout(() => {
-        window.location.reload();
-      }, 1000);
+      window.location.reload();
     } else {
-      errorMessage("Unable to delete data");
+      errorMessage(res?.data?.error);
     }
   };
 
   const Form = () => {
     return type == "delete" && id ? (
-      <form action="" className="p-4 flex flex-col items-center gap-4">
+      <div className="p-10 flex flex-col items-center gap-4">
         <div className="text-center font-medium">
           All data will be deleted upon the compltion of this action. Are you
           sure you want to continue
@@ -80,11 +89,17 @@ const FormModal = ({ table, type, id, data, title }) => {
         >
           Delete
         </button>
-      </form>
+      </div>
     ) : type == "create" || type == "update" ? (
       forms[table](type, data)
     ) : null;
   };
+
+  // useEffect(() => {
+  //   if (open) {
+  //     closeAction();
+  //   }
+  // }, [actionOpen]);
 
   return (
     <>
@@ -94,11 +109,9 @@ const FormModal = ({ table, type, id, data, title }) => {
       > */}
       <button
         onClick={() => setopen(true)}
-        className={
-          type == "create"
-            ? "flex items-center gap-2 py-2 px-3 rounded-sm bg-[#17a2b8] text-[15px] text-white cursor-pNointer`"
-            : "flex items-center gap-1"
-        }
+        className={`flex items-center rounded-sm text-[15px] cursor-pointer ${
+          type == "create" ? "gap-2 bg-[#17a2b8] text-white py-2 px-3" : "gap-1"
+        }`}
       >
         <span>
           {type == "create" ? (
@@ -116,8 +129,8 @@ const FormModal = ({ table, type, id, data, title }) => {
       </button> */}
 
       {open && (
-        <div className="w-screen h-screen bg-black/65 absolute top-0 left-0 z-50 flex items-center justify-center">
-          <div className="bg-white  w-[75%] p-5 relative ">
+        <div className="w-screen h-screen bg-black/65 fixed top-0 left-0 z-50 flex items-center justify-center">
+          <div className="bg-white w-[75%] p-5 relative ">
             <div
               className="absolute top-4 right-4 cursor-pointer"
               onClick={() => setopen(false)}

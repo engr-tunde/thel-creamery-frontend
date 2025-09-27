@@ -1,29 +1,43 @@
+export const loginAdminValues = () => {
+  const initialValues = {
+    email: "",
+    password: "",
+  };
+  return initialValues;
+};
+
+export const addCategoryValues = (data) => {
+  const initialValues = {
+    category: data ? data.category : "",
+    parent_category: data ? data.parent_category : "",
+  };
+  return initialValues;
+};
+
 export const addProductValues = (data) => {
   const initialValues = {
-    productName: data ? data.productName : "",
-    productCode: data ? data.productCode : "",
-    barcodeSymbology: data ? data.barcodeSymbology : "",
+    product_type: data ? data.product_type : "",
+    product_name: data ? data.product_name : "",
+    product_code: data ? data.product_code : "",
+    barcode_format: data ? data.barcode_format : "",
     brand: data ? data.brand : "",
     category: data ? data.category : "",
-    productUnit: data ? data.productUnit : "",
-    saleUnit: data ? data.saleUnit : "",
-    productCost: data ? data.productCost : "",
-    profitMargin: data ? data.profitMargin : "",
-    productPrice: data ? data.productPrice : "",
-    wholesalePrice: data ? data.wholesalePrice : "",
-    dailySaleObjective: data ? data.dailySaleObjective : "",
-    alertQuantity: data ? data.alertQuantity : "",
-    productTax: data ? data.productTax : "",
-    taxMethod: data ? data.taxMethod : "",
-    warrantyPeriod: data ? data.warrantyPeriod : "",
-    warrantyUnit: data ? data.warrantyUnit : "",
-    guaranteePeriod: data ? data.guaranteePeriod : "",
-    guaranteeUnit: data ? data.guaranteeUnit : "",
-    purchaseUnit: data ? data.purchaseUnit : "",
-    featured: data ? data.featured : "",
-    embeddedBarcode: data ? data.embeddedBarcode : "",
-    initialStock: data ? data.initialStock : "",
-    productDetails: data ? data.productDetails : "",
+    unit: data ? data.unit : "",
+    purchase_unit: data ? data.purchase_unit : "",
+    sale_unit: data ? data.sale_unit : "",
+    quantity: data ? data.quantity : "",
+    product_cost: data ? data.product_cost : "",
+    profit_margin: data ? data.profit_margin : "",
+    product_price: data ? data.product_price : "",
+    wholesale_price: data ? data.wholesale_price : "",
+    daily_sale_objective: data ? data.daily_sale_objective : "",
+    alert_quantity: data ? data.alert_quantity : "",
+    product_tax: data ? data.product_tax : "",
+    tax_method: data ? data.tax_method : "",
+    warranty: data ? data.warranty : "",
+    guarantee: data ? data.guarantee : "",
+    image: data ? data.image : "",
+    product_details: data ? data.product_details : "",
   };
   return initialValues;
 };
@@ -102,4 +116,3 @@ export const addAdjustment = (data) => {
   };
   return initialValues;
 };
-

@@ -520,6 +520,26 @@ export const sidebarData = [
     ],
   },
 ];
+
+export const barcodeFormatArr = [
+  "Code128",
+  "Code39",
+  "UPCA",
+  "UPCE",
+  "EAN-8",
+  "EAN-13",
+];
+export const productTypeArr = ["Standard", "Combo", "Digital", "Service"];
+export const productUnitArr = [
+  "Piece",
+  "Dozen",
+  "Carton",
+  "Pallet",
+  "Tray",
+  "Can",
+  "Pack",
+];
+export const productTaxArr = [2, 2.5, 5, 5.5, 7, 7.5, 10];
 // for nav bar plus menu
 export const plusMenu = [
   {

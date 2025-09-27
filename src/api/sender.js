@@ -1,7 +1,7 @@
 import { axiosInstance } from "./client";
 
 const postData = async (url, data, withCredentials) => {
-  const result = await axiosInstance
+  const result = await axiosInstance()
     .post(url, data, { withCredentials })
     .then((res) => {
       console.log("res", res);
@@ -15,7 +15,7 @@ const postData = async (url, data, withCredentials) => {
 };
 
 const putData = async (url, data, withCredentials) => {
-  const result = await axiosInstance
+  const result = await axiosInstance()
     .put(url, data, { withCredentials })
     .then((res) => {
       console.log("res", res);
@@ -29,7 +29,7 @@ const putData = async (url, data, withCredentials) => {
 };
 
 const patchData = async (url, data, withCredentials) => {
-  const result = await axiosInstance
+  const result = await axiosInstance()
     .patch(url, data, { withCredentials })
     .then((res) => {
       console.log("res", res);
@@ -43,8 +43,8 @@ const patchData = async (url, data, withCredentials) => {
 };
 
 const deleteData = async (url, withCredentials) => {
-  const result = await axiosInstance
-    .delete(url, data, { withCredentials })
+  const result = await axiosInstance()
+    .delete(url, { withCredentials })
     .then((res) => {
       console.log("res", res);
       if (res.status === 401) {
@@ -57,7 +57,7 @@ const deleteData = async (url, withCredentials) => {
 };
 
 const postMultipartData = async (url, data, withCredentials) => {
-  const result = await axiosInstance
+  const result = await axiosInstance()
     .put(url, data, { withCredentials })
     .then((res) => res.data)
     .catch((err) => err.response);

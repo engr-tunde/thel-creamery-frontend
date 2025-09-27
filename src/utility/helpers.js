@@ -7,7 +7,7 @@ export const errorMessage = (message) => toast.error(message);
 export const infoMessage = (message) => toast.info(message);
 
 export const currencyFormatter = (amount) => {
-  const fm = new Intl.NumberFormat("en-US", {
+  const fm = new Intl.NumberFormat("en-NG", {
     style: "currency",
     currency: "NGN",
   });

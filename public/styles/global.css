@@ -19,3 +19,7 @@
   width: 0px;
   background: #f8f9fa6d;
 }
+
+body {
+  @apply text-gray-700 font-normal bg-white;
+}

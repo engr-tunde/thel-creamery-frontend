@@ -20,19 +20,17 @@ import ImportProduct from "../../component/products/ImportProduct";
 import { productTableColumn, proListRowData } from "../../data/productData";
 import Table from "../../component/global/Table";
 import ProductRowTemplate from "../../component/products/ProductRowTemplate";
-import useFetch from "../../api/useFetch";
-import { fetchAllProducts } from "../../api";
 import FilterProduct from "../../component/products/FilterProduct";
+import { fetchAllProducts } from "../../api";
 
 const ProductPageList = () => {
   const [eyeBtnOpen, setEyeBtnOpen] = useState(false);
   const [filterOpen, setfilterOpen] = useState(false);
   const [importOpen, setimportOpen] = useState(false);
 
-  // const {productsData, productsLoading, productsError} = fetchAllProducts()
-
-  const { data } = useFetch("products");
+  const { data, loading, mutate } = fetchAllProducts();
   console.log("data", data);
+  mutate();
 
   const handleImportClick = () => {
     setimportOpen(!importOpen);
@@ -148,12 +146,14 @@ const ProductPageList = () => {
           </div>
 
           {/* Table section */}
-          <Table
-            tableColumn={productTableColumn}
-            rowData={proListRowData}
-            rowTemplate={ProductRowTemplate}
-            checkAll={true}
-          />
+          {data ? (
+            <Table
+              tableColumn={productTableColumn}
+              rowData={data?.data}
+              rowTemplate={ProductRowTemplate}
+              checkAll={true}
+            />
+          ) : null}
         </div>
 
         <div className="flex items-center justify-between w-full  p-5">

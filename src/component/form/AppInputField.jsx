@@ -9,8 +9,8 @@ const AppInputField = ({
   className,
   defaultValue,
 }) => {
-  const { errors, values, touched, handleBlur, handleChange } = useFormikContext();
-
+  const { errors, values, touched, handleBlur, handleChange } =
+    useFormikContext();
   const [showPassword, setshowPassword] = useState(false);
 
   const value = values[name];
