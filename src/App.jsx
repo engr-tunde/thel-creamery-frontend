@@ -109,9 +109,9 @@ function App() {
             <Route path="/return-sale" element={<ReturnSaleList />} />
             <Route path="/return-purchase" element={<ReturnPurchaseList />} />
             <Route path="/sales/add-sale" element={<AddSale />} />
-            <Route path="/account-list" element={<AccountListPage />} />
+            {/* <Route path="/account-list" element={<AccountListPage />} />
             <Route path="/money-transfer" element={<MoneyTransferPage />} />
-            <Route path="/balance-sheet" element={<BalanceSheetPage />} />
+            <Route path="/balance-sheet" element={<BalanceSheetPage />} /> */}
           </Route>
         </Routes>
       </BrowserRouter>
