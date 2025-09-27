@@ -35,8 +35,8 @@ import ReturnPurchaseList from "./pages/return/ReturnPurchaseList.jsx";
 import AddSale from "./pages/sale/AddSale.jsx";
 
 import AccountListPage from "./pages/accounting/index.jsx";
-import BalanceSheetPage from "./pages/accounting/balance-sheet/index.jsx";
-import MoneyTransferPage from "./pages/accounting/money-transfer/index.jsx";
+import BalanceSheetPage from "./pages/accounting/balance-sheet.jsx";
+import MoneyTransferPage from "./pages/accounting/money-transfer.jsx";
 import PrintBarcodePage from "./pages/products/print-barcode.jsx";
 import AuthLayout from "./layouts/AuthLayout.jsx";
 import LoginPage from "./pages/auth/Login.jsx";
@@ -109,9 +109,9 @@ function App() {
             <Route path="/return-sale" element={<ReturnSaleList />} />
             <Route path="/return-purchase" element={<ReturnPurchaseList />} />
             <Route path="/sales/add-sale" element={<AddSale />} />
-            {/* <Route path="/account-list" element={<AccountListPage />} />
+            <Route path="/account-list" element={<AccountListPage />} />
             <Route path="/money-transfer" element={<MoneyTransferPage />} />
-            <Route path="/balance-sheet" element={<BalanceSheetPage />} /> */}
+            <Route path="/balance-sheet" element={<BalanceSheetPage />} />
           </Route>
         </Routes>
       </BrowserRouter>
