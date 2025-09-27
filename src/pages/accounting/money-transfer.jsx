@@ -1,20 +1,32 @@
+import { useState } from "react";
+import { MdKeyboardArrowLeft, MdKeyboardArrowRight } from "react-icons/md";
+import Table from "../../component/global/Table";
+import { RiArrowDownSFill } from "react-icons/ri";
+import {
+  FaRegEye,
+  FaRegFile,
+  FaRegFileAlt,
+  FaRegFilePdf,
+} from "react-icons/fa";
+import { LiaTimesSolid } from "react-icons/lia";
+import { AiFillPrinter } from "react-icons/ai";
+import AccountFormModal from "../../component/accounting/AccountFormModal";
+import {
+  moneyTransferRowData,
+  moneyTransferTableColumn,
+} from "../../data/accountingData";
+import MoneyTransferRowTemplate from "../../component/accounting/moneyTransferForm/MoneyTransferRowTemplate";
 
-import { FaRegEye, FaRegFile, FaRegFileAlt, FaRegFilePdf } from 'react-icons/fa';
-import { AiFillPrinter } from 'react-icons/ai';
-import { LiaTimesSolid } from 'react-icons/lia';
-import { RiArrowDownSFill } from 'react-icons/ri';
-import Table from '../../../component/global/Table';
-import { MdKeyboardArrowLeft, MdKeyboardArrowRight } from 'react-icons/md';
-import { balanceSheetRowData, balanceSheetTableColumn } from '../../../data/accountingData';
-import BalanceSheetRowTemplate from '../../../component/accounting/balanceSheet/balanceSheetRowTemplate';
-import { useState } from 'react';
-
-const BalanceSheetPage = () => {
- const [eyeBtnOpen, setEyeBtnOpen] = useState(false);
+const MoneyTransferPage = () => {
+  const [eyeBtnOpen, setEyeBtnOpen] = useState(false);
 
   return (
     <div className="w-full">
-      <h1 className='font-medium text-2xl'>Balance Sheet</h1>
+      <AccountFormModal
+        title="Add Money Transfer"
+        table="moneyTransfer"
+        type="create"
+      />
 
       <div className="flex items-center justify-between mt-10 mb-10">
         {/* {left side */}
@@ -79,9 +91,9 @@ const BalanceSheetPage = () => {
       </div>
 
       <Table
-        tableColumn={balanceSheetTableColumn}
-        rowData={balanceSheetRowData}
-        rowTemplate={BalanceSheetRowTemplate}
+        tableColumn={moneyTransferTableColumn}
+        rowData={moneyTransferRowData}
+        rowTemplate={MoneyTransferRowTemplate}
         checkAll={true}
       />
 
@@ -104,6 +116,6 @@ const BalanceSheetPage = () => {
       </div>
     </div>
   );
-}
+};
 
-export default BalanceSheetPage
+export default MoneyTransferPage;
