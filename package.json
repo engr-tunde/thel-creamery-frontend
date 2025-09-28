@@ -5,6 +5,7 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
+    "start": "node server.js",
     "build": "vite build",
     "lint": "eslint .",
     "preview": "vite preview"
@@ -12,6 +13,7 @@
   "dependencies": {
     "@tailwindcss/vite": "^4.1.12",
     "axios": "^1.11.0",
+    "express": "^5.1.0",
     "formik": "^2.4.6",
     "js-cookie": "3.0.5",
     "path": "^0.12.7",
