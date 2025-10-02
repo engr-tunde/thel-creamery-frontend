@@ -15,3 +15,9 @@ export const FETCH_ALL_CATEGORIES = "/products/fetch-categories";
 export const ADD_CATEGORY = "/products/add-category";
 export const EDIT_CATEGORY = "/products/edit-category";
 export const DELETE_CATEGORY = "/products/delete-category";
+
+export const ADD_PURCHASE = "/purchases/add-purchase";
+export const EDIT_PURCHASE = "/purchases/edit-purchase";
+export const FETCH_PURCHASES = "/purchases/fetch-purchases";
+export const FETCH_SINGLE_PURCHASE = "/purchases/fetch-single-purchase";
+export const DELETE_PURCHASE = "/purchases/delete-purchase";

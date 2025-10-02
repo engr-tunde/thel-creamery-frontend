@@ -10,9 +10,10 @@ import {
 import StockCountForm from "../products/stockCount/StockCountForm";
 import AdjustmentForm from "../products/adjustment/AdjustmentForm";
 import CategoryForm from "../form-modals/CategoryForm";
-import { deleteCategory, deleteProduct } from "../../api";
+import { deleteCategory, deleteProduct, deletePurchase } from "../../api";
 import { errorMessage, successMessage } from "../../utility/helpers";
 import ProductForm from "../form-modals/ProductForm";
+import PurchaseForm from "../form-modals/PurchaseForm";
 
 const FormModal = ({
   table,
@@ -22,6 +23,7 @@ const FormModal = ({
   title,
   closeAction,
   actionOpen,
+  setActionOpen,
 }) => {
   const [open, setopen] = useState(false);
   const bgColor =
@@ -40,39 +42,31 @@ const FormModal = ({
     category: (type, data) => (
       <CategoryForm type={type} data={data} setopen={setopen} />
     ),
-    // ),
-    stockcount: (type, data) =>
-      type == "update" ? (
-        data && <StockCountForm type={type} data={data} setopen={setopen} />
-      ) : (
-        <StockCountForm type={type} data={data} setopen={setopen} />
-      ),
-    adjustment: (type, data) =>
-      type == "update" ? (
-        data && <AdjustmentForm type={type} data={data} setopen={setopen} />
-      ) : (
-        <AdjustmentForm type={type} data={data} setopen={setopen} />
-      ),
+    purchase: (type, data) => (
+      <PurchaseForm type={type} data={data} setopen={setopen} />
+    ),
   };
 
   const handleDelete = async () => {
-    const res =
+    const response =
       table === "product"
         ? await deleteProduct(id)
         : table === "category"
         ? await deleteCategory(id)
+        : table === "purchase"
+        ? await deletePurchase(id)
         : table === "stockcount"
         ? await axios.delete(`${DELETE_STOCKCOUNT}/${id}`)
         : table === "adjustment"
         ? await axios.delete(`${DELETE_ADJUSTMENT}/${id}`)
         : null;
-    console.log("res", res);
-    if (res.status === 200) {
-      successMessage(res?.data?.message);
+    console.log("response", response);
+    if (response?.status?.toString()?.includes("20")) {
+      successMessage(response?.data?.message);
       setopen(false);
       window.location.reload();
     } else {
-      errorMessage(res?.data?.error);
+      errorMessage(response?.data?.error);
     }
   };
 
@@ -94,13 +88,6 @@ const FormModal = ({
       forms[table](type, data)
     ) : null;
   };
-
-  // useEffect(() => {
-  //   if (open) {
-  //     closeAction();
-  //   }
-  // }, [actionOpen]);
-
   return (
     <>
       {/* <button
@@ -108,7 +95,9 @@ const FormModal = ({
         className={`${bgColor} h-7 w-7 flex items-center justify-center rounded-full cursor-pointer`}
       > */}
       <button
-        onClick={() => setopen(true)}
+        onClick={() => {
+          setopen(true);
+        }}
         className={`flex items-center rounded-sm text-[15px] cursor-pointer ${
           type == "create" ? "gap-2 bg-[#17a2b8] text-white py-2 px-3" : "gap-1"
         }`}

@@ -44,19 +44,21 @@ export const addProductValues = (data) => {
 
 export const addPurchaseValues = (data) => {
   const initialValues = {
-    purchaseStatus: data ? data.purchaseStatus : "",
-    referenceNumber: data ? data.referenceNumber : "",
-    warehouse: data ? data.warehouse : "",
-    date: data ? data.date : "",
+    purchase_date: data ? data.purchase_date : "",
+    reference_number: data ? data.reference_number : "",
+    purchase_status: data ? data.purchase_status : "",
     supplier: data ? data.supplier : "",
-    attachDocument: data ? data.attachDocument : "",
+    // supply_document: data ? data.supply_document : "",
+    product: data ? data.product : "",
+    quantity: data ? data.quantity : "",
     currency: data ? data.currency : "",
-    exchangeRate: data ? data.exchangeRate : "",
-    selectProduct: data ? data.selectProduct : "",
-    orderTax: data ? data.orderTax : "",
-    discount: data ? data.discount : "",
-    shippingCost: data ? data.shippingCost : "",
-    paymentStatus: data ? data.paymentStatus : "",
+    exchange_rate: data ? data.exchange_rate : "",
+    amount_currrency: data ? data.amount_currrency : "",
+    order_tax: data ? data.order_tax : 0,
+    discount: data ? data.discount : 0,
+    shipping_cost: data ? data.shipping_cost : 0,
+    paid: data ? data.paid : 0,
+    payment_status: data ? data.payment_status : "",
     note: data ? data.note : "",
   };
   return initialValues;

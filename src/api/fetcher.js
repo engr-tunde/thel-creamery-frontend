@@ -5,7 +5,6 @@ export const fetcher = (url) =>
   axiosInstance()
     .get(url, { withCredentials: true })
     .then((res) => {
-      console.log("res", res);
       if (res.status === 401) {
         Cookies.remove("u-x-key");
         window.location.href = "/login";
@@ -13,7 +12,6 @@ export const fetcher = (url) =>
       return res.data;
     })
     .catch((err) => {
-      console.log("fetch error", err);
       if (err.response.status === 401) {
         Cookies.remove("u-x-key");
         window.location.href = "/login";
@@ -25,7 +23,6 @@ export const sesionFetcher = (url) =>
   axiosInstance()
     .get(url, { withCredentials: true })
     .then((res) => {
-      console.log("res", res);
       if (res.status === 200) {
         return res.data;
       } else if (res.status === 401) {
@@ -34,7 +31,6 @@ export const sesionFetcher = (url) =>
       }
     })
     .catch((err) => {
-      console.log("fetch error", err);
       if (err.response.status === 401) {
         Cookies.remove("u-x-key");
         return null;

@@ -9,15 +9,12 @@ import {
 import { LiaTimesSolid } from "react-icons/lia";
 import { MdKeyboardArrowLeft, MdKeyboardArrowRight } from "react-icons/md";
 import { RiArrowDownSFill } from "react-icons/ri";
-import {
-  stockCountRowData,
-  stockCountTableCol,
-} from "../../../utility/dataArr";
+import { stockCountRowData, stockCountTableCol } from "../../utility/dataArr";
 import { useState } from "react";
-import StockCountTable from "../../../component/global/StockCountTable";
-import stockCountRowTemplate from "../../../component/products/stockCount/stockCountRowTemplate";
-import FormModal from "../../../component/form/FormModal";
-import useFetch from "../../../api/useFetch";
+import StockCountTable from "../../component/global/StockCountTable";
+import stockCountRowTemplate from "../../component/products/stockCount/stockCountRowTemplate";
+import FormModal from "../../component/form/FormModal";
+import useFetch from "../../api/useFetch";
 
 const StockCountPage = () => {
   const { data } = useFetch("stockcount");

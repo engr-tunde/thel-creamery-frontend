@@ -50,19 +50,24 @@ export const validateAddProduct = () => {
 
 export const validateAddPurchase = () => {
   const validationSchema = yup.object({
-    purchaseStatus: yup.string().required("Purchae status is missing"),
-    referenceNumber: yup.string().required("Reference number is missing"),
-    date: yup.string().required(" the date is missing"),
-    supplier: yup.string().required("suppliers name must be provided"),
-    AttachDocument: yup.string().required("attached the neccessary document"),
+    purchase_date: yup.string().required(" the date is missing"),
+    reference_number: yup.string().required("Reference number is missing"),
+    purchase_status: yup.string().required("Purchae status is missing"),
+    supplier: yup.string().required("Suppliers name must be provided"),
+    // supply_document: yup.mixed().required("Attached the neccessary document"),
+    product: yup.string().required("specify the selected product"),
+    quantity: yup.string().required("Provide purchase quantity"),
     currency: yup.string().required("select currency"),
-    exchangeRate: yup.string().required("select exchange rate"),
-    selectProduct: yup.string().required("specify the selected product"),
-    orderTax: yup.string().required("Provide the order tax"),
-    discount: yup.string().required("discount prices is misssing"),
-    shippingCost: yup.string().required("shipping cost is missing"),
-    paymentStatue: yup.string().required("Payment status is missing"),
-    note: yup.string().required("Add short note"),
+    exchange_rate: yup.number().required("select exchange rate"),
+    amount_currrency: yup
+      .number()
+      .required("How much in purchase currency rate"),
+    order_tax: yup.number(),
+    discount: yup.number(),
+    shipping_cost: yup.number(),
+    paid: yup.number(),
+    payment_status: yup.string().required("Payment status is missing"),
+    note: yup.string(),
   });
 
   return validationSchema;

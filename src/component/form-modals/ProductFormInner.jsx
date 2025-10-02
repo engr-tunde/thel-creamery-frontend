@@ -13,10 +13,9 @@ import {
   productTypeArr,
   productUnitArr,
 } from "../../utility/dataArr";
-import AppTextAreaField from "../form/product-form/AppTextAreaField";
+import AppTextAreaField from "../form/AppTextAreaField";
 
 const ProductFormInner = ({ type, handleSubmit, data }) => {
-  console.log("data", data);
   const { data: catsData } = fetchAllCategories();
   const [cats, setcats] = useState();
   useEffect(() => {
@@ -251,12 +250,6 @@ const ProductFormInner = ({ type, handleSubmit, data }) => {
               name="product_details"
               placeholder="Enter product details"
             />
-            {/* <textarea
-              name="productDetails"
-              rows="4"
-              className="border rounded-md p-2 w-full"
-              placeholder="Enter product details"
-            ></textarea> */}
           </div>
         </div>
 

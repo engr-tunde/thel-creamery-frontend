@@ -2,14 +2,19 @@ import useSWR from "swr";
 import {
   ADD_CATEGORY,
   ADD_PRODUCT,
+  ADD_PURCHASE,
   CHECK_SESSION,
   DELETE_CATEGORY,
   DELETE_PRODUCT,
+  DELETE_PURCHASE,
   EDIT_CATEGORY,
   EDIT_PRODUCT,
+  EDIT_PURCHASE,
   FETCH_ALL_CATEGORIES,
   FETCH_ALL_PRODUCTS,
+  FETCH_PURCHASES,
   FETCH_SINGLE_PRODUCT,
+  FETCH_SINGLE_PURCHASE,
   LOGGED_IN_ADMIN,
   LOGIN_ADMIN,
 } from "../constants/routes";
@@ -31,6 +36,7 @@ export const fetchLoggedInAdmin = () => {
   return { data, error, loading, mutate };
 };
 
+// Products
 export const addNewProduct = async (values) => {
   const result = await mutationRequest(ADD_PRODUCT, "post", values);
   return result;
@@ -55,6 +61,7 @@ export const deleteProduct = async (id) => {
   return result;
 };
 
+// Category
 export const addNewCategory = async (values) => {
   const result = await mutationRequest(ADD_CATEGORY, "post", values);
   return result;
@@ -76,5 +83,30 @@ export const fetchAllCategories = () => {
 };
 export const deleteCategory = async (id) => {
   const result = await mutationRequest(`${DELETE_CATEGORY}/${id}`, "delete");
+  return result;
+};
+
+// ?Purchase
+export const addNewPurchase = async (values) => {
+  const result = await mutationRequest(ADD_PURCHASE, "post", values);
+  return result;
+};
+export const editPurchase = async (values, id) => {
+  const result = await mutationRequest(`${EDIT_PURCHASE}/${id}`, "put", values);
+  return result;
+};
+export const fetchAllPurchases = () => {
+  const { data, error, loading, mutate } = useSWR(FETCH_PURCHASES, fetcher);
+  return { data, error, loading, mutate };
+};
+export const fetchSinglePurchase = (id) => {
+  const { data, error, loading, mutate } = useSWR(
+    `${FETCH_SINGLE_PURCHASE}/${id}`,
+    fetcher
+  );
+  return { data, error, loading, mutate };
+};
+export const deletePurchase = async (id) => {
+  const result = await mutationRequest(`${DELETE_PURCHASE}/${id}`, "delete");
   return result;
 };

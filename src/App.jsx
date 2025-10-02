@@ -9,7 +9,7 @@ import ProductPagesLayout from "./layouts/ProductPagesLayout";
 import PurchasePagesLayout from "./layouts/PurchaseLayout";
 import PurchaseListPage from "./pages/purchase";
 import CategoryPage from "./pages/products/category";
-import StockCountPage from "./pages/products/stockCountPage";
+import StockCountPage from "./pages/products/stock-count";
 import ProductPageList from "./pages/products";
 import AdjustmentListPage from "./pages/products/adjustmentListPage";
 import AddAdjustmentPage from "./pages/products/add-adjustment";

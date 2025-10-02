@@ -13,7 +13,7 @@ const AppSubmitButton = ({
       onClick={handleSubmit}
       disabled={disabled ? true : isSubmitting ? true : false}
       className={`${full ? "w-full" : "w-fit"} primary-btn p-2 ${
-        disabled || (isSubmitting && "opacity-50")
+        (disabled || isSubmitting) && "opacity-50"
       } ${className}`}
     >
       {isSubmitting ? "Submitting..." : title}

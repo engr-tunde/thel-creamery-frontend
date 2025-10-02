@@ -23,7 +23,7 @@ const AppTextAreaField = ({
         value={value}
         defaultValue={defaultValue}
         rows={rows}
-        className="border rounded-md p-2 w-full"
+        className="border border-[rgb(228,230,252)] rounded-md p-2 w-full"
         type={type}
         placeholder={placeholder}
       />

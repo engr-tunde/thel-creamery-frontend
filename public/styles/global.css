@@ -9,7 +9,7 @@
 }
 
 .primary-input {
-  @apply rounded-sm bg-transparent border-[1px] border-black;
+  @apply rounded-sm bg-transparent border-[1px] border-[rgb(228,230,252)];
 }
 .primary-btn {
   @apply bg-blue-800 text-center text-white hover:scale-110 ease-in duration-200 rounded-md cursor-pointer;
