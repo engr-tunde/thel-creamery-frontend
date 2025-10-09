@@ -10,10 +10,11 @@ import {
 import StockCountForm from "../products/stockCount/StockCountForm";
 import AdjustmentForm from "../products/adjustment/AdjustmentForm";
 import CategoryForm from "../form-modals/CategoryForm";
-import { deleteCategory, deleteProduct, deletePurchase } from "../../api";
+import { deleteCategory, deleteProduct, deletePurchase, deleteSale } from "../../api";
 import { errorMessage, successMessage } from "../../utility/helpers";
 import ProductForm from "../form-modals/ProductForm";
 import PurchaseForm from "../form-modals/PurchaseForm";
+import SaleForm from "../form-modals/SaleForm";
 
 const FormModal = ({
   table,
@@ -45,6 +46,9 @@ const FormModal = ({
     purchase: (type, data) => (
       <PurchaseForm type={type} data={data} setopen={setopen} />
     ),
+    sale: (type, data) => (
+      <SaleForm type={type} data={data} setopen={setopen} />
+    ),
   };
 
   const handleDelete = async () => {
@@ -55,6 +59,8 @@ const FormModal = ({
         ? await deleteCategory(id)
         : table === "purchase"
         ? await deletePurchase(id)
+        : table === "sale"
+        ? await deleteSale(id)
         : table === "stockcount"
         ? await axios.delete(`${DELETE_STOCKCOUNT}/${id}`)
         : table === "adjustment"

@@ -21,3 +21,11 @@ export const EDIT_PURCHASE = "/purchases/edit-purchase";
 export const FETCH_PURCHASES = "/purchases/fetch-purchases";
 export const FETCH_SINGLE_PURCHASE = "/purchases/fetch-single-purchase";
 export const DELETE_PURCHASE = "/purchases/delete-purchase";
+
+
+// Sales
+export const FETCH_ALL_SALES = "/sales/fetch-sales";
+export const FETCH_SINGLE_SALES = "/sales/fetch-single-sale";
+export const ADD_SALE = "/sales/add-sale";
+export const EDIT_SALE = "/sales/edit-sale";
+export const DELETE_SALE = "/sales/delete-sale";

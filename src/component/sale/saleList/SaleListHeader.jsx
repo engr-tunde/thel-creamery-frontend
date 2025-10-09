@@ -14,17 +14,21 @@ import {
 } from "react-icons/fa";
 import { FaX } from "react-icons/fa6";
 import { FiFilter, FiTrash2 } from "react-icons/fi";
+import FormModal from "../../form/FormModal";
+import { fetchAllSales } from "../../../api";
 
-function SaleListHeader() {
+function SaleListHeader(item) {
   const [recordsPerPage, setRecordsPerPage] = useState(10);
+
   return (
     <div className="p-6 border-b border-gray-200">
       <div className="flex flex-col lg:justify-between gap-4">
         <div className="flex gap-3 mb-2 border-gray-300 border-b-2 pb-4">
-          <button className="flex items-center gap-2 bg-teal-500 hover:bg-teal-600 text-white px-4 py-2 rounded-lg transition-colors">
+          {/* <button className="flex items-center gap-2 bg-teal-500 hover:bg-teal-600 text-white px-4 py-2 rounded-lg transition-colors">
             <FaPlus size={20} />
             Add Sale
-          </button>
+          </button> */}
+          <FormModal title="Add Sale" type="create" table="sale" />
           <button className="flex items-center gap-2 bg-purple-500 hover:bg-purple-600 text-white px-4 py-2 rounded-lg transition-colors whitspace-nowrap">
             <FaCopy size={20} />
             Import Sale
@@ -41,7 +45,7 @@ function SaleListHeader() {
 
         <div className="flex flex-col sm:flex-row items-start sm:items-center gap-4 justify-between py-3 w-full">
           <div className="flex items-center gap-2">
-            <select 
+            <select
               className="border border-gray-300 rounded-lg px-3 py-2 bg-white focus:bg-gray-200"
               value={recordsPerPage}
               onChange={(e) => setRecordsPerPage(e.target.value)}

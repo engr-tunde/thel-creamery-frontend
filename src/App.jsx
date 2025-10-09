@@ -25,7 +25,7 @@ import IncomeList from "./pages/income/IncomeList";
 
 // Sale Imports
 import SalePagesLayout from "./layouts/SalePagesLayout.jsx";
-import SaleListPage from "./pages/sale/SaleList.jsx";
+// import SaleListPage from "./pages/sale/SaleList.jsx";
 import TransferList from "./pages/transfer/TransferList.jsx";
 import AddTransfer from "./pages/transfer/AddTransfer.jsx";
 import ImportTransferByCSV from "./pages/transfer/ImportTransferByCSV.jsx";
@@ -40,6 +40,7 @@ import MoneyTransferPage from "./pages/accounting/money-transfer.jsx";
 import PrintBarcodePage from "./pages/products/print-barcode.jsx";
 import AuthLayout from "./layouts/AuthLayout.jsx";
 import LoginPage from "./pages/auth/Login.jsx";
+import SaleListPage from "./pages/sale/index.jsx";
 
 function App() {
   const [count, setCount] = useState(0);

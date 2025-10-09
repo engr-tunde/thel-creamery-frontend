@@ -3,18 +3,23 @@ import {
   ADD_CATEGORY,
   ADD_PRODUCT,
   ADD_PURCHASE,
+  ADD_SALE,
   CHECK_SESSION,
   DELETE_CATEGORY,
   DELETE_PRODUCT,
   DELETE_PURCHASE,
+  DELETE_SALE,
   EDIT_CATEGORY,
   EDIT_PRODUCT,
   EDIT_PURCHASE,
+  EDIT_SALE,
   FETCH_ALL_CATEGORIES,
   FETCH_ALL_PRODUCTS,
+  FETCH_ALL_SALES,
   FETCH_PURCHASES,
   FETCH_SINGLE_PRODUCT,
   FETCH_SINGLE_PURCHASE,
+  FETCH_SINGLE_SALES,
   LOGGED_IN_ADMIN,
   LOGIN_ADMIN,
 } from "../constants/routes";
@@ -91,7 +96,7 @@ export const addNewPurchase = async (values) => {
   const result = await mutationRequest(ADD_PURCHASE, "post", values);
   return result;
 };
-export const editPurchase = async (values, id) => {
+export const editPurchase = async (id, values) => {
   const result = await mutationRequest(`${EDIT_PURCHASE}/${id}`, "put", values);
   return result;
 };
@@ -108,5 +113,30 @@ export const fetchSinglePurchase = (id) => {
 };
 export const deletePurchase = async (id) => {
   const result = await mutationRequest(`${DELETE_PURCHASE}/${id}`, "delete");
+  return result;
+};
+
+//  Sales
+export const addNewSale = async (values) => {
+  const result = await mutationRequest(ADD_SALE, "post", values);
+  return result;
+};
+export const updateSale = async (id, values) => {
+  const result = await mutationRequest(`${EDIT_SALE}/${id}`, "put", values);
+  return result;
+};
+export const fetchAllSales = () => {
+  const { data, error, loading, mutate } = useSWR(FETCH_ALL_SALES, fetcher);
+  return { data, error, loading, mutate };
+};
+export const fetchSingleSale = (id) => {
+  const { data, error, loading, mutate } = useSWR(
+    `${FETCH_SINGLE_SALES}/${id}`,
+    fetcher
+  );
+  return { data, error, loading, mutate };
+};
+export const deleteSale = async (id) => {
+  const result = await mutationRequest(`${DELETE_SALE}/${id}`, "delete");
   return result;
 };

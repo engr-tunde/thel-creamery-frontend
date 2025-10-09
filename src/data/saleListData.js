@@ -15,10 +15,6 @@ export const saleListTableColumn = [
     className: "",
   },
   {
-    title: "Reference",
-    className: "",
-  },
-  {
     title: "Customer",
     className: "",
   },
@@ -27,19 +23,19 @@ export const saleListTableColumn = [
     className: "",
   },
   {
-    title: "Sale Status",
+    title: "Discount",
     className: "",
   },
   {
-    title: "Payment Status",
+    title: "Order Tax",
     className: "",
   },
   {
-    title: "Payment Method",
+    title: "Shipping Cost",
     className: "",
   },
   {
-    title: "Delivery Status",
+    title: "Total Before Discount",
     className: "",
   },
   {
@@ -47,15 +43,15 @@ export const saleListTableColumn = [
     className: "",
   },
   {
-    title: "Amount Returned",
+    title: "Delivery Status",
     className: "",
   },
   {
-    title: "Paid",
+    title: "sale Status",
     className: "",
   },
   {
-    title: "Due",
+    title: "Payment Status",
     className: "",
   },
 ];

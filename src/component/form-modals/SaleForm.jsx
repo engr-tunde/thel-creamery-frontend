@@ -1,42 +1,49 @@
-import { addNewCategory, updateCategory } from "../../api";
+import { addNewSale, updateSale } from "../../api";
 import { errorMessage, successMessage } from "../../utility/helpers";
-import CategoryFormInner from "./CategoryFormInner";
 import { useState } from "react";
+import SaleFormInner from "./SaleFormInner";
 
 const SaleForm = ({ type, data, setopen }) => {
-  const [image, setimage] = useState();
-  const [imageError, setimageError] = useState("");
-  const [imageText, setimageText] = useState("");
-  const handleImageChange = (e) => {
-    const file = e.target.files[0];
-    setimage(file);
-    setimageError("");
-    setimageText(file.name);
-  };
+  // const [image, setimage] = useState();
+  // const [imageError, setimageError] = useState("");
+  // const [imageText, setimageText] = useState("");
+  // const handleImageChange = (e) => {
+  //   const file = e.target.files[0];
+  //   setimage(file);
+  //   setimageError("");
+  //   setimageText(file.name);
+  // };
 
   const handleSubmit = async (values) => {
     console.log("values", values);
-    if (!image) {
-      setimageError("Category image is missing");
+    const payload = {
+      ...values,
+      total_before_discount: 5000,
+      grand_total: 4900,
+    };
+    console.log("payload", payload);
+    // if (!image) {
+    //   setimageError("Category image is missing");
+    // } else {
+    //   const formData = new FormData();
+    //   formData.append("image", image);
+    //   formData.append("category", values.category);
+    //   formData.append("parent_category", values.parent_category);
+    //   console.log("formData", ...formData);
+
+    const response =
+      type === "create"
+        ? await addNewSale(values)
+        : type === "update"
+        ? await updateSale(data?._id, values)
+        : null;
+    console.log("response", response);
+    if (response?.status?.toString()?.includes("20")) {
+      successMessage(response?.data?.message);
+      setopen(false);
+      window.location.reload();
     } else {
-      const formData = new FormData();
-      formData.append("image", image);
-      formData.append("category", values.category);
-      formData.append("parent_category", values.parent_category);
-      console.log("formData", ...formData);
-      const res =
-        type === "create"
-          ? await addNewCategory(formData)
-          : type === "update"
-          ? await updateCategory(data?._id, formData)
-          : null;
-      if (res.status === 200) {
-        successMessage(res?.data?.message);
-        setopen(false);
-        window.location.reload();
-      } else {
-        errorMessage(res?.data?.error);
-      }
+      errorMessage(response?.data?.error);
     }
   };
 
@@ -44,22 +51,22 @@ const SaleForm = ({ type, data, setopen }) => {
     <>
       {type == "update" ? (
         data && (
-          <CategoryFormInner
+          <SaleFormInner
             handleSubmit={handleSubmit}
             type={type}
             data={data}
-            imageError={imageError}
-            imageText={imageText}
-            handleImageChange={handleImageChange}
+            // imageError={imageError}
+            // imageText={imageText}
+            // handleImageChange={handleImageChange}
           />
         )
       ) : (
-        <CategoryFormInner
+        <SaleFormInner
           handleSubmit={handleSubmit}
           type={type}
-          imageError={imageError}
-          imageText={imageText}
-          handleImageChange={handleImageChange}
+          // imageError={imageError}
+          // imageText={imageText}
+          // handleImageChange={handleImageChange}
         />
       )}
     </>

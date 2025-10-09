@@ -67,10 +67,10 @@ function PurchaseFilterSearch({
             {purchaseStatus?.map((item, i) => (
               <option
                 key={i}
-                value={item.title}
+                value={item}
                 className="p-4 text-sm rounded-md]"
               >
-                {item.title}
+                {item}
               </option>
             ))}
           </select>
@@ -92,10 +92,10 @@ function PurchaseFilterSearch({
             {paymentStatus?.map((item, i) => (
               <option
                 key={i}
-                value={item.title}
+                value={item}
                 className="p-4 text-sm rounded-md]"
               >
-                {item.title}
+                {item}
               </option>
             ))}
           </select>

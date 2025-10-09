@@ -132,3 +132,23 @@ export const ValidateAddAdjustment = () => {
 
   return validationSchema;
 };
+
+export const validateAddSale = () => {
+  const validationSchema = yup.object({
+    sale_date: yup.string().required(" the date is missing"),
+    customer: yup.string().required("Customer type is missing"),
+    warehouse: yup.string().required("Warehouse name must be provided"),
+    discount: yup.number(),
+    order_tax: yup.number(),
+    shipping_cost: yup.number(),
+    // total_before_discount: yup.number(),
+    // grand_total: yup.number(),
+    delivery_status: yup.string().required("Payment status is missing"),
+    sale_status: yup.string().required("Payment status is missing"),
+    payment_status: yup.string().required("Payment status is missing"),
+    sale_note: yup.string(),
+    staff_note: yup.string(),
+  });
+
+  return validationSchema;
+};

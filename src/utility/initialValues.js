@@ -118,3 +118,22 @@ export const addAdjustment = (data) => {
   };
   return initialValues;
 };
+
+export const addSaleValues = (data) => {
+  const initialValues = {
+    sale_date: data ? data.sale_date : "",
+    customer: data ? data.customer : "",
+    warehouse: data ? data.warehouse : "",
+    discount: data ? data.discount : "",
+    order_tax: data ? data.order_tax : "",
+    shipping_cost: data ? data.shipping_cost : "",
+    // total_before_discount: data ? data.total_before_discount : "",
+    // grand_total: data ? data.grand_total : "",
+    delivery_status: data ? data.delivery_status : "",
+    sale_status: data ? data.sale_status : 0,
+    payment_status: data ? data.payment_status : 0,
+    sale_note: data ? data.sale_note : "",
+    staff_note: data ? data.staff_note : "",
+  };
+  return initialValues;
+};

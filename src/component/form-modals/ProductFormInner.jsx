@@ -17,6 +17,7 @@ import AppTextAreaField from "../form/AppTextAreaField";
 
 const ProductFormInner = ({ type, handleSubmit, data }) => {
   const { data: catsData } = fetchAllCategories();
+
   const [cats, setcats] = useState();
   useEffect(() => {
     if (catsData) {
